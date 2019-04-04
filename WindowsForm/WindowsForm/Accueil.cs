@@ -31,7 +31,7 @@ namespace WindowsForm
 
         private void Accueil_Load(object sender, EventArgs e)
         {
-            if (unUtilisateur.getAdmin() == true)
+            if (unUtilisateur.IsAdmin == true)
             {
                 ajoutDutilisateurToolStripMenuItem.Visible = true;
             }

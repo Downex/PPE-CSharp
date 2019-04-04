@@ -36,19 +36,22 @@ namespace WindowsForm
 
         private void BtConnexion_Click(object sender, EventArgs e)
         {
-            Utilisateur Downex = new Utilisateur("Downex", "123", "Cahier", "François", 0, true);
+            Utilisateur Downex = new Utilisateur("Downex", Hash256("123"), "Cahier", "François", 0, true);
             lesUtilisateurs.Add(Downex);
 
             foreach (Utilisateur unUtilisateur in lesUtilisateurs)
             {
-                if (LoginTextBox.Text == unUtilisateur.getLogin() && MdpTextBox.Text == unUtilisateur.getPassword())
+                if (LoginTextBox.Text == unUtilisateur.Login && Hash256(MdpTextBox.Text) == unUtilisateur.Password)
                 {
                     Utilisateur = unUtilisateur;
                     Dispose();
                 }
                 else
                 {
-                    MessageBox.Show("Nom de compte ou mot de passe incorrect", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    ErrorLabel.Visible = true;
+                    ErrorLabel.Text = "Nom de compte ou mot de passe incorrect";
+                    MdpTextBox.Clear();
+                    //MessageBox.Show("Nom de compte ou mot de passe incorrect", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
         }
@@ -58,7 +61,7 @@ namespace WindowsForm
         /// </summary>
         /// <param name="rawData">Chaîne de caractère que l'on souhaite crypté</param>
         /// <returns></returns>
-        static string ComputeSha256Hash(string rawData)
+        static string Hash256(string rawData)
         {
             // Create a SHA256   
             using (SHA256 sha256Hash = SHA256.Create())
@@ -74,6 +77,11 @@ namespace WindowsForm
                 }
                 return builder.ToString();
             }
+        }
+
+        private void Authentification_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

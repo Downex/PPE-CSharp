@@ -3,19 +3,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Security.Cryptography;
+
 
 namespace WindowsForm
 {
     public class Utilisateur
     {
-        private string Login;
-        private string Password;
 
-        private string Nom;
-        private string Prenom;
+        public string Login { get; set; }
 
-        private int Score;
-        private bool IsAdmin;
+        public string Password { get; set; }
+
+        public string Nom { get; set; }
+        public string Prenom { get; set; }
+
+        public int Score { get; set; }
+        public bool IsAdmin { get; set; }
 
         public Utilisateur(string Login, string Password, string Nom, string Prenom, int Score, bool IsAdmin)
         {
@@ -27,34 +31,31 @@ namespace WindowsForm
             this.IsAdmin = IsAdmin;
         }
 
-        public string getLogin()
+        /// <summary>
+        /// Permet le Hash d'une chaine de caractère
+        /// </summary>
+        /// <param name="rawData"></param>
+        /// <returns></returns>
+        public string Hash256(string rawData)
         {
-            return Login;
-        }
+            try
+            {
+                using (SHA256 sha256Hash = SHA256.Create())
+                {
+                    byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(rawData));
 
-        public string getPassword()
-        {
-            return Password;
-        }
-
-        public string getNom()
-        {
-            return Nom;
-        }
-
-        public string getPrenom()
-        {
-            return Prenom;
-        }
-
-        public int getScore()
-        {
-            return Score;
-        }
-
-        public bool getAdmin()
-        {
-            return IsAdmin;
+                    StringBuilder builder = new StringBuilder();
+                    for (int i = 0; i < bytes.Length; i++)
+                    {
+                        builder.Append(bytes[i].ToString("x2"));
+                    }
+                    return builder.ToString();
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
     }
 }
