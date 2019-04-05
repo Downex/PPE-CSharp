@@ -30,6 +30,7 @@
         {
             this.ClassementGridView = new System.Windows.Forms.DataGridView();
             this.Pseudo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Rang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Score = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.ClassementGridView)).BeginInit();
             this.SuspendLayout();
@@ -41,11 +42,12 @@
             this.ClassementGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ClassementGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Pseudo,
+            this.Rang,
             this.Score});
-            this.ClassementGridView.Location = new System.Drawing.Point(0, 0);
+            this.ClassementGridView.Location = new System.Drawing.Point(1, 0);
             this.ClassementGridView.Name = "ClassementGridView";
             this.ClassementGridView.ReadOnly = true;
-            this.ClassementGridView.Size = new System.Drawing.Size(409, 292);
+            this.ClassementGridView.Size = new System.Drawing.Size(343, 282);
             this.ClassementGridView.TabIndex = 0;
             this.ClassementGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -53,19 +55,22 @@
             // 
             this.Pseudo.HeaderText = "Pseudo";
             this.Pseudo.Name = "Pseudo";
-            this.Pseudo.ReadOnly = true;
+            // 
+            // Rang
+            // 
+            this.Rang.HeaderText = "Rang";
+            this.Rang.Name = "Rang";
             // 
             // Score
             // 
             this.Score.HeaderText = "Score";
             this.Score.Name = "Score";
-            this.Score.ReadOnly = true;
             // 
             // Classement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(411, 294);
+            this.ClientSize = new System.Drawing.Size(342, 281);
             this.Controls.Add(this.ClassementGridView);
             this.Name = "Classement";
             this.Text = "Classement";
@@ -79,6 +84,7 @@
 
         private System.Windows.Forms.DataGridView ClassementGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn Pseudo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Rang;
         private System.Windows.Forms.DataGridViewTextBoxColumn Score;
     }
 }

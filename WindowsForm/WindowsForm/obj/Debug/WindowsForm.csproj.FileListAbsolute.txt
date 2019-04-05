@@ -25,3 +25,5 @@ C:\Users\Admin\Source\Repos\Ppe-Csharp\WindowsForm\WindowsForm\obj\Debug\Windows
 C:\Users\Admin\Source\Repos\Ppe-Csharp\WindowsForm\WindowsForm\obj\Debug\WindowsForm.exe
 C:\Users\Admin\Source\Repos\Ppe-Csharp\WindowsForm\WindowsForm\obj\Debug\WindowsForm.pdb
 C:\Users\Admin\Source\Repos\Ppe-Csharp\WindowsForm\WindowsForm\obj\Debug\WindowsForm.Classement.resources
+C:\Users\Admin\Source\Repos\Ppe-Csharp\WindowsForm\WindowsForm\obj\Debug\WindowsForm.AjoutUtilisateur.resources
+C:\Users\Admin\Source\Repos\Ppe-Csharp\WindowsForm\WindowsForm\obj\Debug\WindowsForm.ListeMot.resources
