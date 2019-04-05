@@ -34,7 +34,7 @@ namespace WindowsForm
                 }
                 else
                 {
-                    Utilisateur unUtilisateur = new Utilisateur(LoginTextBox.Text, Hash256(MdpTextBox.Text), NomTextBox.Text, PrenomTextBox.Text, 0, false);
+                    Utilisateur unUtilisateur = new Utilisateur(LoginTextBox.Text, Utilisateur.Hash256(MdpTextBox.Text), NomTextBox.Text, PrenomTextBox.Text, 0, false);
                     lesUtilisateurs.Add(unUtilisateur);
                     MessageBox.Show("Inscription réussi", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     this.Close();
@@ -49,33 +49,6 @@ namespace WindowsForm
         private void Inscription_Load(object sender, EventArgs e)
         {
 
-        }
-
-        /// <summary>
-        /// Permet le Hash d'une chaine de caractère
-        /// </summary>
-        /// <param name="rawData"></param>
-        /// <returns></returns>
-        public string Hash256(string rawData)
-        {
-            try
-            {
-                using (SHA256 sha256Hash = SHA256.Create())
-                {
-                    byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(rawData));
-
-                    StringBuilder builder = new StringBuilder();
-                    for (int i = 0; i < bytes.Length; i++)
-                    {
-                        builder.Append(bytes[i].ToString("x2"));
-                    }
-                    return builder.ToString();
-                }
-            }
-            catch (Exception)
-            {
-                throw;
-            }
         }
     }
 }

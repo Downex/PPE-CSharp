@@ -36,12 +36,12 @@ namespace WindowsForm
 
         private void BtConnexion_Click(object sender, EventArgs e)
         {
-            Utilisateur Downex = new Utilisateur("Downex", Hash256("123"), "Cahier", "François", 0, true);
+            Utilisateur Downex = new Utilisateur("Downex", Utilisateur.Hash256("123"), "Cahier", "François", 0, true);
             lesUtilisateurs.Add(Downex);
 
             foreach (Utilisateur unUtilisateur in lesUtilisateurs)
             {
-                if (LoginTextBox.Text == unUtilisateur.Login && Hash256(MdpTextBox.Text) == unUtilisateur.Password)
+                if (LoginTextBox.Text == unUtilisateur.Login && Utilisateur.Hash256(MdpTextBox.Text) == unUtilisateur.Password)
                 {
                     Utilisateur = unUtilisateur;
                     Dispose();
@@ -53,29 +53,6 @@ namespace WindowsForm
                     MdpTextBox.Clear();
                     //MessageBox.Show("Nom de compte ou mot de passe incorrect", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-            }
-        }
-
-        /// <summary>
-        /// Cryptage mot de passe
-        /// </summary>
-        /// <param name="rawData">Chaîne de caractère que l'on souhaite crypté</param>
-        /// <returns></returns>
-        static string Hash256(string rawData)
-        {
-            // Create a SHA256   
-            using (SHA256 sha256Hash = SHA256.Create())
-            {
-                // ComputeHash - returns byte array  
-                byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(rawData));
-
-                // Convert byte array to a string   
-                StringBuilder builder = new StringBuilder();
-                for (int i = 0; i < bytes.Length; i++)
-                {
-                    builder.Append(bytes[i].ToString("x2"));
-                }
-                return builder.ToString();
             }
         }
 

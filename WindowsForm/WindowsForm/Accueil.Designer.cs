@@ -34,7 +34,8 @@
             this.monCompteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.InformationPersonnel = new System.Windows.Forms.ToolStripMenuItem();
             this.ajoutDutilisateurToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listeDesUtilisateursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.motToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.classementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,7 +51,9 @@
             // 
             this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.motToolStripMenuItem,
-            this.monCompteToolStripMenuItem});
+            this.monCompteToolStripMenuItem,
+            this.classementToolStripMenuItem,
+            this.motToolStripMenuItem1});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
             this.menuStrip2.Size = new System.Drawing.Size(800, 24);
@@ -68,8 +71,7 @@
             // 
             this.monCompteToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.InformationPersonnel,
-            this.ajoutDutilisateurToolStripMenuItem,
-            this.listeDesUtilisateursToolStripMenuItem});
+            this.ajoutDutilisateurToolStripMenuItem});
             this.monCompteToolStripMenuItem.Name = "monCompteToolStripMenuItem";
             this.monCompteToolStripMenuItem.Size = new System.Drawing.Size(88, 20);
             this.monCompteToolStripMenuItem.Text = "Mon compte";
@@ -89,11 +91,18 @@
             this.ajoutDutilisateurToolStripMenuItem.Text = "Ajout d\'utilisateur";
             this.ajoutDutilisateurToolStripMenuItem.Visible = false;
             // 
-            // listeDesUtilisateursToolStripMenuItem
+            // motToolStripMenuItem1
             // 
-            this.listeDesUtilisateursToolStripMenuItem.Name = "listeDesUtilisateursToolStripMenuItem";
-            this.listeDesUtilisateursToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
-            this.listeDesUtilisateursToolStripMenuItem.Text = "Liste des utilisateurs";
+            this.motToolStripMenuItem1.Name = "motToolStripMenuItem1";
+            this.motToolStripMenuItem1.Size = new System.Drawing.Size(41, 20);
+            this.motToolStripMenuItem1.Text = "Mot";
+            // 
+            // classementToolStripMenuItem
+            // 
+            this.classementToolStripMenuItem.Name = "classementToolStripMenuItem";
+            this.classementToolStripMenuItem.Size = new System.Drawing.Size(80, 20);
+            this.classementToolStripMenuItem.Text = "Classement";
+            this.classementToolStripMenuItem.Click += new System.EventHandler(this.classementToolStripMenuItem_Click);
             // 
             // Accueil
             // 
@@ -121,6 +130,7 @@
         private System.Windows.Forms.ToolStripMenuItem monCompteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem InformationPersonnel;
         private System.Windows.Forms.ToolStripMenuItem ajoutDutilisateurToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem listeDesUtilisateursToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem motToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem classementToolStripMenuItem;
     }
 }

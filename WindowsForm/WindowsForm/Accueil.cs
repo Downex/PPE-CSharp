@@ -42,5 +42,16 @@ namespace WindowsForm
             Information information = new Information(unUtilisateur);
             information.Show();
         }
+
+        private void listeDesUtilisateursToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void classementToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Classement classement = new Classement();
+            classement.Show();
+        }
     }
 }

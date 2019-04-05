@@ -41,6 +41,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.AncienMdpTextBox = new System.Windows.Forms.TextBox();
             this.BtValider = new System.Windows.Forms.Button();
+            this.ScoreLabel = new System.Windows.Forms.Label();
+            this.RangLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -159,11 +161,33 @@
             this.BtValider.Visible = false;
             this.BtValider.Click += new System.EventHandler(this.BtValider_Click);
             // 
+            // ScoreLabel
+            // 
+            this.ScoreLabel.AutoSize = true;
+            this.ScoreLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ScoreLabel.Location = new System.Drawing.Point(311, 21);
+            this.ScoreLabel.Name = "ScoreLabel";
+            this.ScoreLabel.Size = new System.Drawing.Size(74, 26);
+            this.ScoreLabel.TabIndex = 31;
+            this.ScoreLabel.Text = "Score";
+            // 
+            // RangLabel
+            // 
+            this.RangLabel.AutoSize = true;
+            this.RangLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RangLabel.Location = new System.Drawing.Point(311, 86);
+            this.RangLabel.Name = "RangLabel";
+            this.RangLabel.Size = new System.Drawing.Size(68, 26);
+            this.RangLabel.TabIndex = 32;
+            this.RangLabel.Text = "Rang";
+            // 
             // Information
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(397, 303);
+            this.Controls.Add(this.RangLabel);
+            this.Controls.Add(this.ScoreLabel);
             this.Controls.Add(this.BtValider);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.AncienMdpTextBox);
@@ -199,5 +223,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox AncienMdpTextBox;
         private System.Windows.Forms.Button BtValider;
+        private System.Windows.Forms.Label ScoreLabel;
+        private System.Windows.Forms.Label RangLabel;
     }
 }

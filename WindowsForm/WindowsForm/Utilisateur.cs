@@ -18,6 +18,8 @@ namespace WindowsForm
         public string Nom { get; set; }
         public string Prenom { get; set; }
 
+        public string Rang { get; set; }
+
         public int Score { get; set; }
         public bool IsAdmin { get; set; }
 
@@ -36,7 +38,7 @@ namespace WindowsForm
         /// </summary>
         /// <param name="rawData"></param>
         /// <returns></returns>
-        public string Hash256(string rawData)
+        public static string Hash256(string rawData)
         {
             try
             {

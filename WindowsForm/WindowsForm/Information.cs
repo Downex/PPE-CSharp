@@ -25,6 +25,8 @@ namespace WindowsForm
             PseudoLabel.Text = utilisateur.Login;
             PrenomLabel.Text = utilisateur.Prenom;
             NomLabel.Text = utilisateur.Nom;
+            ScoreLabel.Text = utilisateur.Score.ToString();
+
         }
 
         //Affiche le formulaire de modification du mot de passe sinon le cache
@@ -37,7 +39,7 @@ namespace WindowsForm
         {
             try
             {
-                if (utilisateur.Hash256(AncienMdpTextBox.Text) == utilisateur.Password)
+                if (Utilisateur.Hash256(AncienMdpTextBox.Text) == utilisateur.Password)
                 {
                    if (String.IsNullOrWhiteSpace(MdpTextBox.Text) || String.IsNullOrWhiteSpace(CMdpTextBox.Text))
                    {
@@ -45,7 +47,7 @@ namespace WindowsForm
                    }
                    else if (MdpTextBox.Text == CMdpTextBox.Text)
                    {
-                        utilisateur.Password = utilisateur.Hash256(MdpTextBox.Text);
+                        utilisateur.Password = Utilisateur.Hash256(MdpTextBox.Text);
                         MessageBox.Show("Mot de passe modifié", "Modification", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                         AffichageFormulaire();
                     }
