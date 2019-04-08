@@ -61,11 +61,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class jeux\Adjectif.cs" />
+    <Compile Include="Class jeux\Mot.cs" />
+    <Compile Include="Class jeux\Nom.cs" />
+    <Compile Include="Class jeux\Phrase.cs" />
+    <Compile Include="Class jeux\Pronom.cs" />
+    <Compile Include="Class jeux\Verbe.cs" />
     <Compile Include="Forms\Accueil.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Accueil.Designer.cs">
       <DependentUpon>Accueil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AjoutPhrase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AjoutPhrase.Designer.cs">
+      <DependentUpon>AjoutPhrase.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\AjoutUtilisateur.cs">
       <SubType>Form</SubType>
@@ -97,6 +109,12 @@
     <Compile Include="Forms\Inscription.Designer.cs">
       <DependentUpon>Inscription.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Jouer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Jouer.Designer.cs">
+      <DependentUpon>Jouer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ListeMot.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,6 +126,9 @@
     <Compile Include="Class gestion\Utilisateur.cs" />
     <EmbeddedResource Include="Forms\Accueil.resx">
       <DependentUpon>Accueil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AjoutPhrase.resx">
+      <DependentUpon>AjoutPhrase.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AjoutUtilisateur.resx">
       <DependentUpon>AjoutUtilisateur.cs</DependentUpon>
@@ -123,6 +144,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Inscription.resx">
       <DependentUpon>Inscription.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Jouer.resx">
+      <DependentUpon>Jouer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ListeMot.resx">
       <DependentUpon>ListeMot.cs</DependentUpon>
@@ -161,8 +185,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Class jeux\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
