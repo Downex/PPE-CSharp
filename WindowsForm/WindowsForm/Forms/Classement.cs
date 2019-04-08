@@ -27,12 +27,12 @@ namespace WindowsForm
         {
             lesUtilisateurs = new List<Utilisateur>();
 
-            Utilisateur Dwynox = new Utilisateur("Dwynox", Utilisateur.Hash256("123"), "Cahier", "François", "Novice", 14, true);
-            Utilisateur Downex = new Utilisateur("Downex", Utilisateur.Hash256("123"), "Cahier", "François", "Novice", 0, true);
-            Utilisateur Ozziep = new Utilisateur("Ozziep", Utilisateur.Hash256("123"), "Cahier", "François", "Intermediaire", 84, true);
-            Utilisateur Xyro = new Utilisateur("Xyro", Utilisateur.Hash256("123"), "Cahier","Francois", "Maitre", 100, true);
-            Utilisateur SkynX7 = new Utilisateur("SkyNx7", Utilisateur.Hash256("123"), "Cahier", "Francois", "Maitre", 146, true);
-            Utilisateur Michel = new Utilisateur("Michel", Utilisateur.Hash256("123"), "Cahier", "Francois", "Intermerdiaire", 57, true);
+            Utilisateur Dwynox = new Utilisateur("Dwynox", Utilisateur.Hash256("123"), "Cahier", "François", "Novice", "14", "0");
+            Utilisateur Downex = new Utilisateur("Downex", Utilisateur.Hash256("123"), "Cahier", "François", "Novice", "0", "0");
+            Utilisateur Ozziep = new Utilisateur("Ozziep", Utilisateur.Hash256("123"), "Cahier", "François", "Intermediaire", "84", "0");
+            Utilisateur Xyro = new Utilisateur("Xyro", Utilisateur.Hash256("123"), "Cahier","Francois", "Maitre", "100", "0");
+            Utilisateur SkynX7 = new Utilisateur("SkyNx7", Utilisateur.Hash256("123"), "Cahier", "Francois", "Maitre", "146", "0");
+            Utilisateur Michel = new Utilisateur("Michel", Utilisateur.Hash256("123"), "Cahier", "Francois", "Intermerdiaire", "57", "0");
 
             lesUtilisateurs.Add(Dwynox);
             lesUtilisateurs.Add(Downex);

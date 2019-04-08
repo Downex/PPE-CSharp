@@ -10,7 +10,7 @@ namespace WindowsForm
 {
     public class Utilisateur
     {
-
+        public string Id { get; set; }
         public string Login { get; set; }
 
         public string Password { get; set; }
@@ -20,10 +20,10 @@ namespace WindowsForm
 
         public string Rang { get; set; }
 
-        public int Score { get; set; }
-        public bool IsAdmin { get; set; }
+        public string Score { get; set; }
+        public string IsAdmin { get; set; }
 
-        public Utilisateur(string Login, string Password, string Nom, string Prenom, string Rang, int Score, bool IsAdmin)
+        public Utilisateur(string Login, string Password, string Nom, string Prenom, string Rang, string Score, string IsAdmin)
         {
             this.Login = Login;
             this.Password = Password;
@@ -32,6 +32,11 @@ namespace WindowsForm
             this.Rang = Rang;
             this.Score = Score;
             this.IsAdmin = IsAdmin;
+        }
+
+        public Utilisateur()
+        {
+
         }
 
         /// <summary>
