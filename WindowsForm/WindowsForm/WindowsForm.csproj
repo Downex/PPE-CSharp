@@ -49,6 +49,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -61,6 +62,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BdMotDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BdMotDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Class gestion\Bdd.cs" />
     <Compile Include="Class jeux\Adjectif.cs" />
     <Compile Include="Class jeux\Mot.cs" />
     <Compile Include="Class jeux\Nom.cs" />
@@ -160,6 +167,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="BdMotDataSet1.xsc">
+      <DependentUpon>BdMotDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="BdMotDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BdMotDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BdMotDataSet1.xss">
+      <DependentUpon>BdMotDataSet1.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

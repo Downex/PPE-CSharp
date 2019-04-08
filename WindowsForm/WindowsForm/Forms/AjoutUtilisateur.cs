@@ -25,6 +25,8 @@ namespace WindowsForm
 
         private void AjoutUtilisateur_Load(object sender, EventArgs e)
         {
+            // TODO: cette ligne de code charge les données dans la table 'bdMotDataSet.Utilisateur'. Vous pouvez la déplacer ou la supprimer selon les besoins.
+            this.utilisateurTableAdapter.Fill(this.bdMotDataSet.Utilisateur);
             this.utilisateurs = Bdd.SelectAllUser();
             dataGridView1.DataSource = utilisateurs;
         }
