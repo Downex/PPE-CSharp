@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Security.Cryptography; // Cryptage
+using WindowsForm.Class_gestion;
 
 namespace WindowsForm
 {
@@ -34,10 +35,24 @@ namespace WindowsForm
                 }
                 else
                 {
-                    Utilisateur unUtilisateur = new Utilisateur(LoginTextBox.Text, Utilisateur.Hash256(MdpTextBox.Text), NomTextBox.Text, PrenomTextBox.Text, "Novice", 0, false);
-                    lesUtilisateurs.Add(unUtilisateur);
-                    MessageBox.Show("Inscription réussi", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                    this.Close();
+                    //List des utilisateurs
+                    List<Utilisateur> listUtilisateur= new List<Utilisateur>(Bdd.SelectAllUser());
+
+                    foreach  (Utilisateur utilisateur in listUtilisateur)
+                    {
+                        if (LoginTextBox.Text == utilisateur.Login)
+                        {
+                            MessageBox.Show("Nom d'utilisateur déjà pris", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            break;
+                        }
+                        else
+                        {
+                            Bdd.InsertUtilisateur(LoginTextBox.Text, MdpTextBox.Text, PrenomTextBox.Text, NomTextBox.Text);
+                            this.Close();
+                            break;
+                        }
+                    }
+                    
                 }
             }
             else

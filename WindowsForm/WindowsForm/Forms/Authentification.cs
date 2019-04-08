@@ -8,6 +8,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsForm.Class_gestion;
 
 namespace WindowsForm
 {
@@ -36,7 +37,7 @@ namespace WindowsForm
 
         private void BtConnexion_Click(object sender, EventArgs e)
         {
-            Utilisateur Downex = new Utilisateur("Downex", Utilisateur.Hash256("123"), "Cahier", "François", "Novice", 14, true);
+            /*Utilisateur Downex = new Utilisateur("Downex", Utilisateur.Hash256("123"), "Cahier", "François", "Novice", "14", true);
             lesUtilisateurs.Add(Downex);
 
             foreach (Utilisateur unUtilisateur in lesUtilisateurs)
@@ -52,7 +53,28 @@ namespace WindowsForm
                     ErrorLabel.Text = "Nom de compte ou mot de passe incorrect";
                     MdpTextBox.Clear();
                 }
+            }*/
+
+            List<Utilisateur> listUtilisateur = new List<Utilisateur>(Bdd.SelectAllUser());
+            foreach (Utilisateur utilisateur in listUtilisateur)
+            {
+                if (LoginTextBox.Text == utilisateur.Login)
+                {
+                    if (Utilisateur.Hash256(MdpTextBox.Text) == utilisateur.Password)
+                    {
+                        Utilisateur = utilisateur;
+                        Dispose();
+                        break;
+                    }
+                    break;
+                }
+                else
+                {
+                    ErrorLabel.Visible = true;
+                    ErrorLabel.Text = "Nom de compte ou mot de passe incorrect";
+                }
             }
+            MdpTextBox.Clear();
         }
 
         private void Authentification_Load(object sender, EventArgs e)
