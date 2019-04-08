@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsForm.Forms;
 
 namespace WindowsForm
 {
@@ -21,7 +22,8 @@ namespace WindowsForm
 
         private void motToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Jouer jouer = new Jouer();
+            jouer.ShowDialog();
         }
 
         private void monCompteToolStripMenuItem_Click(object sender, EventArgs e)

@@ -49,7 +49,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -62,17 +61,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BdMotDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BdMotDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Class gestion\Bdd.cs" />
+    <Compile Include="Class jeux\Adjectif.cs" />
+    <Compile Include="Class jeux\Mot.cs" />
+    <Compile Include="Class jeux\Nom.cs" />
+    <Compile Include="Class jeux\Phrase.cs" />
+    <Compile Include="Class jeux\Pronom.cs" />
+    <Compile Include="Class jeux\Verbe.cs" />
     <Compile Include="Forms\Accueil.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Accueil.Designer.cs">
       <DependentUpon>Accueil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AjoutPhrase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AjoutPhrase.Designer.cs">
+      <DependentUpon>AjoutPhrase.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\AjoutUtilisateur.cs">
       <SubType>Form</SubType>
@@ -104,6 +109,12 @@
     <Compile Include="Forms\Inscription.Designer.cs">
       <DependentUpon>Inscription.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Jouer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Jouer.Designer.cs">
+      <DependentUpon>Jouer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ListeMot.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +126,9 @@
     <Compile Include="Class gestion\Utilisateur.cs" />
     <EmbeddedResource Include="Forms\Accueil.resx">
       <DependentUpon>Accueil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AjoutPhrase.resx">
+      <DependentUpon>AjoutPhrase.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AjoutUtilisateur.resx">
       <DependentUpon>AjoutUtilisateur.cs</DependentUpon>
@@ -131,6 +145,9 @@
     <EmbeddedResource Include="Forms\Inscription.resx">
       <DependentUpon>Inscription.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Jouer.resx">
+      <DependentUpon>Jouer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ListeMot.resx">
       <DependentUpon>ListeMot.cs</DependentUpon>
     </EmbeddedResource>
@@ -143,17 +160,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="BdMotDataSet.xsc">
-      <DependentUpon>BdMotDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="BdMotDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>BdMotDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="BdMotDataSet.xss">
-      <DependentUpon>BdMotDataSet.xsd</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -165,9 +171,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
@@ -181,8 +185,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Class jeux\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
