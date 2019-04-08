@@ -16,6 +16,8 @@ namespace WindowsForm
         private List<Utilisateur> utilisateurs;
         private Utilisateur utilisateur = new Utilisateur();
 
+        private string isAdmin;
+
         public AjoutUtilisateur()
         {
             InitializeComponent();
@@ -62,19 +64,42 @@ namespace WindowsForm
                 loginSuppLabel.Text = utilisateur.Login;
                 btSupprimer.Enabled = true;
 
-                //textBox_UpdatePseudo.Enabled = true;
-                //radioButton_UpdateAdministrateur.Enabled = true;
-                //radioButton_UpdateUtilisateur.Enabled = true;
-                //button_UpdateUtilisateur.Enabled = true;
-                //button_DeleteUtilisateur.Enabled = true;
+            }
+        }
 
-                //textBox_UpdatePseudo.Text = utilisateur.Pseudo;
-                //textBox_DeleteUtilisateur.Text = utilisateur.Pseudo;
+        private void btAjout_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrWhiteSpace(ajoutLoginTextBox.Text) || String.IsNullOrWhiteSpace(ajoutPrenomTextBox.Text) || String.IsNullOrWhiteSpace(ajoutPasswordTextBox.Text) || String.IsNullOrWhiteSpace(ajoutNomTextBox.Text))
+            {
+                MessageBox.Show("Veuillez rentrez des valeurs valide", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                //List des utilisateurs
+                List<Utilisateur> listUtilisateur = new List<Utilisateur>(Bdd.SelectAllUser());
 
-                //if (utilisateur.IdRole == Consts.Administrateur)
-                //    radioButton_UpdateAdministrateur.Checked = true;
-                //else if (utilisateur.IdRole == Consts.Utilisateur)
-                //    radioButton_UpdateUtilisateur.Checked = true;
+                foreach (Utilisateur utilisateur in listUtilisateur)
+                {
+                    if (ajoutLoginTextBox.Text == utilisateur.Login)
+                    {
+                        MessageBox.Show("Nom d'utilisateur déjà pris", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        break;
+                    }
+                    else
+                    {
+                        if (ajoutAdministrateurCheckBox.Checked == true)
+                        {
+                            isAdmin = "1";
+                        }
+                        else
+                        {
+                             isAdmin = "0";
+                        }
+                        Bdd.InsertUtilisateur(ajoutLoginTextBox.Text, ajoutPasswordTextBox.Text, ajoutPrenomTextBox.Text, ajoutNomTextBox.Text, isAdmin);
+                        break;
+                    }
+                }
+
             }
         }
     }

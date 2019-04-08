@@ -50,7 +50,7 @@ namespace WindowsForm.Class_gestion
             return utilisateurs;
         }
 
-        public static void InsertUtilisateur(string login, string password, string prenom, string nom)
+        public static void InsertUtilisateur(string login, string password, string prenom, string nom, string isAdmin)
         {
             try
             {
@@ -68,7 +68,7 @@ namespace WindowsForm.Class_gestion
                         command.Parameters.Add(new SqlParameter("@Score", "0"));
                         //command.Parameters.Add(new SqlParameter("@Score", Convert.ToInt32(score)));
                         command.Parameters.Add(new SqlParameter("@Rang", "novice"));
-                        command.Parameters.Add(new SqlParameter("@IsAdmin", "0"));
+                        command.Parameters.Add(new SqlParameter("@IsAdmin", isAdmin));
 
                         int result = command.ExecuteNonQuery();
 

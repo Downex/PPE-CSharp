@@ -30,22 +30,31 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.loginDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prenomDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.scoreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rangDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.isAdminDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.utilisateurBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bdMotDataSet = new WindowsForm.BdMotDataSet();
             this.utilisateurTableAdapter = new WindowsForm.BdMotDataSetTableAdapters.UtilisateurTableAdapter();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.ajoutLoginTextBox = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btAjout = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.ajoutNomTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.Administrateur = new System.Windows.Forms.CheckBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.ajoutAdministrateurCheckBox = new System.Windows.Forms.CheckBox();
+            this.ajoutPrenomTextBox = new System.Windows.Forms.TextBox();
+            this.ajoutPasswordTextBox = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.loginModifLabel = new System.Windows.Forms.Label();
             this.btModifier = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.labelModification = new System.Windows.Forms.Label();
@@ -56,18 +65,9 @@
             this.textBox_UpdateScore = new System.Windows.Forms.TextBox();
             this.textBox_UpdatePrenom = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.loginSuppLabel = new System.Windows.Forms.Label();
             this.btSupprimer = new System.Windows.Forms.Button();
             this.labelSuppression = new System.Windows.Forms.Label();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.loginDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prenomDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.scoreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rangDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.isAdminDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.loginSuppLabel = new System.Windows.Forms.Label();
-            this.loginModifLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.utilisateurBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdMotDataSet)).BeginInit();
@@ -100,6 +100,64 @@
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "id";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
+            // 
+            // loginDataGridViewTextBoxColumn
+            // 
+            this.loginDataGridViewTextBoxColumn.DataPropertyName = "login";
+            this.loginDataGridViewTextBoxColumn.HeaderText = "login";
+            this.loginDataGridViewTextBoxColumn.Name = "loginDataGridViewTextBoxColumn";
+            this.loginDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // passwordDataGridViewTextBoxColumn
+            // 
+            this.passwordDataGridViewTextBoxColumn.DataPropertyName = "password";
+            this.passwordDataGridViewTextBoxColumn.HeaderText = "password";
+            this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
+            this.passwordDataGridViewTextBoxColumn.ReadOnly = true;
+            this.passwordDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // prenomDataGridViewTextBoxColumn
+            // 
+            this.prenomDataGridViewTextBoxColumn.DataPropertyName = "prenom";
+            this.prenomDataGridViewTextBoxColumn.HeaderText = "prenom";
+            this.prenomDataGridViewTextBoxColumn.Name = "prenomDataGridViewTextBoxColumn";
+            this.prenomDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nomDataGridViewTextBoxColumn
+            // 
+            this.nomDataGridViewTextBoxColumn.DataPropertyName = "nom";
+            this.nomDataGridViewTextBoxColumn.HeaderText = "nom";
+            this.nomDataGridViewTextBoxColumn.Name = "nomDataGridViewTextBoxColumn";
+            this.nomDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // scoreDataGridViewTextBoxColumn
+            // 
+            this.scoreDataGridViewTextBoxColumn.DataPropertyName = "score";
+            this.scoreDataGridViewTextBoxColumn.HeaderText = "score";
+            this.scoreDataGridViewTextBoxColumn.Name = "scoreDataGridViewTextBoxColumn";
+            this.scoreDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // rangDataGridViewTextBoxColumn
+            // 
+            this.rangDataGridViewTextBoxColumn.DataPropertyName = "rang";
+            this.rangDataGridViewTextBoxColumn.HeaderText = "rang";
+            this.rangDataGridViewTextBoxColumn.Name = "rangDataGridViewTextBoxColumn";
+            this.rangDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // isAdminDataGridViewTextBoxColumn
+            // 
+            this.isAdminDataGridViewTextBoxColumn.DataPropertyName = "isAdmin";
+            this.isAdminDataGridViewTextBoxColumn.HeaderText = "isAdmin";
+            this.isAdminDataGridViewTextBoxColumn.Name = "isAdminDataGridViewTextBoxColumn";
+            this.isAdminDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // utilisateurBindingSource
             // 
             this.utilisateurBindingSource.DataMember = "Utilisateur";
@@ -114,39 +172,40 @@
             // 
             this.utilisateurTableAdapter.ClearBeforeFill = true;
             // 
-            // textBox1
+            // ajoutLoginTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(19, 70);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 1;
+            this.ajoutLoginTextBox.Location = new System.Drawing.Point(19, 70);
+            this.ajoutLoginTextBox.Name = "ajoutLoginTextBox";
+            this.ajoutLoginTextBox.Size = new System.Drawing.Size(100, 20);
+            this.ajoutLoginTextBox.TabIndex = 1;
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.button3);
+            this.panel1.Controls.Add(this.btAjout);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.textBox7);
+            this.panel1.Controls.Add(this.ajoutNomTextBox);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.Administrateur);
-            this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.ajoutAdministrateurCheckBox);
+            this.panel1.Controls.Add(this.ajoutPrenomTextBox);
+            this.panel1.Controls.Add(this.ajoutPasswordTextBox);
+            this.panel1.Controls.Add(this.ajoutLoginTextBox);
             this.panel1.Location = new System.Drawing.Point(570, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(470, 158);
             this.panel1.TabIndex = 2;
             // 
-            // button3
+            // btAjout
             // 
-            this.button3.Location = new System.Drawing.Point(182, 129);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 10;
-            this.button3.Text = "Ajouter";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btAjout.Location = new System.Drawing.Point(182, 129);
+            this.btAjout.Name = "btAjout";
+            this.btAjout.Size = new System.Drawing.Size(75, 23);
+            this.btAjout.TabIndex = 10;
+            this.btAjout.Text = "Ajouter";
+            this.btAjout.UseVisualStyleBackColor = true;
+            this.btAjout.Click += new System.EventHandler(this.btAjout_Click);
             // 
             // label6
             // 
@@ -175,12 +234,12 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "Mot de passe";
             // 
-            // textBox7
+            // ajoutNomTextBox
             // 
-            this.textBox7.Location = new System.Drawing.Point(337, 70);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 20);
-            this.textBox7.TabIndex = 6;
+            this.ajoutNomTextBox.Location = new System.Drawing.Point(337, 70);
+            this.ajoutNomTextBox.Name = "ajoutNomTextBox";
+            this.ajoutNomTextBox.Size = new System.Drawing.Size(100, 20);
+            this.ajoutNomTextBox.TabIndex = 6;
             // 
             // label3
             // 
@@ -200,29 +259,29 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Ajout d\'un utilisateur";
             // 
-            // Administrateur
+            // ajoutAdministrateurCheckBox
             // 
-            this.Administrateur.AutoSize = true;
-            this.Administrateur.Location = new System.Drawing.Point(193, 106);
-            this.Administrateur.Name = "Administrateur";
-            this.Administrateur.Size = new System.Drawing.Size(92, 17);
-            this.Administrateur.TabIndex = 4;
-            this.Administrateur.Text = "Administrateur";
-            this.Administrateur.UseVisualStyleBackColor = true;
+            this.ajoutAdministrateurCheckBox.AutoSize = true;
+            this.ajoutAdministrateurCheckBox.Location = new System.Drawing.Point(193, 106);
+            this.ajoutAdministrateurCheckBox.Name = "ajoutAdministrateurCheckBox";
+            this.ajoutAdministrateurCheckBox.Size = new System.Drawing.Size(92, 17);
+            this.ajoutAdministrateurCheckBox.TabIndex = 4;
+            this.ajoutAdministrateurCheckBox.Text = "Administrateur";
+            this.ajoutAdministrateurCheckBox.UseVisualStyleBackColor = true;
             // 
-            // textBox3
+            // ajoutPrenomTextBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(231, 70);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 3;
+            this.ajoutPrenomTextBox.Location = new System.Drawing.Point(231, 70);
+            this.ajoutPrenomTextBox.Name = "ajoutPrenomTextBox";
+            this.ajoutPrenomTextBox.Size = new System.Drawing.Size(100, 20);
+            this.ajoutPrenomTextBox.TabIndex = 3;
             // 
-            // textBox2
+            // ajoutPasswordTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(125, 70);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 2;
+            this.ajoutPasswordTextBox.Location = new System.Drawing.Point(125, 70);
+            this.ajoutPasswordTextBox.Name = "ajoutPasswordTextBox";
+            this.ajoutPasswordTextBox.Size = new System.Drawing.Size(100, 20);
+            this.ajoutPasswordTextBox.TabIndex = 2;
             // 
             // panel2
             // 
@@ -240,6 +299,15 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(470, 158);
             this.panel2.TabIndex = 5;
+            // 
+            // loginModifLabel
+            // 
+            this.loginModifLabel.AutoSize = true;
+            this.loginModifLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loginModifLabel.Location = new System.Drawing.Point(239, 17);
+            this.loginModifLabel.Name = "loginModifLabel";
+            this.loginModifLabel.Size = new System.Drawing.Size(0, 13);
+            this.loginModifLabel.TabIndex = 6;
             // 
             // btModifier
             // 
@@ -329,6 +397,15 @@
             this.panel3.Size = new System.Drawing.Size(470, 100);
             this.panel3.TabIndex = 13;
             // 
+            // loginSuppLabel
+            // 
+            this.loginSuppLabel.AutoSize = true;
+            this.loginSuppLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loginSuppLabel.Location = new System.Drawing.Point(239, 17);
+            this.loginSuppLabel.Name = "loginSuppLabel";
+            this.loginSuppLabel.Size = new System.Drawing.Size(0, 13);
+            this.loginSuppLabel.TabIndex = 5;
+            // 
             // btSupprimer
             // 
             this.btSupprimer.Enabled = false;
@@ -347,82 +424,6 @@
             this.labelSuppression.Size = new System.Drawing.Size(83, 13);
             this.labelSuppression.TabIndex = 3;
             this.labelSuppression.Text = "Suppression de ";
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "id";
-            this.id.HeaderText = "id";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Visible = false;
-            // 
-            // loginDataGridViewTextBoxColumn
-            // 
-            this.loginDataGridViewTextBoxColumn.DataPropertyName = "login";
-            this.loginDataGridViewTextBoxColumn.HeaderText = "login";
-            this.loginDataGridViewTextBoxColumn.Name = "loginDataGridViewTextBoxColumn";
-            this.loginDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // passwordDataGridViewTextBoxColumn
-            // 
-            this.passwordDataGridViewTextBoxColumn.DataPropertyName = "password";
-            this.passwordDataGridViewTextBoxColumn.HeaderText = "password";
-            this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
-            this.passwordDataGridViewTextBoxColumn.ReadOnly = true;
-            this.passwordDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // prenomDataGridViewTextBoxColumn
-            // 
-            this.prenomDataGridViewTextBoxColumn.DataPropertyName = "prenom";
-            this.prenomDataGridViewTextBoxColumn.HeaderText = "prenom";
-            this.prenomDataGridViewTextBoxColumn.Name = "prenomDataGridViewTextBoxColumn";
-            this.prenomDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nomDataGridViewTextBoxColumn
-            // 
-            this.nomDataGridViewTextBoxColumn.DataPropertyName = "nom";
-            this.nomDataGridViewTextBoxColumn.HeaderText = "nom";
-            this.nomDataGridViewTextBoxColumn.Name = "nomDataGridViewTextBoxColumn";
-            this.nomDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // scoreDataGridViewTextBoxColumn
-            // 
-            this.scoreDataGridViewTextBoxColumn.DataPropertyName = "score";
-            this.scoreDataGridViewTextBoxColumn.HeaderText = "score";
-            this.scoreDataGridViewTextBoxColumn.Name = "scoreDataGridViewTextBoxColumn";
-            this.scoreDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // rangDataGridViewTextBoxColumn
-            // 
-            this.rangDataGridViewTextBoxColumn.DataPropertyName = "rang";
-            this.rangDataGridViewTextBoxColumn.HeaderText = "rang";
-            this.rangDataGridViewTextBoxColumn.Name = "rangDataGridViewTextBoxColumn";
-            this.rangDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // isAdminDataGridViewTextBoxColumn
-            // 
-            this.isAdminDataGridViewTextBoxColumn.DataPropertyName = "isAdmin";
-            this.isAdminDataGridViewTextBoxColumn.HeaderText = "isAdmin";
-            this.isAdminDataGridViewTextBoxColumn.Name = "isAdminDataGridViewTextBoxColumn";
-            this.isAdminDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // loginSuppLabel
-            // 
-            this.loginSuppLabel.AutoSize = true;
-            this.loginSuppLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loginSuppLabel.Location = new System.Drawing.Point(239, 17);
-            this.loginSuppLabel.Name = "loginSuppLabel";
-            this.loginSuppLabel.Size = new System.Drawing.Size(0, 13);
-            this.loginSuppLabel.TabIndex = 5;
-            // 
-            // loginModifLabel
-            // 
-            this.loginModifLabel.AutoSize = true;
-            this.loginModifLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loginModifLabel.Location = new System.Drawing.Point(239, 17);
-            this.loginModifLabel.Name = "loginModifLabel";
-            this.loginModifLabel.Size = new System.Drawing.Size(0, 13);
-            this.loginModifLabel.TabIndex = 6;
             // 
             // AjoutUtilisateur
             // 
@@ -455,18 +456,18 @@
         private BdMotDataSet bdMotDataSet;
         private System.Windows.Forms.BindingSource utilisateurBindingSource;
         private BdMotDataSetTableAdapters.UtilisateurTableAdapter utilisateurTableAdapter;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox ajoutLoginTextBox;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btAjout;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox ajoutNomTextBox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.CheckBox Administrateur;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.CheckBox ajoutAdministrateurCheckBox;
+        private System.Windows.Forms.TextBox ajoutPrenomTextBox;
+        private System.Windows.Forms.TextBox ajoutPasswordTextBox;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btModifier;
         private System.Windows.Forms.Label label7;
