@@ -13,6 +13,7 @@ namespace WindowsForm.Class_gestion
     {
         public static string ConnectionString = ConfigurationManager.ConnectionStrings["ConString"].ConnectionString;
 
+        //Selection allUtilisateur
         public static List<Utilisateur> SelectAllUser()
         {
             List<Utilisateur> utilisateurs = new List<Utilisateur>();
@@ -50,6 +51,7 @@ namespace WindowsForm.Class_gestion
             return utilisateurs;
         }
 
+        //Insertion utilisateur
         public static void InsertUtilisateur(string login, string password, string prenom, string nom, string isAdmin)
         {
             try
@@ -85,6 +87,96 @@ namespace WindowsForm.Class_gestion
                 throw;
             }
         }
+
+        //Supprime un utilisateur
+        public static void DeleteUtilisateur(string idUtilisateur)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(ConnectionString))
+                {
+                    connection.Open();
+                    string query = @"DELETE FROM Utilisateur WHERE id = @IdUtilisateur";
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.Add(new SqlParameter("@IdUtilisateur", Convert.ToInt32(idUtilisateur)));
+                        int result = command.ExecuteNonQuery();
+
+                        if (result <= 0)
+                            MessageBox.Show("Erreur lors de la suppression de l'utilisateur.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        else
+                            MessageBox.Show("Utilisateur supprimé avec succès.", "Succès", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Erreur lors de la suppression de l'utilisateur.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
+            }
+
+        }
+
+        public static void UpdateUtilisateur(string idUtilisateur, string prenom, string nom, string score, string isAdmin)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(ConnectionString))
+                {
+                    connection.Open();
+                    string query = @"UPDATE Utilisateur SET prenom = @Prenom, nom = @Nom, score = @Score, isAdmin = @IsAdmin WHERE id = @IdUtilisateur";
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.Add(new SqlParameter("@Prenom", prenom));
+                        command.Parameters.Add(new SqlParameter("@Nom", nom));
+                        command.Parameters.Add(new SqlParameter("@Score", Convert.ToInt32(score)));
+                        command.Parameters.Add(new SqlParameter("@IsAdmin", Convert.ToInt32(isAdmin)));
+                        command.Parameters.Add(new SqlParameter("@IdUtilisateur", Convert.ToInt32(idUtilisateur)));
+                        int result = command.ExecuteNonQuery();
+
+                        if (result <= 0)
+                            MessageBox.Show("Erreur lors de la mise à jour de l'utilisateur.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        else
+                            MessageBox.Show("Utilisateur mis à jour avec succès.", "Succès", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Erreur lors de la mise à jour de l'utilisateur.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
+            }
+        }
+
+        public static void UpdateMotdePasse(string idUtilisateur, string motDePasse)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(ConnectionString))
+                {
+                    connection.Open();
+                    string query = @"UPDATE Utilisateur SET password = @MotDePasse WHERE id = @IdUtilisateur";
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.Add(new SqlParameter("@MotDePasse", motDePasse));
+                        command.Parameters.Add(new SqlParameter("@IdUtilisateur", Convert.ToInt32(idUtilisateur)));
+                        int result = command.ExecuteNonQuery();
+
+                        if (result <= 0)
+                            MessageBox.Show("Erreur lors de la mise à jour de l'utilisateur.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Erreur lors de la mise à jour de l'utilisateur.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
+            }
+        }
+
 
     }
 

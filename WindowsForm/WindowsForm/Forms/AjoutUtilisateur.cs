@@ -77,7 +77,7 @@ namespace WindowsForm
             }
             else
             {
-                //List des utilisateurs
+                //Listes des utilisateurs
                 List<Utilisateur> listUtilisateur = new List<Utilisateur>(Bdd.SelectAllUser());
 
                 foreach (Utilisateur utilisateur in listUtilisateur)
@@ -98,11 +98,39 @@ namespace WindowsForm
                              isAdmin = "0";
                         }
                         Bdd.InsertUtilisateur(ajoutLoginTextBox.Text, ajoutPasswordTextBox.Text, ajoutPrenomTextBox.Text, ajoutNomTextBox.Text, isAdmin);
+                        Refresh_DataGridView();
                         break;
                     }
                 }
-
             }
+        }
+
+        //Méthode de raffraichissement de la data_GridView
+        private void Refresh_DataGridView()
+        {
+            this.utilisateurs = Bdd.SelectAllUser();
+            dataGridView1.DataSource = utilisateurs;
+        }
+
+        private void btSupprimer_Click(object sender, EventArgs e)
+        {
+            Bdd.DeleteUtilisateur(utilisateur.Id);
+            Refresh_DataGridView();
+        }
+
+        //Modification de l'utilisateur
+        private void btModifier_Click(object sender, EventArgs e)
+        {
+            if (CheckBoxModifAdmin.Checked == true)
+            {
+                isAdmin = "1";
+            }
+            else
+            {
+                isAdmin = "0";
+            }
+            Bdd.UpdateUtilisateur(utilisateur.Id, textBox_UpdatePrenom.Text, textBox_UpdateNom.Text, textBox_UpdateScore.Text, isAdmin);
+            Refresh_DataGridView();
         }
     }
 }
