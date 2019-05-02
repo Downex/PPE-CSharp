@@ -68,8 +68,7 @@ namespace WindowsForm.Class_gestion
                         command.Parameters.Add(new SqlParameter("@Prenom", prenom));
                         command.Parameters.Add(new SqlParameter("@Nom", nom));
                         command.Parameters.Add(new SqlParameter("@Score", "0"));
-                        //command.Parameters.Add(new SqlParameter("@Score", Convert.ToInt32(score)));
-                        command.Parameters.Add(new SqlParameter("@Rang", "novice"));
+                        command.Parameters.Add(new SqlParameter("@Rang", "Novice"));
                         command.Parameters.Add(new SqlParameter("@IsAdmin", isAdmin));
 
                         int result = command.ExecuteNonQuery();

@@ -53,7 +53,7 @@ namespace WindowsForm
                 textBox_UpdatePrenom.Text = utilisateur.Prenom;
                 textBox_UpdateNom.Text = utilisateur.Nom;
                 textBox_UpdateScore.Text = utilisateur.Score;
-                if (utilisateur.IsAdmin == "0")
+                if (utilisateur.IsAdmin == "1")
                 {
                     CheckBoxModifAdmin.Checked = true;
                 } else
@@ -65,6 +65,10 @@ namespace WindowsForm
                 //Suppression
                 loginSuppLabel.Text = utilisateur.Login;
                 btSupprimer.Enabled = true;
+
+                //Design
+                panel2.Visible = true;
+                panel3.Visible = true;
 
             }
         }
@@ -103,6 +107,11 @@ namespace WindowsForm
                     }
                 }
             }
+            ajoutLoginTextBox.Clear();
+            ajoutPrenomTextBox.Clear();
+            ajoutPasswordTextBox.Clear();
+            ajoutNomTextBox.Clear();
+            ajoutAdministrateurCheckBox.Checked = false;
         }
 
         //Méthode de raffraichissement de la data_GridView
@@ -116,6 +125,8 @@ namespace WindowsForm
         {
             Bdd.DeleteUtilisateur(utilisateur.Id);
             Refresh_DataGridView();
+            panel2.Visible = false;
+            panel3.Visible = false;
         }
 
         //Modification de l'utilisateur
@@ -130,7 +141,16 @@ namespace WindowsForm
                 isAdmin = "0";
             }
             Bdd.UpdateUtilisateur(utilisateur.Id, textBox_UpdatePrenom.Text, textBox_UpdateNom.Text, textBox_UpdateScore.Text, isAdmin);
+
+            /* Design */
             Refresh_DataGridView();
+            panel2.Visible = false;
+            panel3.Visible = false;
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
