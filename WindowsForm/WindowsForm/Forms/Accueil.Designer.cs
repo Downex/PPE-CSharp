@@ -92,7 +92,7 @@
             // 
             this.ajoutDutilisateurToolStripMenuItem.Name = "ajoutDutilisateurToolStripMenuItem";
             this.ajoutDutilisateurToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
-            this.ajoutDutilisateurToolStripMenuItem.Text = "Ajout d\'utilisateur";
+            this.ajoutDutilisateurToolStripMenuItem.Text = "Gestion des utilisateurs";
             this.ajoutDutilisateurToolStripMenuItem.Visible = false;
             this.ajoutDutilisateurToolStripMenuItem.Click += new System.EventHandler(this.ajoutDutilisateurToolStripMenuItem_Click);
             // 
