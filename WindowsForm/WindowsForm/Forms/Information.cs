@@ -8,6 +8,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsForm.Class_gestion;
 
 namespace WindowsForm
 {
@@ -48,7 +49,7 @@ namespace WindowsForm
                    }
                    else if (MdpTextBox.Text == CMdpTextBox.Text)
                    {
-                        utilisateur.Password = Utilisateur.Hash256(MdpTextBox.Text);
+                        Bdd.UpdateMotdePasse(utilisateur.Id, Utilisateur.Hash256(MdpTextBox.Text));
                         MessageBox.Show("Mot de passe modifié", "Modification", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                         AffichageFormulaire();
                     }

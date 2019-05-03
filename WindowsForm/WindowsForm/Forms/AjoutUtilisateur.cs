@@ -53,7 +53,7 @@ namespace WindowsForm
                 textBox_UpdatePrenom.Text = utilisateur.Prenom;
                 textBox_UpdateNom.Text = utilisateur.Nom;
                 textBox_UpdateScore.Text = utilisateur.Score;
-                if (utilisateur.IsAdmin == "0")
+                if (utilisateur.IsAdmin == "1")
                 {
                     CheckBoxModifAdmin.Checked = true;
                 } else
@@ -66,6 +66,10 @@ namespace WindowsForm
                 loginSuppLabel.Text = utilisateur.Login;
                 btSupprimer.Enabled = true;
 
+                //Design
+                panel2.Visible = true;
+                panel3.Visible = true;
+
             }
         }
 
@@ -77,7 +81,7 @@ namespace WindowsForm
             }
             else
             {
-                //List des utilisateurs
+                //Listes des utilisateurs
                 List<Utilisateur> listUtilisateur = new List<Utilisateur>(Bdd.SelectAllUser());
 
                 foreach (Utilisateur utilisateur in listUtilisateur)
@@ -98,11 +102,55 @@ namespace WindowsForm
                              isAdmin = "0";
                         }
                         Bdd.InsertUtilisateur(ajoutLoginTextBox.Text, ajoutPasswordTextBox.Text, ajoutPrenomTextBox.Text, ajoutNomTextBox.Text, isAdmin);
+                        Refresh_DataGridView();
                         break;
                     }
                 }
-
             }
+            ajoutLoginTextBox.Clear();
+            ajoutPrenomTextBox.Clear();
+            ajoutPasswordTextBox.Clear();
+            ajoutNomTextBox.Clear();
+            ajoutAdministrateurCheckBox.Checked = false;
+        }
+
+        //Méthode de raffraichissement de la data_GridView
+        private void Refresh_DataGridView()
+        {
+            this.utilisateurs = Bdd.SelectAllUser();
+            dataGridView1.DataSource = utilisateurs;
+        }
+
+        private void btSupprimer_Click(object sender, EventArgs e)
+        {
+            Bdd.DeleteUtilisateur(utilisateur.Id);
+            Refresh_DataGridView();
+            panel2.Visible = false;
+            panel3.Visible = false;
+        }
+
+        //Modification de l'utilisateur
+        private void btModifier_Click(object sender, EventArgs e)
+        {
+            if (CheckBoxModifAdmin.Checked == true)
+            {
+                isAdmin = "1";
+            }
+            else
+            {
+                isAdmin = "0";
+            }
+            Bdd.UpdateUtilisateur(utilisateur.Id, textBox_UpdatePrenom.Text, textBox_UpdateNom.Text, textBox_UpdateScore.Text, isAdmin);
+
+            /* Design */
+            Refresh_DataGridView();
+            panel2.Visible = false;
+            panel3.Visible = false;
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

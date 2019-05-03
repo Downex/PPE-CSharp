@@ -33,7 +33,8 @@ namespace WindowsForm
 
         private void Accueil_Load(object sender, EventArgs e)
         {
-            if (unUtilisateur.IsAdmin == "0")
+            //Affichage des menus pour l'admnistrateur
+            if (unUtilisateur.IsAdmin == "1")
             {
                 ajoutDutilisateurToolStripMenuItem.Visible = true;
             }

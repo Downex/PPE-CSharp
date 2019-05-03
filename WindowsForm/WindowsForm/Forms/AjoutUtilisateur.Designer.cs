@@ -30,7 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.utilisateurBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.utilisateurBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.bdMotDataSet = new WindowsForm.BdMotDataSet();
             this.ajoutLoginTextBox = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btAjout = new System.Windows.Forms.Button();
@@ -58,8 +59,6 @@
             this.loginSuppLabel = new System.Windows.Forms.Label();
             this.btSupprimer = new System.Windows.Forms.Button();
             this.labelSuppression = new System.Windows.Forms.Label();
-            this.bdMotDataSet = new WindowsForm.BdMotDataSet();
-            this.utilisateurBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.utilisateurTableAdapter = new WindowsForm.BdMotDataSetTableAdapters.UtilisateurTableAdapter();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -70,12 +69,11 @@
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.utilisateurBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.utilisateurBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdMotDataSet)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bdMotDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.utilisateurBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -101,10 +99,17 @@
             this.dataGridView1.Size = new System.Drawing.Size(540, 535);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // utilisateurBindingSource
+            // utilisateurBindingSource1
             // 
-            this.utilisateurBindingSource.DataMember = "Utilisateur";
+            this.utilisateurBindingSource1.DataMember = "Utilisateur";
+            this.utilisateurBindingSource1.DataSource = this.bdMotDataSet;
+            // 
+            // bdMotDataSet
+            // 
+            this.bdMotDataSet.DataSetName = "BdMotDataSet";
+            this.bdMotDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // ajoutLoginTextBox
             // 
@@ -214,6 +219,7 @@
             // 
             this.ajoutPasswordTextBox.Location = new System.Drawing.Point(125, 70);
             this.ajoutPasswordTextBox.Name = "ajoutPasswordTextBox";
+            this.ajoutPasswordTextBox.PasswordChar = '•';
             this.ajoutPasswordTextBox.Size = new System.Drawing.Size(100, 20);
             this.ajoutPasswordTextBox.TabIndex = 2;
             // 
@@ -233,6 +239,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(470, 158);
             this.panel2.TabIndex = 5;
+            this.panel2.Visible = false;
             // 
             // loginModifLabel
             // 
@@ -252,6 +259,7 @@
             this.btModifier.TabIndex = 5;
             this.btModifier.Text = "Modfier";
             this.btModifier.UseVisualStyleBackColor = true;
+            this.btModifier.Click += new System.EventHandler(this.btModifier_Click);
             // 
             // label7
             // 
@@ -330,6 +338,7 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(470, 100);
             this.panel3.TabIndex = 13;
+            this.panel3.Visible = false;
             // 
             // loginSuppLabel
             // 
@@ -349,6 +358,7 @@
             this.btSupprimer.TabIndex = 4;
             this.btSupprimer.Text = "Supprimer";
             this.btSupprimer.UseVisualStyleBackColor = true;
+            this.btSupprimer.Click += new System.EventHandler(this.btSupprimer_Click);
             // 
             // labelSuppression
             // 
@@ -358,16 +368,6 @@
             this.labelSuppression.Size = new System.Drawing.Size(83, 13);
             this.labelSuppression.TabIndex = 3;
             this.labelSuppression.Text = "Suppression de ";
-            // 
-            // bdMotDataSet
-            // 
-            this.bdMotDataSet.DataSetName = "BdMotDataSet";
-            this.bdMotDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // utilisateurBindingSource1
-            // 
-            this.utilisateurBindingSource1.DataMember = "Utilisateur";
-            this.utilisateurBindingSource1.DataSource = this.bdMotDataSet;
             // 
             // utilisateurTableAdapter
             // 
@@ -430,6 +430,7 @@
             this.dataGridViewTextBoxColumn7.HeaderText = "isAdmin";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.dataGridViewTextBoxColumn7.Visible = false;
             // 
             // AjoutUtilisateur
             // 
@@ -444,15 +445,14 @@
             this.Text = "AjoutUtilisateur";
             this.Load += new System.EventHandler(this.AjoutUtilisateur_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.utilisateurBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.utilisateurBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdMotDataSet)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bdMotDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.utilisateurBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -460,8 +460,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-       // private BdMotDataSet bdMotDataSet;
-        private System.Windows.Forms.BindingSource utilisateurBindingSource;
        // private BdMotDataSetTableAdapters.UtilisateurTableAdapter utilisateurTableAdapter;
         private System.Windows.Forms.TextBox ajoutLoginTextBox;
         private System.Windows.Forms.Panel panel1;
