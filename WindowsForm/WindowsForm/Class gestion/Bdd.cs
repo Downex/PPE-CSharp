@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsForm.Class_jeux;
 
 namespace WindowsForm.Class_gestion
 {
@@ -176,7 +177,37 @@ namespace WindowsForm.Class_gestion
             }
         }
 
+        public static List<Question> SelectAllQuestion()
+        {
+            List<Question> questions = new List<Question>();
 
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                connection.Open();
+                string query = @"SELECT * FROM Question";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.HasRows)
+                        {
+                            while (reader.Read())
+                            {
+                                Question question = new Question
+                                {
+                                    Id = reader["id"].ToString(),
+                                    Libelle = reader["libelle"].ToString(),
+                                    Type = reader["type"].ToString()
+                                };
+                                questions.Add(question);
+                            }
+                        }
+                    }
+                }
+            }
+            return questions;
+        }
     }
 
 

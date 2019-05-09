@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="WindowsForm.BdMotDataSet" Collapsed="true">
+    <Position X="9.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAA0AAAAJABAAAQAAAAAgCQBgAAIAAAAEABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WindowsForm.Utilisateur">
+    <Position X="7.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAACAAAAAAAAAAgAAAAAAAAACCAAAACCACAQAAAAAAA=</HashCode>
+      <FileName>Class gestion\Utilisateur.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WindowsForm.Accueil" Collapsed="true">
+    <Position X="9.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AUAIBAAAACAAAAAAAACAQAiCACgAAAAAAgQAISAAIJA=</HashCode>
+      <FileName>Forms\Accueil.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WindowsForm.AjoutUtilisateur" Collapsed="true">
+    <Position X="13.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QCQAQAIBADAMghDHiACEAiADAgllAAoLAEFkAbAACgQ=</HashCode>
+      <FileName>Forms\AjoutUtilisateur.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WindowsForm.Authentification" Collapsed="true">
+    <Position X="15" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAQAIGFAABAAIACAAAAKAAAAAAAAAEAAAABEAAA=</HashCode>
+      <FileName>Forms\Authentification.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WindowsForm.Classement" Collapsed="true">
+    <Position X="11.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAUAAAAAACAAAgBACAKAEiACAAABAAABAAAEAJgAAAA=</HashCode>
+      <FileName>Forms\Classement.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WindowsForm.Information" Collapsed="true">
+    <Position X="13.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAgACEQgBBAAACAAAACgAgAQBAGAkAAAIBAAAA=</HashCode>
+      <FileName>Forms\Information.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WindowsForm.Inscription" Collapsed="true">
+    <Position X="15" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAACBAgBAAAACAAAAKAAAIABBAAEAAAABAAAA=</HashCode>
+      <FileName>Forms\Inscription.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WindowsForm.ListeMot" Collapsed="true">
+    <Position X="9.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>/yCAAAQAASAABBCQEAKAQABCIEg4AAACEAAAAAEBAJA=</HashCode>
+      <FileName>Forms\ListeMot.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WindowsForm.Program" Collapsed="true">
+    <Position X="13.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WindowsForm.BdMotDataSetTableAdapters.UtilisateurTableAdapter" Collapsed="true">
+    <Position X="16.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WindowsForm.BdMotDataSetTableAdapters.TableAdapterManager" Collapsed="true">
+    <Position X="11.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAACAAIABIBAEBAAAAMAAgAAACgAAAAAQAAAAABAQ=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WindowsForm.Class_gestion.Bdd">
+    <Position X="0.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAFAAAAAAAIAAAAAAACAQAAAAAAA=</HashCode>
+      <FileName>Class gestion\Bdd.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WindowsForm.Class_jeux.Adjectif">
+    <Position X="5.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAAAAAgCAAAAAAgAAIEBAQAAAAAAAA=</HashCode>
+      <FileName>Class jeux\Adjectif.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WindowsForm.Class_jeux.Mot">
+    <Position X="3.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BABAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Class jeux\Mot.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WindowsForm.Class_jeux.Nom">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAgAgAAAAAAAAAAAACAAAAAAAAAAAAEAAAAAA=</HashCode>
+      <FileName>Class jeux\Nom.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WindowsForm.Class_jeux.Phrase" Collapsed="true">
+    <Position X="11.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Class jeux\Phrase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WindowsForm.Class_jeux.Pronom">
+    <Position X="2.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAgAgAAAAAAAAAAAACAAAAAAAAAAAAEAAAAAA=</HashCode>
+      <FileName>Class jeux\Pronom.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WindowsForm.Class_jeux.Verbe">
+    <Position X="7.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAA=</HashCode>
+      <FileName>Class jeux\Verbe.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WindowsForm.Forms.AjoutPhrase" Collapsed="true">
+    <Position X="11.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAACAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Forms\AjoutPhrase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WindowsForm.Forms.Jouer" Collapsed="true">
+    <Position X="16.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAACAAABAAAACAAAACAAAIAAAAAAAAAABAAAA=</HashCode>
+      <FileName>Forms\Jouer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WindowsForm.Properties.Resources" Collapsed="true">
+    <Position X="15" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WindowsForm.Properties.Settings" Collapsed="true">
+    <Position X="16.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

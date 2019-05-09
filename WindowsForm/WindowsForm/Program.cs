@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsForm.Class_jeux;
 
 namespace WindowsForm
 {
@@ -19,6 +20,10 @@ namespace WindowsForm
 
             List<Utilisateur> lesUtilisateurs;
             lesUtilisateurs = new List<Utilisateur>();
+
+            List<Question> lesQuestions;
+            lesQuestions = new List<Question>();
+
 
             Authentification authentification = new Authentification(lesUtilisateurs);
 
