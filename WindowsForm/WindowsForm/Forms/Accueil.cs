@@ -7,12 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsForm.Class_jeux;
 using WindowsForm.Forms;
 
 namespace WindowsForm
 {
     public partial class Accueil : Form
     {
+        //private List<Mot> lesMots;
+
         Utilisateur unUtilisateur;
         public Accueil(Utilisateur unUtilisateur)
         {
@@ -67,6 +70,12 @@ namespace WindowsForm
         {
             ListeMot listeMot = new ListeMot();
             listeMot.ShowDialog();
+        }
+
+        private void ajouterUnePhraseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AjoutPhrase ajoutPhrase = new AjoutPhrase();
+            ajoutPhrase.ShowDialog();
         }
     }
 }

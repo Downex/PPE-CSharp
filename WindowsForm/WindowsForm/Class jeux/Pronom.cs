@@ -6,30 +6,37 @@ using System.Threading.Tasks;
 
 namespace WindowsForm.Class_jeux
 {
-    class Pronom : Mot
+    public class Pronom : Mot
     {
-        private String singulier;
-        private String pluriel;
-        private String genre;
-        public Pronom(String texte, String nature, String singulier, String pluriel, String genre) : base(texte)
+        public string id { get; set; }
+        public string singulier { get; set; }
+        public string pluriel { get; set; }
+        public string genre { get; set; }
+
+        public Pronom(String id, String texte, String pluriel, String genre) : base(texte)
         {
-            this.singulier = singulier;
+            this.id = id;
+            singulier = texte;
             this.pluriel = pluriel;
             this.genre = genre;
         }
 
-        public String getSingulier()
+        public Pronom()
         {
 
-            return singulier;
         }
 
-        public String getPluriel()
+        public String GetId()
+        {
+            return id;
+        }
+
+        public String GetPluriel()
         {
             return pluriel;
         }
 
-        public String getGenre()
+        public String GetGenre()
         {
             return genre;
         }
