@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsForm.Class_gestion;
+using WindowsForm.Class_jeux;
 
 namespace WindowsForm.Forms
 {
@@ -30,6 +32,15 @@ namespace WindowsForm.Forms
         private void label4_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Dommage ! Le verbe était 'est'. Vous perdez 1 point !");
+        }
+
+        private void Jouer_Load(object sender, EventArgs e)
+        {
+            //Affiche une question aléatoire    
+            Random randomQuestion = new Random();
+            int index = randomQuestion.Next(Bdd.SelectAllQuestion().Count);
+            Question question = Bdd.SelectAllQuestion().ElementAt(index);
+            label5.Text = question.Libelle;
         }
     }
 }
