@@ -8,15 +8,11 @@ namespace WindowsForm.Class_jeux
 {
     public class Mot
     {
-        public String texte;
+        private String texte;
 
         public Mot(String texte)
         {
             this.texte = texte;
-        }
-        public Mot()
-        {
-
         }
 
         public String getTexte()

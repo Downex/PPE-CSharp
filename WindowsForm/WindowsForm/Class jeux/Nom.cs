@@ -6,41 +6,31 @@ using System.Threading.Tasks;
 
 namespace WindowsForm.Class_jeux
 {
-    public class Nom : Mot
+    class Nom : Mot
     {
-        public string id { get; set; }
-        public string singulier { get; set; }
-        public string pluriel { get; set; }
-        public string genre { get; set; }
+        private String singulier;
+        private String pluriel;
+        private String genre;
 
-        public Nom(String id, String texte, String pluriel, String genre) : base(texte)
+        public Nom(String texte, String singulier, String pluriel, String genre) : base(texte)
         {
-            this.id = id;
-            singulier = texte;
+            this.singulier = singulier;
             this.pluriel = pluriel;
             this.genre = genre;
         }
-        public Nom()
+
+        public String getSingulier()
         {
 
-        }
-
-        public String GetId()
-        {
-            return id;
-        }
-
-        public String GetSingulier()
-        {
             return singulier;
         }
 
-        public String GetPluriel()
+        public String getPluriel()
         {
             return pluriel;
         }
 
-        public String GetGenre()
+        public String getGenre()
         {
             return genre;
         }
