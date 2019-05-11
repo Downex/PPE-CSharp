@@ -75,10 +75,6 @@ namespace WindowsForm.Forms
                         if (verbeStock.GetGenre() == "Etat")
                         {
                             Adjectif(femMasc, pluriel);
-                            //MessageBox.Show(adj.GetSingMasculin() + " " +
-                            //    nomStock + " " +
-                            //    conjugaisonStock + " " +
-                            //    adjStock);
 
                             LabelPerso labelAdjP = new LabelPerso(adj.GetSingMasculin());
                             labelAdjP.Text = adj.GetSingMasculin();
@@ -101,10 +97,6 @@ namespace WindowsForm.Forms
                         else if (verbeStock.GetGenre() == "Action" || verbeStock.GetGenre() == "Mouvement")
                         {
                             Adverbe();
-                            //MessageBox.Show(adj.GetSingMasculin() + " " +
-                            //    nomStock + " " +
-                            //    conjugaisonStock + " " +
-                            //    advStock);
 
                             LabelPerso labelAdjP = new LabelPerso(adj.GetSingMasculin());
                             labelAdjP.Text = adj.GetSingMasculin();
@@ -140,10 +132,6 @@ namespace WindowsForm.Forms
                         if (verbeStock.GetGenre() == "Etat")
                         {
                             Adjectif(femMasc, pluriel);
-                            //MessageBox.Show(adj.GetSingFeminin() + " " +
-                            //    nomStock + " " +
-                            //    conjugaisonStock + " " +
-                            //    adjStock);
 
                             LabelPerso labelAdjP = new LabelPerso(adj.GetSingFeminin());
                             labelAdjP.Text = adj.GetSingFeminin();
@@ -166,10 +154,6 @@ namespace WindowsForm.Forms
                         else if (verbeStock.GetGenre() == "Action" || verbeStock.GetGenre() == "Mouvement")
                         {
                             Adverbe();
-                            //MessageBox.Show(adj.GetSingFeminin() + " " +
-                            //    nomStock + " " +
-                            //    conjugaisonStock + " " +
-                            //    advStock);
 
                             LabelPerso labelAdjP = new LabelPerso(adj.GetSingFeminin());
                             labelAdjP.Text = adj.GetSingFeminin();
@@ -205,10 +189,6 @@ namespace WindowsForm.Forms
                         if (verbeStock.GetGenre() == "Etat")
                         {
                             Adjectif(femMasc, pluriel);
-                            //MessageBox.Show(adj.GetPlurMasculin() + " " +
-                            //    nomStock + " " +
-                            //    conjugaisonStock + " " +
-                            //    adjStock);
 
                             LabelPerso labelAdjP = new LabelPerso(adj.GetPlurMasculin());
                             labelAdjP.Text = adj.GetPlurMasculin();
@@ -231,10 +211,6 @@ namespace WindowsForm.Forms
                         else if (verbeStock.GetGenre() == "Action" || verbeStock.GetGenre() == "Mouvement")
                         {
                             Adverbe();
-                            //MessageBox.Show(adj.GetPlurMasculin() + " " +
-                            //    nomStock + " " +
-                            //    conjugaisonStock + " " +
-                            //    advStock);
 
                             LabelPerso labelAdjP = new LabelPerso(adj.GetPlurMasculin());
                             labelAdjP.Text = adj.GetPlurMasculin();
@@ -270,10 +246,6 @@ namespace WindowsForm.Forms
                         if (verbeStock.GetGenre() == "Etat")
                         {
                             Adjectif(femMasc, pluriel);
-                            //MessageBox.Show(adj.GetPlurFeminin() + " " +
-                            //    nomStock + " " +
-                            //    conjugaisonStock + " " +
-                            //    adjStock);
 
                             LabelPerso labelAdjP = new LabelPerso(adj.GetPlurFeminin());
                             labelAdjP.Text = adj.GetPlurFeminin();
@@ -296,10 +268,6 @@ namespace WindowsForm.Forms
                         else if (verbeStock.GetGenre() == "Action" || verbeStock.GetGenre() == "Mouvement")
                         {
                             Adverbe();
-                            //MessageBox.Show(adj.GetPlurFeminin() + " " +
-                            //    nomStock + " " +
-                            //    conjugaisonStock + " " +
-                            //    advStock);
 
                             LabelPerso labelAdjP = new LabelPerso(adj.GetPlurFeminin());
                             labelAdjP.Text = adj.GetPlurFeminin();
@@ -356,10 +324,6 @@ namespace WindowsForm.Forms
                             if (verbeStock.GetGenre() == "Etat")
                             {
                                 Adjectif("Masculin", "0");
-                                //MessageBox.Show(article.GetMasculin() + " " + 
-                                //    nomStock + " " +
-                                //    conjugaisonStock + " " +
-                                //    adjStock);
                                 
                                 LabelPerso labelA = new LabelPerso(adjStock);
                                 labelA.Text = adjStock;
@@ -370,10 +334,6 @@ namespace WindowsForm.Forms
                             else if(verbeStock.GetGenre() == "Action" || verbeStock.GetGenre() == "Mouvement")
                             {
                                 Adverbe();
-                                //MessageBox.Show(article.GetMasculin() + " " + 
-                                //    nomStock + " " + 
-                                //    conjugaisonStock + " " + 
-                                //    advStock);
 
                                 LabelPerso labelA = new LabelPerso(adjStock);
                                 labelA.Text = adjStock;
@@ -407,10 +367,6 @@ namespace WindowsForm.Forms
                             if (verbeStock.GetGenre() == "Etat")
                             {
                                 Adjectif("Feminin", "0");
-                                //MessageBox.Show(article.GetFeminin() + " " + 
-                                //    nomStock + " " +
-                                //    conjugaisonStock + " " +
-                                //    adjStock);
 
                                 LabelPerso labelA = new LabelPerso(adjStock);
                                 labelA.Text = adjStock;
@@ -421,10 +377,6 @@ namespace WindowsForm.Forms
                             else if (verbeStock.GetGenre() == "Action" || verbeStock.GetGenre() == "Mouvement")
                             {
                                 Adverbe();
-                                //MessageBox.Show(article.GetFeminin() + " " + 
-                                //    nomStock + " " + 
-                                //    conjugaisonStock + " " +
-                                //    advStock);
 
                                 LabelPerso labelA = new LabelPerso(advStock);
                                 labelA.Text = advStock;
@@ -465,10 +417,6 @@ namespace WindowsForm.Forms
                             if (verbeStock.GetGenre() == "Etat")
                             {
                                 Adjectif("Masculin", "1");
-                                //MessageBox.Show(article.GetPluriel() + " " +
-                                //    nomStock + " " +
-                                //    conjugaisonStock + " " +
-                                //    adjStock);
 
                                 LabelPerso labelA = new LabelPerso(adjStock);
                                 labelA.Text = adjStock;
@@ -479,10 +427,6 @@ namespace WindowsForm.Forms
                             else if (verbeStock.GetGenre() == "Action" || verbeStock.GetGenre() == "Mouvement")
                             {
                                 Adverbe();
-                                //MessageBox.Show(article.GetPluriel() + " " + 
-                                //    nomStock + " " + 
-                                //    conjugaisonStock + " " +
-                                //    advStock);
 
                                 LabelPerso labelA = new LabelPerso(advStock);
                                 labelA.Text = advStock;
@@ -515,10 +459,6 @@ namespace WindowsForm.Forms
                             if (verbeStock.GetGenre() == "Etat")
                             {
                                 Adjectif("Feminin", "1");
-                                //MessageBox.Show(article.GetPluriel() + " " + 
-                                //    nomStock + " " +
-                                //    conjugaisonStock + " " +
-                                //    adjStock);
 
                                 LabelPerso labelA = new LabelPerso(adjStock);
                                 labelA.Text = adjStock;
@@ -528,10 +468,7 @@ namespace WindowsForm.Forms
                             }
                             else if (verbeStock.GetGenre() == "Action" || verbeStock.GetGenre() == "Mouvement")
                             {
-                                //MessageBox.Show(article.GetPluriel() + " " + 
-                                //    nomStock + " " + 
-                                //    conjugaisonStock + " " +
-                                //    advStock);
+                                Adverbe();
 
                                 LabelPerso labelA = new LabelPerso(advStock);
                                 labelA.Text = advStock;
@@ -576,9 +513,6 @@ namespace WindowsForm.Forms
                         {
                             femMasc = pronom.GetGenre();
                             Adjectif(femMasc, "0");
-                            //MessageBox.Show(pronom.getTexte() + " " +
-                            //    conjugaisonStock + " " +
-                            //    adjStock);
 
                             LabelPerso labelP = new LabelPerso(pronom.getTexte());
                             labelP.Text = pronom.getTexte();
@@ -605,12 +539,7 @@ namespace WindowsForm.Forms
                             {
                                 femMasc = "Masculin";
                                 Adjectif(femMasc, "0");
-                                //MessageBox.Show("j'" +
-                                //    conjugaisonStock + " " +
-                                //    adjStock);
 
-                                //LabelPerso labelPersoAP = new LabelPerso("j'");
-                                //labelPersoAP.Text = "j'";
                                 LabelPerso labelP = new LabelPerso("j'");
                                 labelP.Text = "j'";
                                 lesLabels.Add(labelP);
@@ -630,9 +559,6 @@ namespace WindowsForm.Forms
                             {
                                 femMasc = "Masculin";
                                 Adjectif(femMasc, "0");
-                                //MessageBox.Show(pronom.getTexte() + " " +
-                                //    conjugaisonStock + " " +
-                                //    adjStock);
 
                                 LabelPerso labelP = new LabelPerso(pronom.getTexte());
                                 labelP.Text = pronom.getTexte();
@@ -652,9 +578,6 @@ namespace WindowsForm.Forms
                             {
                                 femMasc = "Feminin";
                                 Adjectif(femMasc, pronom.GetPluriel());
-                                //MessageBox.Show(pronom.getTexte() + " " +
-                                //    conjugaisonStock + " " +
-                                //    adjStock);
 
                                 LabelPerso labelP = new LabelPerso(pronom.getTexte());
                                 labelP.Text = pronom.getTexte();
@@ -686,9 +609,6 @@ namespace WindowsForm.Forms
                         {
                             femMasc = pronom.GetGenre();
                             Adjectif(femMasc, pronom.GetPluriel());
-                            //MessageBox.Show(pronom.getTexte() + " " +
-                            //    conjugaisonStock + " " +
-                            //    adjStock);
 
                             LabelPerso labelP = new LabelPerso(pronom.getTexte());
                             labelP.Text = pronom.getTexte();
@@ -711,9 +631,6 @@ namespace WindowsForm.Forms
                             {
                                 femMasc = "Masculin";
                                 Adjectif(femMasc, pronom.GetPluriel());
-                                //MessageBox.Show(pronom.getTexte() + " " +
-                                //    conjugaisonStock + " " +
-                                //    adjStock);
 
                                 LabelPerso labelP = new LabelPerso(pronom.getTexte());
                                 labelP.Text = pronom.getTexte();
@@ -733,9 +650,6 @@ namespace WindowsForm.Forms
                             {
                                 femMasc = "Feminin";
                                 Adjectif(femMasc, pronom.GetPluriel());
-                                //MessageBox.Show(pronom.getTexte() + " " +
-                                //    conjugaisonStock + " " +
-                                //    adjStock);
 
                                 LabelPerso labelP = new LabelPerso(pronom.getTexte());
                                 labelP.Text = pronom.getTexte();
@@ -776,9 +690,6 @@ namespace WindowsForm.Forms
                     {
                         femMasc = "Masculin";
                         Adverbe();
-                        //MessageBox.Show("j'" +
-                        //    conjugaisonStock + " " +
-                        //    advStock);
 
                         LabelPerso labelP = new LabelPerso("j'");
                         labelP.Text = "j'";
@@ -1011,11 +922,9 @@ namespace WindowsForm.Forms
 
         private void SuppLabel()
         {
-            MessageBox.Show("SuppLabel() lesLabels.Count = " + lesLabels.Count.ToString());
             foreach(LabelPerso unLabel in lesLabels)
             {
                 MessageBox.Show("unLabel = " + unLabel.Text);
-                //Controls.Remove(Controls["label"]);
             }
             lesLabels.Clear();
         }
@@ -1023,20 +932,6 @@ namespace WindowsForm.Forms
         private void AfficheLabel()
         {
             int x = 150;
-            //foreach(Label unlabel in lesLabels)
-            //{
-            //    Label label = new LabelPerso(" ");
-            //    label.Text = unlabel.Text;
-            //    label.Top = 50;
-            //    label.Left = x;
-            //    SizeF stringSize = new SizeF();
-            //    Graphics g = AjoutPhrase.CreateGraphics();
-            //    stringSize = g.MeasureString(unlabel.Text, label.Font);
-            //    label.Width = Convert.ToInt32(stringSize.Width) + 5;
-            //    this.Controls.Add(label);
-            //    x = x + Convert.ToInt32(stringSize.Width) + 5;
-            //    MessageBox.Show(Convert.ToString(Convert.ToInt32(stringSize.Width)), "My Application", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //}
             foreach(LabelPerso unLabel in lesLabels)
             {
                 LabelPerso label = new LabelPerso(" ");
