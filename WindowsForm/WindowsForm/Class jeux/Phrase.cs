@@ -8,12 +8,12 @@ namespace WindowsForm.Class_jeux
 {
     class Phrase
     {
-       /* public Phrase(int idPronom, int idNom, int idVerbe, int idAdjectif)
+        public Phrase(int idPronom, int idNom, int idVerbe, int idAdjectif)
         {
-            Pronom.id = idPronom;
-            Nom.id = idNom;
-            Verbe.id = idVerbe;
-            Adjectif.id = idAdjectif;
-        } */
+            //Pronom.id = idPronom;
+            //Nom.id = idNom;
+            //Verbe.id = idVerbe;
+            //Adjectif.id = idAdjectif;
+        } 
     }
 }

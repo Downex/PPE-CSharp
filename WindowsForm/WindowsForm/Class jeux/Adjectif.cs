@@ -3,43 +3,61 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WindowsForm;
 
 namespace WindowsForm.Class_jeux
 {
-    class Adjectif : Mot
+    public class Adjectif : Mot
     {
-        private String singMasculin;
-        private String singFeminin;
-        private String plurMasculin;
-        private String plurFeminin;
+        public string id { get; set; }
+        public string singMasculin { get; set; }
+        public string singFeminin { get; set; }
+        public string plurMasculin { get; set; }
+        public string plurFeminin { get; set; }
+        public string fonction { get; set; }
 
-        public Adjectif(String texte, String singMasculin, String singFeminin, String plurMasculin, String plurFeminin) : base(texte)
+        public Adjectif(String id, String texte, String singFeminin, String plurMasculin, String plurFeminin, String fonction) : base(texte)
         {
-            this.singMasculin = singMasculin;
+            this.id = id;
+            singMasculin = texte;
             this.singFeminin = singFeminin;
             this.plurMasculin = plurMasculin;
             this.plurFeminin = plurFeminin;
+            this.fonction = fonction;
         }
-
-        public String getSingMasculin()
+        public Adjectif()
         {
 
+        }
+
+        public String GetId()
+        {
+            return id;
+        }
+
+        public String GetSingMasculin()
+        {
             return singMasculin;
         }
 
-        public String getSingFeminin()
+        public String GetSingFeminin()
         {
             return singFeminin;
         }
 
-        public String getPlurMasculin()
+        public string GetPlurMasculin()
         {
             return plurMasculin;
         }
 
-        public String getPlurFeminin()
+        public string GetPlurFeminin()
         {
             return plurFeminin;
+        }
+
+        public string GetFonction()
+        {
+            return fonction;
         }
     }
 }

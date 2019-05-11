@@ -6,13 +6,37 @@ using System.Threading.Tasks;
 
 namespace WindowsForm.Class_jeux
 {
-    class Verbe : Mot
+    public class Verbe : Mot
     {
-        private String infinitif;
+        public string id { get; set; }
+        public string infinitif { get; set; }
+        public string genre { get; set; }
 
-        public Verbe(String texte, String infinitif) : base(texte)
+        public Verbe(String id, String texte, String genre) : base(texte)
         {
-            this.infinitif = infinitif;
+            this.id = id;
+            infinitif = texte;
+            this.genre = genre;
+        }
+
+        public Verbe()
+        {
+
+        }
+
+        public string GetId()
+        {
+            return id;
+        }
+
+        public string GetInfinitif()
+        {
+            return infinitif;
+        }
+
+        public string GetGenre()
+        {
+            return genre;
         }
     }
 }

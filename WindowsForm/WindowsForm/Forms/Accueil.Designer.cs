@@ -44,9 +44,10 @@
             // menuStrip1
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Location = new System.Drawing.Point(0, 24);
+            this.menuStrip1.Location = new System.Drawing.Point(0, 28);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(1067, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -60,14 +61,15 @@
             this.motToolStripMenuItem1});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip2.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
+            this.menuStrip2.Size = new System.Drawing.Size(1067, 28);
             this.menuStrip2.TabIndex = 1;
             this.menuStrip2.Text = "menuStrip2";
             // 
             // motToolStripMenuItem
             // 
             this.motToolStripMenuItem.Name = "motToolStripMenuItem";
-            this.motToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.motToolStripMenuItem.Size = new System.Drawing.Size(80, 24);
             this.motToolStripMenuItem.Text = "S\'exercer";
             this.motToolStripMenuItem.Click += new System.EventHandler(this.motToolStripMenuItem_Click);
             // 
@@ -77,29 +79,29 @@
             this.InformationPersonnel,
             this.ajoutDutilisateurToolStripMenuItem});
             this.monCompteToolStripMenuItem.Name = "monCompteToolStripMenuItem";
-            this.monCompteToolStripMenuItem.Size = new System.Drawing.Size(88, 20);
+            this.monCompteToolStripMenuItem.Size = new System.Drawing.Size(106, 24);
             this.monCompteToolStripMenuItem.Text = "Mon compte";
             this.monCompteToolStripMenuItem.Click += new System.EventHandler(this.monCompteToolStripMenuItem_Click);
             // 
             // InformationPersonnel
             // 
             this.InformationPersonnel.Name = "InformationPersonnel";
-            this.InformationPersonnel.Size = new System.Drawing.Size(201, 22);
+            this.InformationPersonnel.Size = new System.Drawing.Size(243, 26);
             this.InformationPersonnel.Text = "Information personnelle";
             this.InformationPersonnel.Click += new System.EventHandler(this.InformationPersonnel_Click);
             // 
             // ajoutDutilisateurToolStripMenuItem
             // 
             this.ajoutDutilisateurToolStripMenuItem.Name = "ajoutDutilisateurToolStripMenuItem";
-            this.ajoutDutilisateurToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
-            this.ajoutDutilisateurToolStripMenuItem.Text = "Gestion des utilisateurs";
+            this.ajoutDutilisateurToolStripMenuItem.Size = new System.Drawing.Size(243, 26);
+            this.ajoutDutilisateurToolStripMenuItem.Text = "Ajout d\'utilisateur";
             this.ajoutDutilisateurToolStripMenuItem.Visible = false;
             this.ajoutDutilisateurToolStripMenuItem.Click += new System.EventHandler(this.ajoutDutilisateurToolStripMenuItem_Click);
             // 
             // classementToolStripMenuItem
             // 
             this.classementToolStripMenuItem.Name = "classementToolStripMenuItem";
-            this.classementToolStripMenuItem.Size = new System.Drawing.Size(80, 20);
+            this.classementToolStripMenuItem.Size = new System.Drawing.Size(96, 24);
             this.classementToolStripMenuItem.Text = "Classement";
             this.classementToolStripMenuItem.Click += new System.EventHandler(this.classementToolStripMenuItem_Click);
             // 
@@ -109,30 +111,32 @@
             this.listeMotToolStripMenuItem,
             this.ajouterUnePhraseToolStripMenuItem});
             this.motToolStripMenuItem1.Name = "motToolStripMenuItem1";
-            this.motToolStripMenuItem1.Size = new System.Drawing.Size(41, 20);
+            this.motToolStripMenuItem1.Size = new System.Drawing.Size(48, 24);
             this.motToolStripMenuItem1.Text = "Mot";
             // 
             // listeMotToolStripMenuItem
             // 
             this.listeMotToolStripMenuItem.Name = "listeMotToolStripMenuItem";
-            this.listeMotToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
+            this.listeMotToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.listeMotToolStripMenuItem.Text = "Liste mot";
             this.listeMotToolStripMenuItem.Click += new System.EventHandler(this.listeMotToolStripMenuItem_Click);
             // 
             // ajouterUnePhraseToolStripMenuItem
             // 
             this.ajouterUnePhraseToolStripMenuItem.Name = "ajouterUnePhraseToolStripMenuItem";
-            this.ajouterUnePhraseToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
+            this.ajouterUnePhraseToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.ajouterUnePhraseToolStripMenuItem.Text = "Ajouter une phrase";
+            this.ajouterUnePhraseToolStripMenuItem.Click += new System.EventHandler(this.ajouterUnePhraseToolStripMenuItem_Click);
             // 
             // Accueil
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.menuStrip2);
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Accueil";
             this.Text = "Accueil";
             this.Load += new System.EventHandler(this.Accueil_Load);
