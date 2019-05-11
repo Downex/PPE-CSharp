@@ -49,6 +49,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -61,7 +62,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BdMotDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BdMotDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BdMotDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BdMotDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Class gestion\Bdd.cs" />
+    <Compile Include="Class gestion\Utilisateur.cs" />
     <Compile Include="Class jeux\Adjectif.cs" />
+    <Compile Include="Class jeux\Adverbe.cs" />
+    <Compile Include="Class jeux\Article.cs" />
+    <Compile Include="Class jeux\Conjugaison.cs" />
     <Compile Include="Class jeux\Mot.cs" />
     <Compile Include="Class jeux\Nom.cs" />
     <Compile Include="Class jeux\Phrase.cs" />
@@ -121,9 +137,11 @@
     <Compile Include="Forms\ListeMot.Designer.cs">
       <DependentUpon>ListeMot.cs</DependentUpon>
     </Compile>
+    <Compile Include="LabelPerso.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Class gestion\Utilisateur.cs" />
     <EmbeddedResource Include="Forms\Accueil.resx">
       <DependentUpon>Accueil.cs</DependentUpon>
     </EmbeddedResource>
@@ -160,6 +178,28 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="BdMotDataSet.xsc">
+      <DependentUpon>BdMotDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BdMotDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BdMotDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BdMotDataSet.xss">
+      <DependentUpon>BdMotDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BdMotDataSet1.xsc">
+      <DependentUpon>BdMotDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="BdMotDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BdMotDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BdMotDataSet1.xss">
+      <DependentUpon>BdMotDataSet1.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -171,7 +211,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
@@ -185,6 +227,8 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -117,7 +117,7 @@
             // listeMotToolStripMenuItem
             // 
             this.listeMotToolStripMenuItem.Name = "listeMotToolStripMenuItem";
-            this.listeMotToolStripMenuItem.Size = new System.Drawing.Size(145, 26);
+            this.listeMotToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.listeMotToolStripMenuItem.Text = "Liste mot";
             this.listeMotToolStripMenuItem.Click += new System.EventHandler(this.listeMotToolStripMenuItem_Click);
             // 
@@ -126,6 +126,7 @@
             this.ajouterUnePhraseToolStripMenuItem.Name = "ajouterUnePhraseToolStripMenuItem";
             this.ajouterUnePhraseToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.ajouterUnePhraseToolStripMenuItem.Text = "Ajouter une phrase";
+            this.ajouterUnePhraseToolStripMenuItem.Click += new System.EventHandler(this.ajouterUnePhraseToolStripMenuItem_Click);
             // 
             // Accueil
             // 
@@ -135,7 +136,7 @@
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.menuStrip2);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Accueil";
             this.Text = "Accueil";
             this.Load += new System.EventHandler(this.Accueil_Load);
