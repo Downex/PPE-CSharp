@@ -8,6 +8,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsForm.Class_gestion;
 
 namespace WindowsForm
 {
@@ -25,7 +26,7 @@ namespace WindowsForm
             PseudoLabel.Text = utilisateur.Login;
             PrenomLabel.Text = utilisateur.Prenom;
             NomLabel.Text = utilisateur.Nom;
-            ScoreLabel.Text = utilisateur.Score.ToString();
+            ScoreLabel.Text = utilisateur.Score;
             RangLabel.Text = utilisateur.Rang;
 
         }
@@ -42,20 +43,20 @@ namespace WindowsForm
             {
                 if (Utilisateur.Hash256(AncienMdpTextBox.Text) == utilisateur.Password)
                 {
-                   if (String.IsNullOrWhiteSpace(MdpTextBox.Text) || String.IsNullOrWhiteSpace(CMdpTextBox.Text))
-                   {
+                    if (String.IsNullOrWhiteSpace(MdpTextBox.Text) || String.IsNullOrWhiteSpace(CMdpTextBox.Text))
+                    {
                         MessageBox.Show("Veuillez rentrez un mot de passe Valide", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                   }
-                   else if (MdpTextBox.Text == CMdpTextBox.Text)
-                   {
-                        utilisateur.Password = Utilisateur.Hash256(MdpTextBox.Text);
+                    }
+                    else if (MdpTextBox.Text == CMdpTextBox.Text)
+                    {
+                        Bdd.UpdateMotdePasse(utilisateur.Id, Utilisateur.Hash256(MdpTextBox.Text));
                         MessageBox.Show("Mot de passe modifié", "Modification", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                         AffichageFormulaire();
                     }
-                   else if (MdpTextBox.Text != CMdpTextBox.Text)
-                   {
+                    else if (MdpTextBox.Text != CMdpTextBox.Text)
+                    {
                         MessageBox.Show("Les mots de passe ne correspondent pas", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                   }
+                    }
                 }
                 else
                 {

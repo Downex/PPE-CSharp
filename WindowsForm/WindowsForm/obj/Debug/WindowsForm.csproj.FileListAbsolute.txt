@@ -45,3 +45,5 @@ C:\Users\smart\Source\Repos\Downex\Ppe-Csharp\WindowsForm\WindowsForm\obj\Debug\
 C:\Users\smart\Source\Repos\Downex\Ppe-Csharp\WindowsForm\WindowsForm\obj\Debug\WindowsForm.pdb
 C:\Users\smart\Source\Repos\Downex\Ppe-Csharp\WindowsForm\WindowsForm\obj\Debug\WindowsForm.Forms.Jouer.resources
 C:\Users\smart\source\repos\Downex\Ppe-Csharp\WindowsForm\WindowsForm\obj\Debug\WindowsForm.Forms.AjoutPhrase.resources
+C:\Users\Admin\Source\Repos\Ppe-Csharp\WindowsForm\WindowsForm\obj\Debug\WindowsForm.Forms.AjoutPhrase.resources
+C:\Users\Admin\Source\Repos\Ppe-Csharp\WindowsForm\WindowsForm\obj\Debug\WindowsForm.Forms.Jouer.resources

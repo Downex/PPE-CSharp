@@ -34,9 +34,11 @@ namespace WindowsForm.Forms
         private List<Phrase> lesPhrases;
         private List<LabelPerso> lesLabels;
         private List<Mot> lesMots;
+        Utilisateur utilisateur;
 
-        public Jouer()
+        public Jouer(Utilisateur utilisateur)
         {
+            this.utilisateur = utilisateur;
             InitializeComponent();
             lesLabels = new List<LabelPerso>();
             lesMots = new List<Mot>();
@@ -60,6 +62,7 @@ namespace WindowsForm.Forms
         private void Jouer_Load(object sender, EventArgs e)
         {
             StartGame();
+            ScoreLabel.Text = utilisateur.Score;
         }
 
         public void StartGame() { 

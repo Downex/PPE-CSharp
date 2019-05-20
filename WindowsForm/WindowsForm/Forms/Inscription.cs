@@ -47,7 +47,7 @@ namespace WindowsForm
                         }
                         else
                         {
-                            Bdd.InsertUtilisateur(LoginTextBox.Text, MdpTextBox.Text, PrenomTextBox.Text, NomTextBox.Text);
+                            Bdd.InsertUtilisateur(LoginTextBox.Text, MdpTextBox.Text, PrenomTextBox.Text, NomTextBox.Text, "0");
                             this.Close();
                             break;
                         }

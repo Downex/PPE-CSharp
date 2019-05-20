@@ -25,7 +25,7 @@ namespace WindowsForm
 
         private void motToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Jouer jouer = new Jouer();
+            Jouer jouer = new Jouer(unUtilisateur);
             jouer.ShowDialog();
         }
 
@@ -36,7 +36,7 @@ namespace WindowsForm
 
         private void Accueil_Load(object sender, EventArgs e)
         {
-            if (unUtilisateur.IsAdmin == "0")
+            if (unUtilisateur.IsAdmin == "1")
             {
                 ajoutDutilisateurToolStripMenuItem.Visible = true;
             }
