@@ -156,6 +156,38 @@ namespace WindowsForm.Class_gestion
             }
             return lesMots;
         }
+        public static Nom SelectNomById(string id)
+        {
+            Nom nom = new Nom();
+
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                connection.Open();
+                string query = @"SELECT * FROM Nom WHERE id=@id";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.Add("id", SqlDbType.VarChar).Value = id;
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.HasRows)
+                        {
+                            while (reader.Read())
+                            {
+                                nom = new Nom(
+                                    reader["id"].ToString(),
+                                    reader["singulier"].ToString(),
+                                    reader["pluriel"].ToString(),
+                                    reader["genre"].ToString()
+                                );
+                            }
+                        }
+                    }
+                }
+            }
+            return nom;
+        }
 
         public static void InsertNom(string singulier, string pluriel, string genre)
         {
@@ -261,6 +293,42 @@ namespace WindowsForm.Class_gestion
             }
 
             return lesMots;
+        }
+
+        
+        public static Adjectif SelectAdjectifById(string id)
+        {
+            Adjectif adj = new Adjectif();
+
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                connection.Open();
+                string query = @"SELECT * FROM Adjectif WHERE id=@id";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.Add("id", SqlDbType.VarChar).Value = id;
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.HasRows)
+                        {
+                            while (reader.Read())
+                            {
+                                adj = new Adjectif(
+                                    reader["id"].ToString(),
+                                    reader["singMasculin"].ToString(),
+                                    reader["singFeminin"].ToString(),
+                                    reader["plurMasculin"].ToString(),
+                                    reader["plurFeminin"].ToString(),
+                                    reader["fonction"].ToString()
+                                );
+                            }
+                        }
+                    }
+                }
+            }
+            return adj;
         }
 
         public static Adjectif SelectAdjectifPossessif(string singMasculin)
@@ -391,7 +459,6 @@ namespace WindowsForm.Class_gestion
                                     reader["pluriel"].ToString(),
                                     reader["genre"].ToString()
                                 );
-                                Console.WriteLine("ffff" + pronom.singulier);
                                 lesMots.Add(pronom);
                             }
                         }
@@ -414,6 +481,39 @@ namespace WindowsForm.Class_gestion
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     command.Parameters.Add("singulier", SqlDbType.VarChar).Value = singulier;
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.HasRows)
+                        {
+                            while (reader.Read())
+                            {
+                                pronom = new Pronom(
+                                    reader["id"].ToString(),
+                                    reader["singulier"].ToString(),
+                                    reader["pluriel"].ToString(),
+                                    reader["genre"].ToString()
+                                );
+                            }
+                        }
+                    }
+                }
+            }
+            return pronom;
+        }
+
+        public static Pronom SelectPronomById(string id)
+        {
+            Pronom pronom = new Pronom();
+
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                connection.Open();
+                string query = @"SELECT * FROM Pronom WHERE id=@id";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.Add("id", SqlDbType.VarChar).Value = id;
 
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
@@ -500,6 +600,38 @@ namespace WindowsForm.Class_gestion
             return lesMots;
         }
 
+        public static Verbe SelectVerbeById(string id)
+        {
+            Verbe verbe = new Verbe();
+
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                connection.Open();
+                string query = @"SELECT * FROM Verbe WHERE id=@id";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.Add("id", SqlDbType.VarChar).Value = id;
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.HasRows)
+                        {
+                            while (reader.Read())
+                            {
+                                verbe = new Verbe(
+                                    reader["id"].ToString(),
+                                    reader["infinitif"].ToString(),
+                                    reader["genre"].ToString()
+                                );
+                            }
+                        }
+                    }
+                }
+            }
+            return verbe;
+        }
+
         public static void InsertVerbe(string infinitif, string genre)
         {
             try
@@ -574,7 +706,7 @@ namespace WindowsForm.Class_gestion
                                     troisiemeSing = reader["troisiemeSing"].ToString(),
                                     premierPlur = reader["premierPlur"].ToString(),
                                     deuxiemePlur = reader["deuxiemePlur"].ToString(),
-                                    troisiemePlur = reader["troisiemePur"].ToString(),
+                                    troisiemePlur = reader["troisiemePlur"].ToString(),
                                     idVerbe = reader["idVerbe"].ToString()
 
                                 };
@@ -585,6 +717,44 @@ namespace WindowsForm.Class_gestion
                 }
             }
             return lesConjugaisons;
+        }
+
+        public static Conjugaison SelectConjugaisonById(string idVerbe)
+        {
+            Conjugaison conjugaison = new Conjugaison();
+
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                connection.Open();
+                string query = @"SELECT * FROM Conjugaison WHERE idVerbe=@idVerbe";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.Add("idVerbe", SqlDbType.VarChar).Value = idVerbe;
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.HasRows)
+                        {
+                            while (reader.Read())
+                            {
+                                conjugaison = new Conjugaison(
+                                    reader["id"].ToString(),
+                                    reader["temps"].ToString(),
+                                    reader["premierSing"].ToString(),
+                                    reader["deuxiemeSing"].ToString(),
+                                    reader["troisiemeSing"].ToString(),
+                                    reader["premierPlur"].ToString(),
+                                    reader["deuxiemePlur"].ToString(),
+                                    reader["troisiemePlur"].ToString(),
+                                    reader["idVerbe"].ToString()
+                                );
+                            }
+                        }
+                    }
+                }
+            }
+            return conjugaison;
         }
 
         public static Conjugaison SelectConjugaisonByVerbe(string idVerbe)
@@ -696,6 +866,39 @@ namespace WindowsForm.Class_gestion
             }
             return lesMots;
         }
+        
+        public static Article SelectArticleById(string id)
+        {
+            Article article = new Article();
+
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                connection.Open();
+                string query = @"SELECT * FROM Article WHERE id=@id";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.Add("id", SqlDbType.VarChar).Value = id;
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.HasRows)
+                        {
+                            while (reader.Read())
+                            {
+                                article = new Article(
+                                    reader["id"].ToString(),
+                                    reader["masculin"].ToString(),
+                                    reader["feminin"].ToString(),
+                                    reader["pluriel"].ToString()
+                                );
+                            }
+                        }
+                    }
+                }
+            }
+            return article;
+        }
 
         public static void InsertArticle(string masculin, string feminin, string pluriel)
         {
@@ -751,7 +954,6 @@ namespace WindowsForm.Class_gestion
                                 (
                                     reader["id"].ToString(),
                                     reader["adverbe"].ToString()
-
                                 );
                                 lesMots.Add(adverbe);
                             }
@@ -760,6 +962,36 @@ namespace WindowsForm.Class_gestion
                 }
             }
             return lesMots;
+        }
+        public static Adverbe SelectAdverbeById(string id)
+        {
+            Adverbe adverbe = new Adverbe();
+
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                connection.Open();
+                string query = @"SELECT * FROM Adverbe WHERE id=@id";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.Add("id", SqlDbType.VarChar).Value = id;
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.HasRows)
+                        {
+                            while (reader.Read())
+                            {
+                                adverbe = new Adverbe(
+                                    reader["id"].ToString(),
+                                    reader["adverbe"].ToString()
+                                );
+                            }
+                        }
+                    }
+                }
+            }
+            return adverbe;
         }
 
         public static void InsertAdverbe(string adverbe)
@@ -792,14 +1024,98 @@ namespace WindowsForm.Class_gestion
         }
 
         /* -- Phrase -- */
-        public static void InsertPhrase(string idAdjP, string adjP, string idArticle, string article, string idPronom, string pronom, string idNom, string nom, string idVerbe, string conjugaison, string idAdv, string idAdj, string adj)
+        public static List<Phrase> SelectAllPhrases()
+        {
+            List<Phrase> lesPhrases = new List<Phrase>();
+
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                connection.Open();
+                string query = @"SELECT * FROM Phrase ORDER BY id";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.HasRows)
+                        {
+                            while (reader.Read())
+                            {
+                                Phrase phrase = new Phrase(
+                                    reader["id"].ToString(),
+                                    reader["idAdjectifPossessif"].ToString(),
+                                    reader["adjectifPossessif"].ToString(),
+                                    reader["idArticle"].ToString(),
+                                    reader["article"].ToString(),
+                                    reader["idPronom"].ToString(),
+                                    reader["idNom"].ToString(),
+                                    reader["nom"].ToString(),
+                                    reader["idVerbe"].ToString(),
+                                    reader["conjugaison"].ToString(),
+                                    reader["idAdverbe"].ToString(),
+                                    reader["idAdjectif"].ToString(),
+                                    reader["adjectif"].ToString()
+                                );
+                                lesPhrases.Add(phrase);
+                            }
+                        }
+                    }
+                }
+            }
+
+            return lesPhrases;
+        }
+
+        public static Phrase SelectPhraseById(string id)
+        {
+            Phrase phrase = new Phrase();
+
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                connection.Open();
+                string query = @"SELECT * FROM Phrase WHERE id=@id";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.Add("id", SqlDbType.VarChar).Value = id;
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.HasRows)
+                        {
+                            while (reader.Read())
+                            {
+                                phrase = new Phrase(
+                                    reader["id"].ToString(),
+                                    reader["idAdjectifPossessif"].ToString(),
+                                    reader["adjectifPossessif"].ToString(),
+                                    reader["idArticle"].ToString(),
+                                    reader["article"].ToString(),
+                                    reader["idPronom"].ToString(),
+                                    reader["idNom"].ToString(),
+                                    reader["nom"].ToString(),
+                                    reader["idVerbe"].ToString(),
+                                    reader["conjugaison"].ToString(),
+                                    reader["idAdverbe"].ToString(),
+                                    reader["idAdjectif"].ToString(),
+                                    reader["adjectif"].ToString()
+                                );
+                            }
+                        }
+                    }
+                }
+            }
+            return phrase;
+        }
+
+        public static void InsertPhrase(string idAdjP, string adjP, string idArticle, string article, string idPronom, string idNom, string nom, string idVerbe, string conjugaison, string idAdv, string idAdj, string adj)
         {
             try
             {
                 using (SqlConnection connection = new SqlConnection(ConnectionString))
                 {
                     connection.Open();
-                    string query = @"INSERT INTO Phrase (idAdjectifPossessif, adjectifPossessif, idArticle, article, idPronom, pronom, idNom, nom, idVerbe, conjugaison, idAdverbe, idAdjectif, adjectif) VALUES (@idAdjectifPossessif, @adjectifPossessif, @idArticle, @article, @idPronom, @pronom, @idNom, @nom, @idVerbe, @conjugaison, @idAdverbe, @idAdjectif, @adjectif)";
+                    string query = @"INSERT INTO Phrase (idAdjectifPossessif, adjectifPossessif, idArticle, article, idPronom, idNom, nom, idVerbe, conjugaison, idAdverbe, idAdjectif, adjectif) VALUES (@idAdjectifPossessif, @adjectifPossessif, @idArticle, @article, @idPronom, @idNom, @nom, @idVerbe, @conjugaison, @idAdverbe, @idAdjectif, @adjectif)";
 
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
@@ -808,7 +1124,6 @@ namespace WindowsForm.Class_gestion
                         command.Parameters.Add(new SqlParameter("@idArticle", String.IsNullOrEmpty(idArticle) ? (object)DBNull.Value : (string)idArticle));
                         command.Parameters.Add(new SqlParameter("@article", String.IsNullOrEmpty(article) ? (object)DBNull.Value : (string)article));
                         command.Parameters.Add(new SqlParameter("@idPronom", String.IsNullOrEmpty(idPronom) ? (object)DBNull.Value : (string)idPronom));
-                        command.Parameters.Add(new SqlParameter("@pronom", String.IsNullOrEmpty(pronom) ? (object)DBNull.Value : (string)pronom));
                         command.Parameters.Add(new SqlParameter("@idNom", String.IsNullOrEmpty(idNom) ? (object)DBNull.Value : (string)idNom));
                         command.Parameters.Add(new SqlParameter("@nom", String.IsNullOrEmpty(nom) ? (object)DBNull.Value : (string)nom));
                         command.Parameters.Add(new SqlParameter("@idVerbe", idVerbe));
@@ -831,6 +1146,39 @@ namespace WindowsForm.Class_gestion
                 MessageBox.Show("Erreur lors de l'insertion de la phrase.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 throw;
             }
+        }
+
+        /* -- Question -- */
+        public static List<Question> SelectAllQuestion()
+        {
+            List<Question> questions = new List<Question>();
+
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                connection.Open();
+                string query = @"SELECT * FROM Question";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.HasRows)
+                        {
+                            while (reader.Read())
+                            {
+                                Question question = new Question
+                                {
+                                    id = reader["id"].ToString(),
+                                    libelle = reader["libelle"].ToString(),
+                                    type = reader["type"].ToString()
+                                };
+                                questions.Add(question);
+                            }
+                        }
+                    }
+                }
+            }
+            return questions;
         }
     }
 }

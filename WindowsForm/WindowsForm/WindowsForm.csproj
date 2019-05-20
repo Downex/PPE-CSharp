@@ -82,6 +82,7 @@
     <Compile Include="Class jeux\Nom.cs" />
     <Compile Include="Class jeux\Phrase.cs" />
     <Compile Include="Class jeux\Pronom.cs" />
+    <Compile Include="Class jeux\Question.cs" />
     <Compile Include="Class jeux\Verbe.cs" />
     <Compile Include="Forms\Accueil.cs">
       <SubType>Form</SubType>

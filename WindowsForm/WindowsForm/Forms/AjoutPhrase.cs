@@ -22,7 +22,6 @@ namespace WindowsForm.Forms
         private String idArticle = null;
         private String indexArticle = null;
         private String idPronom = null;
-        private String indexPronom = null;
         private String idNom = null;
         private String indexNom = null;
         private String indexConjugaison;
@@ -80,19 +79,19 @@ namespace WindowsForm.Forms
                             //    conjugaisonStock + " " +
                             //    adjStock);
 
-                            LabelPerso labelAdjP = new LabelPerso(adj.GetSingMasculin());
+                            LabelPerso labelAdjP = new LabelPerso();
                             labelAdjP.Text = adj.GetSingMasculin();
                             lesLabels.Add(labelAdjP);
 
-                            LabelPerso labelN = new LabelPerso(nomStock);
+                            LabelPerso labelN = new LabelPerso();
                             labelN.Text = nomStock;
                             lesLabels.Add(labelN);
 
-                            LabelPerso labelV = new LabelPerso(conjugaisonStock);
+                            LabelPerso labelV = new LabelPerso();
                             labelV.Text = conjugaisonStock;
                             lesLabels.Add(labelV);
 
-                            LabelPerso labelA = new LabelPerso(adjStock);
+                            LabelPerso labelA = new LabelPerso();
                             labelA.Text = adjStock;
                             lesLabels.Add(labelA);
 
@@ -106,19 +105,19 @@ namespace WindowsForm.Forms
                             //    conjugaisonStock + " " +
                             //    advStock);
 
-                            LabelPerso labelAdjP = new LabelPerso(adj.GetSingMasculin());
+                            LabelPerso labelAdjP = new LabelPerso();
                             labelAdjP.Text = adj.GetSingMasculin();
                             lesLabels.Add(labelAdjP);
 
-                            LabelPerso labelN = new LabelPerso(nomStock);
+                            LabelPerso labelN = new LabelPerso();
                             labelN.Text = nomStock;
                             lesLabels.Add(labelN);
 
-                            LabelPerso labelV = new LabelPerso(conjugaisonStock);
+                            LabelPerso labelV = new LabelPerso();
                             labelV.Text = conjugaisonStock;
                             lesLabels.Add(labelV);
 
-                            LabelPerso labelA = new LabelPerso(advStock);
+                            LabelPerso labelA = new LabelPerso();
                             labelA.Text = advStock;
                             lesLabels.Add(labelA);
 
@@ -145,19 +144,19 @@ namespace WindowsForm.Forms
                             //    conjugaisonStock + " " +
                             //    adjStock);
 
-                            LabelPerso labelAdjP = new LabelPerso(adj.GetSingFeminin());
+                            LabelPerso labelAdjP = new LabelPerso();
                             labelAdjP.Text = adj.GetSingFeminin();
                             lesLabels.Add(labelAdjP);
 
-                            LabelPerso labelN = new LabelPerso(nomStock);
+                            LabelPerso labelN = new LabelPerso();
                             labelN.Text = nomStock;
                             lesLabels.Add(labelN);
 
-                            LabelPerso labelV = new LabelPerso(conjugaisonStock);
+                            LabelPerso labelV = new LabelPerso();
                             labelV.Text = conjugaisonStock;
                             lesLabels.Add(labelV);
 
-                            LabelPerso labelA = new LabelPerso(adjStock);
+                            LabelPerso labelA = new LabelPerso();
                             labelA.Text = adjStock;
                             lesLabels.Add(labelA);
 
@@ -171,19 +170,19 @@ namespace WindowsForm.Forms
                             //    conjugaisonStock + " " +
                             //    advStock);
 
-                            LabelPerso labelAdjP = new LabelPerso(adj.GetSingFeminin());
+                            LabelPerso labelAdjP = new LabelPerso();
                             labelAdjP.Text = adj.GetSingFeminin();
                             lesLabels.Add(labelAdjP);
 
-                            LabelPerso labelN = new LabelPerso(nomStock);
+                            LabelPerso labelN = new LabelPerso();
                             labelN.Text = nomStock;
                             lesLabels.Add(labelN);
 
-                            LabelPerso labelV = new LabelPerso(conjugaisonStock);
+                            LabelPerso labelV = new LabelPerso();
                             labelV.Text = conjugaisonStock;
                             lesLabels.Add(labelV);
 
-                            LabelPerso labelA = new LabelPerso(advStock);
+                            LabelPerso labelA = new LabelPerso();
                             labelA.Text = advStock;
                             lesLabels.Add(labelA);
 
@@ -210,19 +209,19 @@ namespace WindowsForm.Forms
                             //    conjugaisonStock + " " +
                             //    adjStock);
 
-                            LabelPerso labelAdjP = new LabelPerso(adj.GetPlurMasculin());
+                            LabelPerso labelAdjP = new LabelPerso();
                             labelAdjP.Text = adj.GetPlurMasculin();
                             lesLabels.Add(labelAdjP);
 
-                            LabelPerso labelN = new LabelPerso(nomStock);
+                            LabelPerso labelN = new LabelPerso();
                             labelN.Text = nomStock;
                             lesLabels.Add(labelN);
 
-                            LabelPerso labelV = new LabelPerso(conjugaisonStock);
+                            LabelPerso labelV = new LabelPerso();
                             labelV.Text = conjugaisonStock;
                             lesLabels.Add(labelV);
 
-                            LabelPerso labelA = new LabelPerso(adjStock);
+                            LabelPerso labelA = new LabelPerso();
                             labelA.Text = adjStock;
                             lesLabels.Add(labelA);
 
@@ -236,19 +235,19 @@ namespace WindowsForm.Forms
                             //    conjugaisonStock + " " +
                             //    advStock);
 
-                            LabelPerso labelAdjP = new LabelPerso(adj.GetPlurMasculin());
+                            LabelPerso labelAdjP = new LabelPerso();
                             labelAdjP.Text = adj.GetPlurMasculin();
                             lesLabels.Add(labelAdjP);
 
-                            LabelPerso labelN = new LabelPerso(nomStock);
+                            LabelPerso labelN = new LabelPerso();
                             labelN.Text = nomStock;
                             lesLabels.Add(labelN);
 
-                            LabelPerso labelV = new LabelPerso(conjugaisonStock);
+                            LabelPerso labelV = new LabelPerso();
                             labelV.Text = conjugaisonStock;
                             lesLabels.Add(labelV);
 
-                            LabelPerso labelA = new LabelPerso(advStock);
+                            LabelPerso labelA = new LabelPerso();
                             labelA.Text = advStock;
                             lesLabels.Add(labelA);
 
@@ -275,19 +274,19 @@ namespace WindowsForm.Forms
                             //    conjugaisonStock + " " +
                             //    adjStock);
 
-                            LabelPerso labelAdjP = new LabelPerso(adj.GetPlurFeminin());
+                            LabelPerso labelAdjP = new LabelPerso();
                             labelAdjP.Text = adj.GetPlurFeminin();
                             lesLabels.Add(labelAdjP);
 
-                            LabelPerso labelN = new LabelPerso(nomStock);
+                            LabelPerso labelN = new LabelPerso();
                             labelN.Text = nomStock;
                             lesLabels.Add(labelN);
 
-                            LabelPerso labelV = new LabelPerso(conjugaisonStock);
+                            LabelPerso labelV = new LabelPerso();
                             labelV.Text = conjugaisonStock;
                             lesLabels.Add(labelV);
 
-                            LabelPerso labelA = new LabelPerso(adjStock);
+                            LabelPerso labelA = new LabelPerso();
                             labelA.Text = adjStock;
                             lesLabels.Add(labelA);
 
@@ -301,19 +300,19 @@ namespace WindowsForm.Forms
                             //    conjugaisonStock + " " +
                             //    advStock);
 
-                            LabelPerso labelAdjP = new LabelPerso(adj.GetPlurFeminin());
+                            LabelPerso labelAdjP = new LabelPerso();
                             labelAdjP.Text = adj.GetPlurFeminin();
                             lesLabels.Add(labelAdjP);
 
-                            LabelPerso labelN = new LabelPerso(nomStock);
+                            LabelPerso labelN = new LabelPerso();
                             labelN.Text = nomStock;
                             lesLabels.Add(labelN);
 
-                            LabelPerso labelV = new LabelPerso(conjugaisonStock);
+                            LabelPerso labelV = new LabelPerso();
                             labelV.Text = conjugaisonStock;
                             lesLabels.Add(labelV);
 
-                            LabelPerso labelA = new LabelPerso(advStock);
+                            LabelPerso labelA = new LabelPerso();
                             labelA.Text = advStock;
                             lesLabels.Add(labelA);
 
@@ -331,6 +330,8 @@ namespace WindowsForm.Forms
                     int indexArt = random.Next(lesMots.Count);
                     Article article = (Article)lesMots[indexArt];
                     idArticle = article.GetId();
+                    MessageBox.Show(article.GetId() + " " + article.GetMasculin() + " " +
+                        article.GetFeminin() + " " + article.GetPluriel());
                     int genreArt = random.Next(0, 2);
                     string plurArt = random.Next(0, 2).ToString();
                     if (plurArt == "0")
@@ -341,15 +342,16 @@ namespace WindowsForm.Forms
                             Nom(plurArt, "Masculin");
                             Verbe("il");
 
-                            LabelPerso labelArt = new LabelPerso(article.GetMasculin());
+                            LabelPerso labelArt = new LabelPerso();
+                            MessageBox.Show(article.GetMasculin());
                             labelArt.Text = article.GetMasculin();
                             lesLabels.Add(labelArt);
 
-                            LabelPerso labelN = new LabelPerso(nomStock);
+                            LabelPerso labelN = new LabelPerso();
                             labelN.Text = nomStock;
                             lesLabels.Add(labelN);
 
-                            LabelPerso labelV = new LabelPerso(conjugaisonStock);
+                            LabelPerso labelV = new LabelPerso();
                             labelV.Text = conjugaisonStock;
                             lesLabels.Add(labelV);
 
@@ -361,7 +363,7 @@ namespace WindowsForm.Forms
                                 //    conjugaisonStock + " " +
                                 //    adjStock);
                                 
-                                LabelPerso labelA = new LabelPerso(adjStock);
+                                LabelPerso labelA = new LabelPerso();
                                 labelA.Text = adjStock;
                                 lesLabels.Add(labelA);
 
@@ -375,7 +377,7 @@ namespace WindowsForm.Forms
                                 //    conjugaisonStock + " " + 
                                 //    advStock);
 
-                                LabelPerso labelA = new LabelPerso(adjStock);
+                                LabelPerso labelA = new LabelPerso();
                                 labelA.Text = adjStock;
                                 lesLabels.Add(labelA);
 
@@ -392,15 +394,16 @@ namespace WindowsForm.Forms
                             Nom(plurArt, "Feminin");
                             Verbe("elle");
 
-                            LabelPerso labelArt = new LabelPerso(article.GetFeminin());
+                            LabelPerso labelArt = new LabelPerso();
+                            MessageBox.Show(article.GetFeminin());
                             labelArt.Text = article.GetFeminin();
                             lesLabels.Add(labelArt);
 
-                            LabelPerso labelN = new LabelPerso(nomStock);
+                            LabelPerso labelN = new LabelPerso();
                             labelN.Text = nomStock;
                             lesLabels.Add(labelN);
 
-                            LabelPerso labelV = new LabelPerso(conjugaisonStock);
+                            LabelPerso labelV = new LabelPerso();
                             labelV.Text = conjugaisonStock;
                             lesLabels.Add(labelV);
                             
@@ -412,7 +415,7 @@ namespace WindowsForm.Forms
                                 //    conjugaisonStock + " " +
                                 //    adjStock);
 
-                                LabelPerso labelA = new LabelPerso(adjStock);
+                                LabelPerso labelA = new LabelPerso();
                                 labelA.Text = adjStock;
                                 lesLabels.Add(labelA);
 
@@ -426,7 +429,7 @@ namespace WindowsForm.Forms
                                 //    conjugaisonStock + " " +
                                 //    advStock);
 
-                                LabelPerso labelA = new LabelPerso(advStock);
+                                LabelPerso labelA = new LabelPerso();
                                 labelA.Text = advStock;
                                 lesLabels.Add(labelA);
 
@@ -450,27 +453,25 @@ namespace WindowsForm.Forms
                             Nom(plurArt, "Masculin");
                             Verbe("ils");
 
-                            LabelPerso labelArt = new LabelPerso(article.GetPluriel());
+                            LabelPerso labelArt = new LabelPerso();
+                            MessageBox.Show(article.GetPluriel());
                             labelArt.Text = article.GetPluriel();
                             lesLabels.Add(labelArt);
 
-                            LabelPerso labelN = new LabelPerso(nomStock);
+                            LabelPerso labelN = new LabelPerso();
                             labelN.Text = nomStock;
                             lesLabels.Add(labelN);
 
-                            LabelPerso labelV = new LabelPerso(conjugaisonStock);
+                            LabelPerso labelV = new LabelPerso();
                             labelV.Text = conjugaisonStock;
                             lesLabels.Add(labelV);
 
                             if (verbeStock.GetGenre() == "Etat")
                             {
                                 Adjectif("Masculin", "1");
-                                //MessageBox.Show(article.GetPluriel() + " " +
-                                //    nomStock + " " +
-                                //    conjugaisonStock + " " +
-                                //    adjStock);
 
-                                LabelPerso labelA = new LabelPerso(adjStock);
+                                LabelPerso labelA = new LabelPerso();
+                                MessageBox.Show(adjStock);
                                 labelA.Text = adjStock;
                                 lesLabels.Add(labelA);
 
@@ -479,12 +480,8 @@ namespace WindowsForm.Forms
                             else if (verbeStock.GetGenre() == "Action" || verbeStock.GetGenre() == "Mouvement")
                             {
                                 Adverbe();
-                                //MessageBox.Show(article.GetPluriel() + " " + 
-                                //    nomStock + " " + 
-                                //    conjugaisonStock + " " +
-                                //    advStock);
 
-                                LabelPerso labelA = new LabelPerso(advStock);
+                                LabelPerso labelA = new LabelPerso();
                                 labelA.Text = advStock;
                                 lesLabels.Add(labelA);
 
@@ -500,15 +497,15 @@ namespace WindowsForm.Forms
                             Nom(plurArt, "Feminin");
                             Verbe("elles");
 
-                            LabelPerso labelArt = new LabelPerso(article.GetMasculin());
-                            labelArt.Text = article.GetMasculin();
+                            LabelPerso labelArt = new LabelPerso();
+                            labelArt.Text = article.GetPluriel();
                             lesLabels.Add(labelArt);
 
-                            LabelPerso labelN = new LabelPerso(nomStock);
+                            LabelPerso labelN = new LabelPerso();
                             labelN.Text = nomStock;
                             lesLabels.Add(labelN);
 
-                            LabelPerso labelV = new LabelPerso(conjugaisonStock);
+                            LabelPerso labelV = new LabelPerso();
                             labelV.Text = conjugaisonStock;
                             lesLabels.Add(labelV);
 
@@ -520,7 +517,7 @@ namespace WindowsForm.Forms
                                 //    conjugaisonStock + " " +
                                 //    adjStock);
 
-                                LabelPerso labelA = new LabelPerso(adjStock);
+                                LabelPerso labelA = new LabelPerso();
                                 labelA.Text = adjStock;
                                 lesLabels.Add(labelA);
 
@@ -533,7 +530,7 @@ namespace WindowsForm.Forms
                                 //    conjugaisonStock + " " +
                                 //    advStock);
 
-                                LabelPerso labelA = new LabelPerso(advStock);
+                                LabelPerso labelA = new LabelPerso();
                                 labelA.Text = advStock;
                                 lesLabels.Add(labelA);
 
@@ -580,15 +577,15 @@ namespace WindowsForm.Forms
                             //    conjugaisonStock + " " +
                             //    adjStock);
 
-                            LabelPerso labelP = new LabelPerso(pronom.getTexte());
+                            LabelPerso labelP = new LabelPerso();
                             labelP.Text = pronom.getTexte();
                             lesLabels.Add(labelP);
 
-                            LabelPerso labelV = new LabelPerso(conjugaisonStock);
+                            LabelPerso labelV = new LabelPerso();
                             labelV.Text = conjugaisonStock;
                             lesLabels.Add(labelV);
 
-                            LabelPerso labelA = new LabelPerso(adjStock);
+                            LabelPerso labelA = new LabelPerso();
                             labelA.Text = adjStock;
                             lesLabels.Add(labelA);
 
@@ -611,15 +608,15 @@ namespace WindowsForm.Forms
 
                                 //LabelPerso labelPersoAP = new LabelPerso("j'");
                                 //labelPersoAP.Text = "j'";
-                                LabelPerso labelP = new LabelPerso("j'");
+                                LabelPerso labelP = new LabelPerso();
                                 labelP.Text = "j'";
                                 lesLabels.Add(labelP);
 
-                                LabelPerso labelV = new LabelPerso(conjugaisonStock);
+                                LabelPerso labelV = new LabelPerso();
                                 labelV.Text = conjugaisonStock;
                                 lesLabels.Add(labelV);
 
-                                LabelPerso labelA = new LabelPerso(adjStock);
+                                LabelPerso labelA = new LabelPerso();
                                 labelA.Text = adjStock;
                                 lesLabels.Add(labelA);
 
@@ -634,15 +631,15 @@ namespace WindowsForm.Forms
                                 //    conjugaisonStock + " " +
                                 //    adjStock);
 
-                                LabelPerso labelP = new LabelPerso(pronom.getTexte());
+                                LabelPerso labelP = new LabelPerso();
                                 labelP.Text = pronom.getTexte();
                                 lesLabels.Add(labelP);
 
-                                LabelPerso labelV = new LabelPerso(conjugaisonStock);
+                                LabelPerso labelV = new LabelPerso();
                                 labelV.Text = conjugaisonStock;
                                 lesLabels.Add(labelV);
 
-                                LabelPerso labelA = new LabelPerso(adjStock);
+                                LabelPerso labelA = new LabelPerso();
                                 labelA.Text = adjStock;
                                 lesLabels.Add(labelA);
 
@@ -656,15 +653,15 @@ namespace WindowsForm.Forms
                                 //    conjugaisonStock + " " +
                                 //    adjStock);
 
-                                LabelPerso labelP = new LabelPerso(pronom.getTexte());
+                                LabelPerso labelP = new LabelPerso();
                                 labelP.Text = pronom.getTexte();
                                 lesLabels.Add(labelP);
 
-                                LabelPerso labelV = new LabelPerso(conjugaisonStock);
+                                LabelPerso labelV = new LabelPerso();
                                 labelV.Text = conjugaisonStock;
                                 lesLabels.Add(labelV);
 
-                                LabelPerso labelA = new LabelPerso(adjStock);
+                                LabelPerso labelA = new LabelPerso();
                                 labelA.Text = adjStock;
                                 lesLabels.Add(labelA);
 
@@ -690,15 +687,15 @@ namespace WindowsForm.Forms
                             //    conjugaisonStock + " " +
                             //    adjStock);
 
-                            LabelPerso labelP = new LabelPerso(pronom.getTexte());
+                            LabelPerso labelP = new LabelPerso();
                             labelP.Text = pronom.getTexte();
                             lesLabels.Add(labelP);
 
-                            LabelPerso labelV = new LabelPerso(conjugaisonStock);
+                            LabelPerso labelV = new LabelPerso();
                             labelV.Text = conjugaisonStock;
                             lesLabels.Add(labelV);
 
-                            LabelPerso labelA = new LabelPerso(adjStock);
+                            LabelPerso labelA = new LabelPerso();
                             labelA.Text = adjStock;
                             lesLabels.Add(labelA);
 
@@ -715,15 +712,15 @@ namespace WindowsForm.Forms
                                 //    conjugaisonStock + " " +
                                 //    adjStock);
 
-                                LabelPerso labelP = new LabelPerso(pronom.getTexte());
+                                LabelPerso labelP = new LabelPerso();
                                 labelP.Text = pronom.getTexte();
                                 lesLabels.Add(labelP);
 
-                                LabelPerso labelV = new LabelPerso(conjugaisonStock);
+                                LabelPerso labelV = new LabelPerso();
                                 labelV.Text = conjugaisonStock;
                                 lesLabels.Add(labelV);
 
-                                LabelPerso labelA = new LabelPerso(adjStock);
+                                LabelPerso labelA = new LabelPerso();
                                 labelA.Text = adjStock;
                                 lesLabels.Add(labelA);
 
@@ -737,15 +734,15 @@ namespace WindowsForm.Forms
                                 //    conjugaisonStock + " " +
                                 //    adjStock);
 
-                                LabelPerso labelP = new LabelPerso(pronom.getTexte());
+                                LabelPerso labelP = new LabelPerso();
                                 labelP.Text = pronom.getTexte();
                                 lesLabels.Add(labelP);
 
-                                LabelPerso labelV = new LabelPerso(conjugaisonStock);
+                                LabelPerso labelV = new LabelPerso();
                                 labelV.Text = conjugaisonStock;
                                 lesLabels.Add(labelV);
 
-                                LabelPerso labelA = new LabelPerso(adjStock);
+                                LabelPerso labelA = new LabelPerso();
                                 labelA.Text = adjStock;
                                 lesLabels.Add(labelA);
 
@@ -780,15 +777,15 @@ namespace WindowsForm.Forms
                         //    conjugaisonStock + " " +
                         //    advStock);
 
-                        LabelPerso labelP = new LabelPerso("j'");
+                        LabelPerso labelP = new LabelPerso();
                         labelP.Text = "j'";
                         lesLabels.Add(labelP);
 
-                        LabelPerso labelV = new LabelPerso(conjugaisonStock);
+                        LabelPerso labelV = new LabelPerso();
                         labelV.Text = conjugaisonStock;
                         lesLabels.Add(labelV);
 
-                        LabelPerso labelA = new LabelPerso(advStock);
+                        LabelPerso labelA = new LabelPerso();
                         labelA.Text = advStock;
                         lesLabels.Add(labelA);
 
@@ -798,15 +795,15 @@ namespace WindowsForm.Forms
                     {
                         Adverbe();
 
-                        LabelPerso labelP = new LabelPerso(pronom.getTexte());
+                        LabelPerso labelP = new LabelPerso();
                         labelP.Text = pronom.getTexte();
                         lesLabels.Add(labelP);
 
-                        LabelPerso labelV = new LabelPerso(conjugaisonStock);
+                        LabelPerso labelV = new LabelPerso();
                         labelV.Text = conjugaisonStock;
                         lesLabels.Add(labelV);
 
-                        LabelPerso labelA = new LabelPerso(advStock);
+                        LabelPerso labelA = new LabelPerso();
                         labelA.Text = advStock;
                         lesLabels.Add(labelA);
 
@@ -894,7 +891,6 @@ namespace WindowsForm.Forms
             {
                 conjugaisonStock = conjugaison.GetPremierSing();
                 verbeConjugueStock = conjugaisonStock;
-                indexPronom = "1";
                 indexConjugaison = "1";
                 return conjugaisonStock;
             }
@@ -902,7 +898,6 @@ namespace WindowsForm.Forms
             {
                 conjugaisonStock = conjugaison.GetDeuxiemeSing();
                 verbeConjugueStock = conjugaisonStock;
-                indexPronom = "2";
                 indexConjugaison = "2";
                 return conjugaisonStock;
             }
@@ -910,7 +905,6 @@ namespace WindowsForm.Forms
             {
                 conjugaisonStock = conjugaison.GetTroisiemeSing();
                 verbeConjugueStock = conjugaisonStock;
-                indexPronom = "3";
                 indexConjugaison = "3";
                 return conjugaisonStock;
             }
@@ -918,7 +912,6 @@ namespace WindowsForm.Forms
             {
                 conjugaisonStock = conjugaison.GetPremierPlur();
                 verbeConjugueStock = conjugaisonStock;
-                indexPronom = "4";
                 indexConjugaison = "4";
                 return conjugaisonStock;
             }
@@ -926,7 +919,6 @@ namespace WindowsForm.Forms
             {
                 conjugaisonStock = conjugaison.GetDeuxiemePlur();
                 verbeConjugueStock = conjugaisonStock;
-                indexPronom = "5";
                 indexConjugaison = "5";
                 return conjugaisonStock;
             }
@@ -934,7 +926,6 @@ namespace WindowsForm.Forms
             {
                 conjugaisonStock = conjugaison.GetTroisiemePlur();
                 verbeConjugueStock = conjugaisonStock;
-                indexPronom = "6";
                 indexConjugaison = "6";
                 return conjugaisonStock;
             }
@@ -1011,37 +1002,63 @@ namespace WindowsForm.Forms
 
         private void SuppLabel()
         {
-            MessageBox.Show("SuppLabel() lesLabels.Count = " + lesLabels.Count.ToString());
-            foreach(LabelPerso unLabel in lesLabels)
+
+            var label = this.Controls.OfType<LabelPerso>().ToList();
+            foreach (LabelPerso l in label)
             {
-                MessageBox.Show("unLabel = " + unLabel.Text);
-                //Controls.Remove(Controls["label"]);
+                l.Dispose();
             }
             lesLabels.Clear();
+            idAdjP = null;
+            indexAdjP = null;
+            idArticle = null;
+            indexArticle = null;
+            idPronom = null;
+            idNom = null;
+            indexNom = null;
+            indexConjugaison = null;
+            idAdjectif = null;
+            indexAdjectif = null;
+            idAdverbe = null;
+
+            adjPStock = null;
+            pronomStock = null;
+            nomStock = null;
+            verbeStock = null;
+            conjugaisonStock = null;
+            advStock = null;
+            adjStock = null;
         }
 
         private void AfficheLabel()
         {
-            int x = 150;
-            //foreach(Label unlabel in lesLabels)
-            //{
-            //    Label label = new LabelPerso(" ");
-            //    label.Text = unlabel.Text;
-            //    label.Top = 50;
-            //    label.Left = x;
-            //    SizeF stringSize = new SizeF();
-            //    Graphics g = AjoutPhrase.CreateGraphics();
-            //    stringSize = g.MeasureString(unlabel.Text, label.Font);
-            //    label.Width = Convert.ToInt32(stringSize.Width) + 5;
-            //    this.Controls.Add(label);
-            //    x = x + Convert.ToInt32(stringSize.Width) + 5;
-            //    MessageBox.Show(Convert.ToString(Convert.ToInt32(stringSize.Width)), "My Application", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //}
+            int x;
+            if (lesLabels.Count <= 3)
+            {
+                x = 150;
+            }
+            else
+            {
+                x = 60;
+            }
+            int index = 0;
             foreach(LabelPerso unLabel in lesLabels)
             {
-                LabelPerso label = new LabelPerso(" ");
-                label.Text = unLabel.Text;
-                label.Top = 50;
+                LabelPerso label = new LabelPerso();
+                if (index == 0)
+                {
+                    label.Text = (char.ToUpper(unLabel.Text[0])) + unLabel.Text.Substring(1);
+                }
+                else if (index == lesLabels.Count-1)
+                {
+                    label.Text = unLabel.Text + ".";
+                }
+                else
+                {
+                    label.Text = unLabel.Text;
+                }
+                label.Font = new Font("Arial", 24);
+                label.Top = 80;
                 label.Left = x;
                 SizeF stringSize = new SizeF();
                 Graphics g = CreateGraphics();
@@ -1049,7 +1066,8 @@ namespace WindowsForm.Forms
                 label.Width = Convert.ToInt32(stringSize.Width);
                 label.AutoSize = true;
                 this.Controls.Add(label);
-                x = x + Convert.ToInt32(stringSize.Width) + 5;
+                x = x + Convert.ToInt32(stringSize.Width) + 3;
+                index = index + 1;
                 //MessageBox.Show(Convert.ToString(Convert.ToInt32(stringSize.Width)), "My Application", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
@@ -1058,7 +1076,7 @@ namespace WindowsForm.Forms
         /* --- Validation de phrase --- */ 
         private void button2_Click(object sender, EventArgs e)
         {
-            Bdd.InsertPhrase(idAdjP, indexAdjP, idArticle, indexArticle, idPronom, indexPronom, idNom, indexNom, verbeStock.GetId(), indexConjugaison, idAdverbe, idAdjectif, indexAdjectif);
+            Bdd.InsertPhrase(idAdjP, indexAdjP, idArticle, indexArticle, idPronom, idNom, indexNom, verbeStock.GetId(), indexConjugaison, idAdverbe, idAdjectif, indexAdjectif);
         }
 
         private void label3_Click(object sender, EventArgs e)

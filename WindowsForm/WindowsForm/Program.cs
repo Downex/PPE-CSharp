@@ -27,6 +27,9 @@ namespace WindowsForm
             List<Conjugaison> lesConjugaisons;
             lesConjugaisons = new List<Conjugaison>();
 
+            List<Phrase> lesPhrases;
+            lesPhrases = new List<Phrase>();
+
             Authentification authentification = new Authentification(lesUtilisateurs);
 
 
