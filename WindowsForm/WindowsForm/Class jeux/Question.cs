@@ -8,20 +8,35 @@ namespace WindowsForm.Class_jeux
 {
     public class Question
     {
-        public string Id { get; set; }
-        public string Libelle { get; set; }
-        public string Type { get; set; }
+        public String id { get; set; }
+        public String libelle { get; set; }
+        public String type { get; set; }
 
-        public Question(string Id, string Libelle, string Type)
+        public Question(String id, String libelle, String type)
         {
-            this.Id = Id;
-            this.Libelle = Libelle;
-            this.Type = Type;
+            this.id = id;
+            this.libelle = libelle;
+            this.type = type;
         }
 
         public Question()
         {
 
+        }
+
+        public String GetId()
+        {
+            return id;
+        }
+
+        public String GetLibelle()
+        {
+            return libelle;
+        }
+
+        public String GetTypeQuestion()
+        {
+            return type;
         }
     }
 }

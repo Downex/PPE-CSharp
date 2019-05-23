@@ -35,7 +35,7 @@ namespace WindowsForm
                 }
                 else
                 {
-                    //Liste des utilisateurs
+                    //List des utilisateurs
                     List<Utilisateur> listUtilisateur= new List<Utilisateur>(Bdd.SelectAllUser());
 
                     foreach  (Utilisateur utilisateur in listUtilisateur)
@@ -52,6 +52,7 @@ namespace WindowsForm
                             break;
                         }
                     }
+                    
                 }
             }
             else

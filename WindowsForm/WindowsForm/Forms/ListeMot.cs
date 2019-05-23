@@ -24,25 +24,17 @@ namespace WindowsForm
 
         private void ListeMot_Load(object sender, EventArgs e)
         {
-            lesMots = Bdd.SelectAllNoms();
-            foreach (Mot unMot in lesMots)
-            {
-                string[] row = new string[]
-                {
-                    unMot.getTexte(), "Nom"
-                };
-                dataGridView1.Rows.Add(row);
-            }
+            Tab1();
         }
 
         private void Tab1()
         {
             lesMots = Bdd.SelectAllNoms();
-            foreach (Mot unMot in lesMots)
+            foreach (Nom unMot in lesMots)
             {
                 string[] row = new string[]
                 {
-                    unMot.getTexte(), "Nom"
+                    unMot.getTexte(), unMot.GetGenre()
                 };
                 dataGridView1.Rows.Add(row);
             }
@@ -50,11 +42,11 @@ namespace WindowsForm
         private void Tab2()
         {
             lesMots = Bdd.SelectAllPronoms();
-            foreach (Mot unMot in lesMots)
+            foreach (Pronom unMot in lesMots)
             {
                 string[] row = new string[]
                 {
-                    unMot.getTexte(), "Pronom"
+                    unMot.getTexte(), unMot.GetGenre()
                 };
                 dataGridView1.Rows.Add(row);
             }
@@ -62,11 +54,11 @@ namespace WindowsForm
         private void Tab3()
         {
             lesMots = Bdd.SelectAllVerbes();
-            foreach (Mot unMot in lesMots)
+            foreach (Verbe unMot in lesMots)
             {
                 string[] row = new string[]
                 {
-                    unMot.getTexte(), "Verbe"
+                    unMot.getTexte(), unMot.GetGenre()
                 };
                 dataGridView1.Rows.Add(row);
             }
@@ -74,11 +66,11 @@ namespace WindowsForm
         private void Tab4()
         {
             lesMots = Bdd.SelectAllAdjectifs();
-            foreach (Mot unMot in lesMots)
+            foreach (Adjectif unMot in lesMots)
             {
                 string[] row = new string[]
                 {
-                    unMot.getTexte(), "Adjectif"
+                    unMot.getTexte(), unMot.GetFonction()
                 };
                 dataGridView1.Rows.Add(row);
             }
@@ -87,11 +79,11 @@ namespace WindowsForm
         private void Tab5()
         {
             lesMots = Bdd.SelectAllArticles();
-            foreach(Mot unMot in lesMots)
+            foreach(Article unMot in lesMots)
             {
                 string[] row = new string[]
                 {
-                    unMot.getTexte(), "Article"
+                    unMot.getTexte(), unMot.GetPluriel()
                 };
                 dataGridView1.Rows.Add(row);
             }
@@ -99,11 +91,11 @@ namespace WindowsForm
         private void Tab6()
         {
             lesMots = Bdd.SelectAllAdverbes();
-            foreach (Mot unMot in lesMots)
+            foreach (Adverbe unMot in lesMots)
             {
                 string[] row = new string[]
                 {
-                    unMot.getTexte(), "Adverbes"
+                    unMot.getTexte(), "Adverbe"
                 };
                 dataGridView1.Rows.Add(row);
             }

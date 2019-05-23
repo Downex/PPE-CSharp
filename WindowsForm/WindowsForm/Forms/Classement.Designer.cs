@@ -30,10 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.ClassementGridView = new System.Windows.Forms.DataGridView();
-            this.bdMotDataSet = new WindowsForm.BdMotDataSet();
-            this.bdMotDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.utilisateurBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.utilisateurTableAdapter = new WindowsForm.BdMotDataSetTableAdapters.UtilisateurTableAdapter();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.loginDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,10 +38,14 @@
             this.rangDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.scoreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.isAdminDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.utilisateurBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bdMotDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bdMotDataSet = new WindowsForm.BdMotDataSet();
+            this.utilisateurTableAdapter = new WindowsForm.BdMotDataSetTableAdapters.UtilisateurTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.ClassementGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdMotDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdMotDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.utilisateurBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdMotDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdMotDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // ClassementGridView
@@ -71,25 +71,7 @@
             this.ClassementGridView.ReadOnly = true;
             this.ClassementGridView.Size = new System.Drawing.Size(344, 538);
             this.ClassementGridView.TabIndex = 0;
-            // 
-            // bdMotDataSet
-            // 
-            this.bdMotDataSet.DataSetName = "BdMotDataSet";
-            this.bdMotDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // bdMotDataSetBindingSource
-            // 
-            this.bdMotDataSetBindingSource.DataSource = this.bdMotDataSet;
-            this.bdMotDataSetBindingSource.Position = 0;
-            // 
-            // utilisateurBindingSource
-            // 
-            this.utilisateurBindingSource.DataMember = "Utilisateur";
-            this.utilisateurBindingSource.DataSource = this.bdMotDataSetBindingSource;
-            // 
-            // utilisateurTableAdapter
-            // 
-            this.utilisateurTableAdapter.ClearBeforeFill = true;
+            this.ClassementGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ClassementGridView_CellContentClick);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -152,6 +134,25 @@
             this.isAdminDataGridViewTextBoxColumn.ReadOnly = true;
             this.isAdminDataGridViewTextBoxColumn.Visible = false;
             // 
+            // utilisateurBindingSource
+            // 
+            this.utilisateurBindingSource.DataMember = "Utilisateur";
+            this.utilisateurBindingSource.DataSource = this.bdMotDataSetBindingSource;
+            // 
+            // bdMotDataSetBindingSource
+            // 
+            this.bdMotDataSetBindingSource.DataSource = this.bdMotDataSet;
+            this.bdMotDataSetBindingSource.Position = 0;
+            // 
+            // bdMotDataSet
+            // 
+            this.bdMotDataSet.DataSetName = "BdMotDataSet";
+            this.bdMotDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // utilisateurTableAdapter
+            // 
+            this.utilisateurTableAdapter.ClearBeforeFill = true;
+            // 
             // Classement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -162,9 +163,9 @@
             this.Text = "Classement";
             this.Load += new System.EventHandler(this.Classement_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ClassementGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdMotDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdMotDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.utilisateurBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdMotDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdMotDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -56,7 +56,8 @@ namespace WindowsForm
                 if (utilisateur.IsAdmin == "1")
                 {
                     CheckBoxModifAdmin.Checked = true;
-                } else
+                }
+                else
                 {
                     CheckBoxModifAdmin.Checked = false;
                 }
@@ -99,7 +100,7 @@ namespace WindowsForm
                         }
                         else
                         {
-                             isAdmin = "0";
+                            isAdmin = "0";
                         }
                         Bdd.InsertUtilisateur(ajoutLoginTextBox.Text, ajoutPasswordTextBox.Text, ajoutPrenomTextBox.Text, ajoutNomTextBox.Text, isAdmin);
                         Refresh_DataGridView();
@@ -149,11 +150,6 @@ namespace WindowsForm
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
         {
 
         }

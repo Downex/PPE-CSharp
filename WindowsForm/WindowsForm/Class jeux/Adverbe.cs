@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WindowsForm.Class_jeux
 {
-    class Adverbe : Mot
+    public class Adverbe : Mot
     {
         private String id { get; set; }
         private String adverbe { get; set; }
@@ -15,6 +15,11 @@ namespace WindowsForm.Class_jeux
         {
             this.id = id;
             adverbe = texte;
+        }
+
+        public Adverbe()
+        {
+
         }
 
         public String GetId()

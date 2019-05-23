@@ -62,6 +62,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BdMotDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BdMotDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BdMotDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BdMotDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Class gestion\Bdd.cs" />
+    <Compile Include="Class gestion\Utilisateur.cs" />
     <Compile Include="Class jeux\Adjectif.cs" />
     <Compile Include="Class jeux\Adverbe.cs" />
     <Compile Include="Class jeux\Article.cs" />
@@ -167,6 +179,28 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="BdMotDataSet.xsc">
+      <DependentUpon>BdMotDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BdMotDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BdMotDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BdMotDataSet.xss">
+      <DependentUpon>BdMotDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BdMotDataSet1.xsc">
+      <DependentUpon>BdMotDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="BdMotDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BdMotDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BdMotDataSet1.xss">
+      <DependentUpon>BdMotDataSet1.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

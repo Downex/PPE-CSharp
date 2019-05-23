@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WindowsForm.Class_jeux
 {
-    class Article : Mot
+    public class Article : Mot
     {
         public string id { get; set; }
         public string masculin { get; set; }
@@ -19,6 +19,11 @@ namespace WindowsForm.Class_jeux
             masculin = texte;
             this.feminin = feminin;
             this.pluriel = pluriel;
+        }
+
+        public Article()
+        {
+
         }
 
         public String GetId()

@@ -8,15 +8,15 @@ namespace WindowsForm.Class_jeux
 {
     public class Conjugaison
     {
-        public string id { get; set; }
-        public string temps { get; set; }
-        public string premierSing { get; set; }
-        public string deuxiemeSing { get; set; }
-        public string troisiemeSing { get; set; }
-        public string premierPlur { get; set; }
-        public string deuxiemePlur { get; set; }
-        public string troisiemePlur { get; set; }
-        public string idVerbe { get; set; }
+        public String id { get; set; }
+        public String temps { get; set; }
+        public String premierSing { get; set; }
+        public String deuxiemeSing { get; set; }
+        public String troisiemeSing { get; set; }
+        public String premierPlur { get; set; }
+        public String deuxiemePlur { get; set; }
+        public String troisiemePlur { get; set; }
+        public String idVerbe { get; set; }
 
         public Conjugaison(String id, String temps, String premierSing, String deuxiemeSing, String troisiemeSing, String premierPlur, String deuxiemePlur, String troisiemePlur, String idVerbe)
         {
@@ -35,39 +35,49 @@ namespace WindowsForm.Class_jeux
 
         }
 
-        public string GetTemps()
+        public String GetId()
+        {
+            return id;
+        }
+
+        public String GetTemps()
         {
             return temps;
         }
 
-        public string GetPremierSing()
+        public String GetPremierSing()
         {
             return premierSing;
         }
 
-        public string GetDeuxiemeSing()
+        public String GetDeuxiemeSing()
         {
             return deuxiemeSing;
         }
 
-        public string GetTroisiemeSing()
+        public String GetTroisiemeSing()
         {
             return troisiemeSing;
         }
 
-        public string GetPremierPlur()
+        public String GetPremierPlur()
         {
             return premierPlur;
         }
 
-        public string GetDeuxiemePlur()
+        public String GetDeuxiemePlur()
         {
             return deuxiemePlur;
         }
 
-        public string GetTroisiemePlur()
+        public String GetTroisiemePlur()
         {
             return troisiemePlur;
+        }
+
+        public String GetIdverbe()
+        {
+            return idVerbe;
         }
     }
 }

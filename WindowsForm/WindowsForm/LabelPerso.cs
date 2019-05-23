@@ -4,43 +4,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsForm.Class_gestion;
 using WindowsForm.Class_jeux;
+using WindowsForm.Forms;
 
 namespace WindowsForm
 {
-    class LabelPerso : Label
+    public class LabelPerso : Label
     {
-        private String mot;
+        private Mot mot;
 
-        public LabelPerso(String mot)
+        public LabelPerso(Mot mot)
         {
             this.mot = mot;
         }
-        //protected override void OnClick(EventArgs e)
-        //{
-        //    base.OnClick(e);
-        //    if (mot is Nom)
-        //    {
-        //        Nom n = (Nom)mot;
-        //        MessageBox.Show("Nom");
-        //    }
-        //    else if (mot is Adjectif)
-        //    {
-        //        Adjectif adj = (Adjectif)mot;
-        //        MessageBox.Show("Adjectif");
-        //    }
-        //    else if(mot is Pronom)
-        //    {
-        //        MessageBox.Show("Pronom");
-        //    }
-        //    else if(mot is Article)
-        //    {
-        //        MessageBox.Show("Article");
-        //    }
-        //    else if(mot is Verbe)
-        //    {
-        //        MessageBox.Show("Verbe");
-        //    }
-        //}
+
+        public LabelPerso()
+        {
+
+        }
     }
 }

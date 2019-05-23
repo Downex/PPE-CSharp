@@ -111,19 +111,21 @@
             this.motToolStripMenuItem1.Name = "motToolStripMenuItem1";
             this.motToolStripMenuItem1.Size = new System.Drawing.Size(41, 20);
             this.motToolStripMenuItem1.Text = "Mot";
+            this.motToolStripMenuItem1.Visible = false;
             // 
             // listeMotToolStripMenuItem
             // 
             this.listeMotToolStripMenuItem.Name = "listeMotToolStripMenuItem";
-            this.listeMotToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
+            this.listeMotToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.listeMotToolStripMenuItem.Text = "Liste mot";
             this.listeMotToolStripMenuItem.Click += new System.EventHandler(this.listeMotToolStripMenuItem_Click);
             // 
             // ajouterUnePhraseToolStripMenuItem
             // 
             this.ajouterUnePhraseToolStripMenuItem.Name = "ajouterUnePhraseToolStripMenuItem";
-            this.ajouterUnePhraseToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
+            this.ajouterUnePhraseToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.ajouterUnePhraseToolStripMenuItem.Text = "Ajouter une phrase";
+            this.ajouterUnePhraseToolStripMenuItem.Click += new System.EventHandler(this.ajouterUnePhraseToolStripMenuItem_Click);
             // 
             // Accueil
             // 

@@ -460,7 +460,7 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-       // private BdMotDataSetTableAdapters.UtilisateurTableAdapter utilisateurTableAdapter;
+        // private BdMotDataSetTableAdapters.UtilisateurTableAdapter utilisateurTableAdapter;
         private System.Windows.Forms.TextBox ajoutLoginTextBox;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btAjout;
@@ -486,14 +486,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btSupprimer;
         private System.Windows.Forms.Label labelSuppression;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn loginDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn passwordDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn prenomDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nomDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn scoreDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn rangDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn isAdminDataGridViewTextBoxColumn;
         private System.Windows.Forms.Label loginModifLabel;
         private System.Windows.Forms.Label loginSuppLabel;
         private BdMotDataSet bdMotDataSet;

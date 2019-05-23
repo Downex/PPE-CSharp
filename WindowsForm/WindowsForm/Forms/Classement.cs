@@ -26,5 +26,10 @@ namespace WindowsForm
             this.utilisateurs = Bdd.SelectAllUser();
             ClassementGridView.DataSource = utilisateurs;
         }
+
+        private void ClassementGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

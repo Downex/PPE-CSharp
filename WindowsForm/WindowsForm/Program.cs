@@ -21,9 +21,14 @@ namespace WindowsForm
             List<Utilisateur> lesUtilisateurs;
             lesUtilisateurs = new List<Utilisateur>();
 
-            List<Question> lesQuestions;
-            lesQuestions = new List<Question>();
+            List<Mot> lesMots;
+            lesMots = new List<Mot>();
 
+            List<Conjugaison> lesConjugaisons;
+            lesConjugaisons = new List<Conjugaison>();
+
+            List<Phrase> lesPhrases;
+            lesPhrases = new List<Phrase>();
 
             Authentification authentification = new Authentification(lesUtilisateurs);
 
