@@ -48,15 +48,21 @@ namespace WindowsForm
                         Dispose();
                         break;
                     }
+                    labelError();
                     break;
                 }
                 else
                 {
-                    ErrorLabel.Visible = true;
-                    ErrorLabel.Text = "Nom de compte ou mot de passe incorrect";
+                    labelError();
                 }
             }
             MdpTextBox.Clear();
+        }
+
+        private void labelError()
+        {
+            ErrorLabel.Visible = true;
+            ErrorLabel.Text = "Nom de compte ou mot de passe incorrect";
         }
 
         private void Authentification_Load(object sender, EventArgs e)

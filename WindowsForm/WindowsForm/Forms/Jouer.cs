@@ -65,7 +65,6 @@ namespace WindowsForm.Forms
             StartGame();
             score = Convert.ToInt32(utilisateur.Score);
             ScoreLabel.Text = score.ToString();
-
         }
 
         public void StartGame() { 
@@ -779,11 +778,13 @@ namespace WindowsForm.Forms
                             {
                                 MessageBox.Show("Bravo vous avez trouvé le pronom !" + "\n" + "Vous gagnez 1 point !", "Félicitations",
                                     MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                ScoreChange(true);
                             }
                             else
                             {
                                 MessageBox.Show("Dommage ! Ce n'était pas le bon mot." + "\n" + "Vous perdez 1 point !", "Dommage",
                                         MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                ScoreChange(false);
                             }
                         }
                         else if (phraseAP != null && (u.Text == char.ToUpper(phraseAP[0]) + phraseAP.Substring(1)
@@ -793,11 +794,13 @@ namespace WindowsForm.Forms
                             {
                                 MessageBox.Show("Bravo vous avez trouvé l'adjectif possessif !" + "\n" + "Vous gagnez 1 point !", "Félicitations",
                                     MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                ScoreChange(true);
                             }
                             else
                             {
                                 MessageBox.Show("Dommage ! Ce n'était pas le bon mot." + "\n" + "Vous perdez 1 point !", "Dommage",
                                         MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                ScoreChange(false);
                             }
                         }
                         else if (phraseArt != null && (u.Text == char.ToUpper(phraseArt[0]) + phraseArt.Substring(1)
@@ -807,11 +810,13 @@ namespace WindowsForm.Forms
                             {
                                 MessageBox.Show("Bravo vous avez trouvé l'article !" + "\n" + "Vous gagnez 1 point !", "Félicitations",
                                     MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                ScoreChange(true);
                             }
                             else
                             {
                                 MessageBox.Show("Dommage ! Ce n'était pas le bon mot." + "\n" + "Vous perdez 1 point !", "Dommage",
                                         MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                ScoreChange(false);
                             }
                         }
                         else if (phraseN != null && (u.Text == char.ToUpper(phraseN[0]) + phraseN.Substring(1)
@@ -821,11 +826,13 @@ namespace WindowsForm.Forms
                             {
                                 MessageBox.Show("Bravo vous avez trouvé le nom !" + "\n" + "Vous gagnez 1 point !", "Félicitations",
                                     MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                ScoreChange(true);
                             }
                             else
                             {
                                 MessageBox.Show("Dommage ! Ce n'était pas le bon mot." + "\n" + "Vous perdez 1 point !", "Dommage",
                                         MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                ScoreChange(false);
                             }
                         }
                         else if (phraseC != null && (u.Text == char.ToUpper(phraseC[0]) + phraseC.Substring(1)
@@ -835,11 +842,13 @@ namespace WindowsForm.Forms
                             {
                                 MessageBox.Show("Bravo vous avez trouvé le verbe !" + "\n" + "Vous gagnez 1 point !", "Félicitations",
                                     MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                ScoreChange(true);
                             }
                             else
                             {
                                 MessageBox.Show("Dommage ! Ce n'était pas le bon mot." + "\n" + "Vous perdez 1 point !", "Dommage",
                                         MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                ScoreChange(false);
                             }
                         }
                         else if (phraseAdv != null && (u.Text == char.ToUpper(phraseAdv[0]) + phraseAdv.Substring(1)
@@ -849,11 +858,13 @@ namespace WindowsForm.Forms
                             {
                                 MessageBox.Show("Bravo vous avez trouvé l'adverbe !" + "\n" + "Vous gagnez 1 point !", "Félicitations",
                                     MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                ScoreChange(true);
                             }
                             else
                             {
                                 MessageBox.Show("Dommage ! Ce n'était pas le bon mot." + "\n" + "Vous perdez 1 point !", "Dommage",
                                         MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                ScoreChange(false);
                             }
                         }
                         else if (phraseAdj != null && (u.Text == char.ToUpper(phraseAdj[0]) + phraseAdj.Substring(1)
@@ -863,11 +874,14 @@ namespace WindowsForm.Forms
                             {
                                 MessageBox.Show("Bravo vous avez trouvé l'adjectif !" + "\n" + "Vous gagnez 1 point !", "Félicitations",
                                     MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                ScoreChange(true);
                             }
                             else
                             {
                                 MessageBox.Show("Dommage ! Ce n'était pas le bon mot." + "\n" + "Vous perdez 1 point !", "Dommage",
                                         MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                ScoreChange(false);
+
                             }
                         }
                         removeLabels();
@@ -887,48 +901,56 @@ namespace WindowsForm.Forms
                 MessageBox.Show("Bien joué ! La phrase ne contenait pas d'article." + "\n" + "Vous gagnez 1 point !", "Félicitations",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                 removeLabels();
+                ScoreChange(true);
             }
             else if(typeQuestion == "adjectif possessif" && phraseAP == null)
             {
                 MessageBox.Show("Bien joué ! La phrase ne contenait pas d'adjectif possessif." + "\n" + "Vous gagnez 1 point !", "Félicitations",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                 removeLabels();
+                ScoreChange(true);
             }
             else if(typeQuestion == "pronom" && phraseP == null)
             {
                 MessageBox.Show("Bien joué ! La phrase ne contenait pas de pronom." + "\n" + "Vous gagnez 1 point !", "Félicitations",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                 removeLabels();
+                ScoreChange(true);
             }
             else if(typeQuestion == "nom" && phraseN == null)
             {
                 MessageBox.Show("Bien joué ! La phrase ne contenait pas de nom." + "\n" + "Vous gagnez 1 point !", "Félicitations",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                 removeLabels();
+                ScoreChange(true);
             }
             else if(typeQuestion == "verbe" && phraseC == null)
             {
                 MessageBox.Show("Bien joué ! La phrase ne contenait pas de verbe." + "\n" + "Vous gagnez 1 point !", "Félicitations",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                 removeLabels();
+                ScoreChange(true);
             }
             else if(typeQuestion == "adjectif" && phraseAdj == null)
             {
                 MessageBox.Show("Bien joué ! La phrase ne contenait pas d'adjectif." + "\n" + "Vous gagnez 1 point !", "Félicitations",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                 removeLabels();
+                ScoreChange(true);
             }
             else if(typeQuestion == "adverbe" && phraseAdv == null)
             {
                 MessageBox.Show("Bien joué ! La phrase ne contenait pas d'adverbe." + "\n" + "Vous gagnez 1 point !", "Félicitations",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                 removeLabels();
+                ScoreChange(true);
             }
             else
             {
                 MessageBox.Show("Dommage ! Le mot était bien dans la phrase." + "\n" + "Vous perdez 1 point !", "Dommage",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                 removeLabels();
+                ScoreChange(false);
             }
         }
 
@@ -941,6 +963,28 @@ namespace WindowsForm.Forms
             }
             lesLabels.Clear();
             StartGame();
+        }
+
+        private void ScoreChange(bool isWin)
+        {
+            int score = Convert.ToInt32(utilisateur.Score);
+            if (isWin == true)
+            {
+                score += 1;
+                utilisateur.Score = score.ToString();
+                Bdd.UpdateScore(utilisateur.Id, score.ToString());
+                ScoreLabel.Text = score.ToString();
+            }
+            else
+            {
+                if (score != 0)
+                {
+                    score -= 1;
+                    utilisateur.Score = score.ToString();
+                    Bdd.UpdateScore(utilisateur.Id, score.ToString());
+                    ScoreLabel.Text = score.ToString();
+                }
+            }
         }
     }
 }

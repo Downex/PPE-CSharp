@@ -74,10 +74,6 @@ namespace WindowsForm.Forms
                         if (verbeStock.GetGenre() == "Etat")
                         {
                             Adjectif(femMasc, pluriel);
-                            //MessageBox.Show(adj.GetSingMasculin() + " " +
-                            //    nomStock + " " +
-                            //    conjugaisonStock + " " +
-                            //    adjStock);
 
                             LabelPerso labelAdjP = new LabelPerso();
                             labelAdjP.Text = adj.GetSingMasculin();
@@ -100,10 +96,6 @@ namespace WindowsForm.Forms
                         else if (verbeStock.GetGenre() == "Action" || verbeStock.GetGenre() == "Mouvement")
                         {
                             Adverbe();
-                            //MessageBox.Show(adj.GetSingMasculin() + " " +
-                            //    nomStock + " " +
-                            //    conjugaisonStock + " " +
-                            //    advStock);
 
                             LabelPerso labelAdjP = new LabelPerso();
                             labelAdjP.Text = adj.GetSingMasculin();
@@ -139,10 +131,6 @@ namespace WindowsForm.Forms
                         if (verbeStock.GetGenre() == "Etat")
                         {
                             Adjectif(femMasc, pluriel);
-                            //MessageBox.Show(adj.GetSingFeminin() + " " +
-                            //    nomStock + " " +
-                            //    conjugaisonStock + " " +
-                            //    adjStock);
 
                             LabelPerso labelAdjP = new LabelPerso();
                             labelAdjP.Text = adj.GetSingFeminin();
@@ -330,8 +318,6 @@ namespace WindowsForm.Forms
                     int indexArt = random.Next(lesMots.Count);
                     Article article = (Article)lesMots[indexArt];
                     idArticle = article.GetId();
-                    MessageBox.Show(article.GetId() + " " + article.GetMasculin() + " " +
-                        article.GetFeminin() + " " + article.GetPluriel());
                     int genreArt = random.Next(0, 2);
                     string plurArt = random.Next(0, 2).ToString();
                     if (plurArt == "0")
@@ -342,10 +328,20 @@ namespace WindowsForm.Forms
                             Nom(plurArt, "Masculin");
                             Verbe("il");
 
-                            LabelPerso labelArt = new LabelPerso();
-                            MessageBox.Show(article.GetMasculin());
-                            labelArt.Text = article.GetMasculin();
-                            lesLabels.Add(labelArt);
+                            if (idArticle == "2" && (nomStock[0].ToString() == "a" || nomStock[0].ToString() == "h"
+                                || nomStock[0].ToString() == "e" || nomStock[0].ToString() == "o"
+                                || nomStock[0].ToString() == "u" || nomStock[0].ToString() == "i"))
+                            {
+                                LabelPerso labelArt = new LabelPerso();
+                                labelArt.Text = "l'";
+                                lesLabels.Add(labelArt);
+                            } else
+                            {
+                                LabelPerso labelArt = new LabelPerso();
+                                labelArt.Text = article.GetMasculin();
+                                lesLabels.Add(labelArt);
+                            }
+
 
                             LabelPerso labelN = new LabelPerso();
                             labelN.Text = nomStock;
@@ -394,10 +390,20 @@ namespace WindowsForm.Forms
                             Nom(plurArt, "Feminin");
                             Verbe("elle");
 
-                            LabelPerso labelArt = new LabelPerso();
-                            MessageBox.Show(article.GetFeminin());
-                            labelArt.Text = article.GetFeminin();
-                            lesLabels.Add(labelArt);
+                            if (idArticle == "2" && (nomStock[0].ToString() == "a" || nomStock[0].ToString() == "h"
+                               || nomStock[0].ToString() == "e" || nomStock[0].ToString() == "o"
+                               || nomStock[0].ToString() == "u" || nomStock[0].ToString() == "i"))
+                            {
+                                LabelPerso labelArt = new LabelPerso();
+                                labelArt.Text = "l'";
+                                lesLabels.Add(labelArt);
+                            }
+                            else
+                            {
+                                LabelPerso labelArt = new LabelPerso();
+                                labelArt.Text = article.GetFeminin();
+                                lesLabels.Add(labelArt);
+                            }
 
                             LabelPerso labelN = new LabelPerso();
                             labelN.Text = nomStock;
@@ -454,7 +460,6 @@ namespace WindowsForm.Forms
                             Verbe("ils");
 
                             LabelPerso labelArt = new LabelPerso();
-                            MessageBox.Show(article.GetPluriel());
                             labelArt.Text = article.GetPluriel();
                             lesLabels.Add(labelArt);
 
@@ -471,7 +476,6 @@ namespace WindowsForm.Forms
                                 Adjectif("Masculin", "1");
 
                                 LabelPerso labelA = new LabelPerso();
-                                MessageBox.Show(adjStock);
                                 labelA.Text = adjStock;
                                 lesLabels.Add(labelA);
 
@@ -1068,7 +1072,6 @@ namespace WindowsForm.Forms
                 this.Controls.Add(label);
                 x = x + Convert.ToInt32(stringSize.Width) + 3;
                 index = index + 1;
-                //MessageBox.Show(Convert.ToString(Convert.ToInt32(stringSize.Width)), "My Application", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 

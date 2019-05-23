@@ -39,6 +39,7 @@ namespace WindowsForm
             if (unUtilisateur.IsAdmin == "1")
             {
                 ajoutDutilisateurToolStripMenuItem.Visible = true;
+                motToolStripMenuItem1.Visible = true;
             }
         }
 
