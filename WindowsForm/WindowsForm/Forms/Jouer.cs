@@ -34,7 +34,8 @@ namespace WindowsForm.Forms
         private List<Phrase> lesPhrases;
         private List<LabelPerso> lesLabels;
         private List<Mot> lesMots;
-        Utilisateur utilisateur;
+        private Utilisateur utilisateur;
+        private int score;
 
         public Jouer(Utilisateur utilisateur)
         {
@@ -62,7 +63,9 @@ namespace WindowsForm.Forms
         private void Jouer_Load(object sender, EventArgs e)
         {
             StartGame();
-            ScoreLabel.Text = utilisateur.Score;
+            score = Convert.ToInt32(utilisateur.Score);
+            ScoreLabel.Text = score.ToString();
+
         }
 
         public void StartGame() { 
@@ -754,8 +757,124 @@ namespace WindowsForm.Forms
                     }
                 }
             }
+            LabelGame();
         }
-        
+
+        private void LabelGame()
+        {
+            var lesLabels = this.Controls.OfType<LabelPerso>().ToList();
+
+            foreach (LabelPerso u in lesLabels)
+            {
+                if (u.Text.Length <= 15)
+                {
+                    this.Controls.Add(u);
+
+                    u.Click += (sender, args) =>
+                    {
+                        if (phraseP != null && (u.Text == char.ToUpper(phraseP[0]) + phraseP.Substring(1)
+                        || u.Text == phraseP || u.Text == phraseP + "."))
+                        {
+                            if (typeQuestion == "pronom")
+                            {
+                                MessageBox.Show("Bravo vous avez trouvé le pronom !" + "\n" + "Vous gagnez 1 point !", "Félicitations",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            else
+                            {
+                                MessageBox.Show("Dommage ! Ce n'était pas le bon mot." + "\n" + "Vous perdez 1 point !", "Dommage",
+                                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                        else if (phraseAP != null && (u.Text == char.ToUpper(phraseAP[0]) + phraseAP.Substring(1)
+                            || u.Text == phraseAP || u.Text == phraseAP + "."))
+                        {
+                            if (typeQuestion == "adjectif possessif")
+                            {
+                                MessageBox.Show("Bravo vous avez trouvé l'adjectif possessif !" + "\n" + "Vous gagnez 1 point !", "Félicitations",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            else
+                            {
+                                MessageBox.Show("Dommage ! Ce n'était pas le bon mot." + "\n" + "Vous perdez 1 point !", "Dommage",
+                                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                        else if (phraseArt != null && (u.Text == char.ToUpper(phraseArt[0]) + phraseArt.Substring(1)
+                            || u.Text == phraseArt || u.Text == phraseArt + "."))
+                        {
+                            if (typeQuestion == "article")
+                            {
+                                MessageBox.Show("Bravo vous avez trouvé l'article !" + "\n" + "Vous gagnez 1 point !", "Félicitations",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            else
+                            {
+                                MessageBox.Show("Dommage ! Ce n'était pas le bon mot." + "\n" + "Vous perdez 1 point !", "Dommage",
+                                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                        else if (phraseN != null && (u.Text == char.ToUpper(phraseN[0]) + phraseN.Substring(1)
+                            || u.Text == phraseN || u.Text == phraseN + "."))
+                        {
+                            if (typeQuestion == "nom")
+                            {
+                                MessageBox.Show("Bravo vous avez trouvé le nom !" + "\n" + "Vous gagnez 1 point !", "Félicitations",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            else
+                            {
+                                MessageBox.Show("Dommage ! Ce n'était pas le bon mot." + "\n" + "Vous perdez 1 point !", "Dommage",
+                                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                        else if (phraseC != null && (u.Text == char.ToUpper(phraseC[0]) + phraseC.Substring(1)
+                            || u.Text == phraseC || u.Text == phraseC + "."))
+                        {
+                            if (typeQuestion == "verbe")
+                            {
+                                MessageBox.Show("Bravo vous avez trouvé le verbe !" + "\n" + "Vous gagnez 1 point !", "Félicitations",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            else
+                            {
+                                MessageBox.Show("Dommage ! Ce n'était pas le bon mot." + "\n" + "Vous perdez 1 point !", "Dommage",
+                                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                        else if (phraseAdv != null && (u.Text == char.ToUpper(phraseAdv[0]) + phraseAdv.Substring(1)
+                            || u.Text == phraseAdv || u.Text == phraseAdv + "."))
+                        {
+                            if (typeQuestion == "adverbe")
+                            {
+                                MessageBox.Show("Bravo vous avez trouvé l'adverbe !" + "\n" + "Vous gagnez 1 point !", "Félicitations",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            else
+                            {
+                                MessageBox.Show("Dommage ! Ce n'était pas le bon mot." + "\n" + "Vous perdez 1 point !", "Dommage",
+                                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                        else if (phraseAdj != null && (u.Text == char.ToUpper(phraseAdj[0]) + phraseAdj.Substring(1)
+                            || u.Text == phraseAdj || u.Text == phraseAdj + "."))
+                        {
+                            if (typeQuestion == "adjectif")
+                            {
+                                MessageBox.Show("Bravo vous avez trouvé l'adjectif !" + "\n" + "Vous gagnez 1 point !", "Félicitations",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            else
+                            {
+                                MessageBox.Show("Dommage ! Ce n'était pas le bon mot." + "\n" + "Vous perdez 1 point !", "Dommage",
+                                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                        removeLabels();
+                    };
+                }
+            }
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();

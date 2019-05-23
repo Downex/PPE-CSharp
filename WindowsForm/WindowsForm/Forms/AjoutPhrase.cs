@@ -1083,5 +1083,10 @@ namespace WindowsForm.Forms
         {
 
         }
+
+        private void AjoutPhrase_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

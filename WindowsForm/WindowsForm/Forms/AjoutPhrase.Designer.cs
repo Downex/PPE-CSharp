@@ -37,9 +37,10 @@
             this.button1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(116, 337);
+            this.button1.Location = new System.Drawing.Point(87, 274);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(239, 61);
+            this.button1.Size = new System.Drawing.Size(179, 50);
             this.button1.TabIndex = 0;
             this.button1.Text = "Générer une phrase";
             this.button1.UseVisualStyleBackColor = false;
@@ -49,9 +50,10 @@
             // 
             this.button2.BackColor = System.Drawing.Color.YellowGreen;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(480, 337);
+            this.button2.Location = new System.Drawing.Point(360, 274);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(234, 61);
+            this.button2.Size = new System.Drawing.Size(176, 50);
             this.button2.TabIndex = 1;
             this.button2.Text = "Valider";
             this.button2.UseVisualStyleBackColor = false;
@@ -59,13 +61,15 @@
             // 
             // AjoutPhrase
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "AjoutPhrase";
             this.Text = "Ajouter une phrase";
+            this.Load += new System.EventHandler(this.AjoutPhrase_Load);
             this.ResumeLayout(false);
 
         }

@@ -37,24 +37,6 @@ namespace WindowsForm
 
         private void BtConnexion_Click(object sender, EventArgs e)
         {
-            /*Utilisateur Downex = new Utilisateur("Downex", Utilisateur.Hash256("123"), "Cahier", "François", "Novice", "14", true);
-            lesUtilisateurs.Add(Downex);
-
-            foreach (Utilisateur unUtilisateur in lesUtilisateurs)
-            {
-                if (LoginTextBox.Text == unUtilisateur.Login && Utilisateur.Hash256(MdpTextBox.Text) == unUtilisateur.Password)
-                {
-                    Utilisateur = unUtilisateur;
-                    Dispose();
-                }
-                else
-                {
-                    ErrorLabel.Visible = true;
-                    ErrorLabel.Text = "Nom de compte ou mot de passe incorrect";
-                    MdpTextBox.Clear();
-                }
-            }*/
-
             List<Utilisateur> listUtilisateur = new List<Utilisateur>(Bdd.SelectAllUser());
             foreach (Utilisateur utilisateur in listUtilisateur)
             {
