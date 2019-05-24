@@ -26,15 +26,18 @@ namespace WindowsForm
             PseudoLabel.Text = utilisateur.Login;
             PrenomLabel.Text = utilisateur.Prenom;
             NomLabel.Text = utilisateur.Nom;
-            ScoreLabel.Text = utilisateur.Score;
+            ScoreLabel.Text = utilisateur.Score + " Points";
             RangLabel.Text = utilisateur.Rang;
+            WelcomeLabel.Text += utilisateur.Login;
 
         }
 
         //Affiche le formulaire de modification du mot de passe sinon le cache
         private void BtModif_Click(object sender, EventArgs e)
         {
-            AffichageFormulaire();
+            panel1.Visible = true;
+            BtModif.Visible = false;
+            ClearTextBox();
         }
 
         private void BtValider_Click(object sender, EventArgs e)
@@ -51,7 +54,9 @@ namespace WindowsForm
                     {
                         Bdd.UpdateMotdePasse(utilisateur.Id, Utilisateur.Hash256(MdpTextBox.Text));
                         MessageBox.Show("Mot de passe modifié", "Modification", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                        AffichageFormulaire();
+                        panel1.Visible = false;
+                        BtModif.Visible = true;
+                        ClearTextBox();
                     }
                     else if (MdpTextBox.Text != CMdpTextBox.Text)
                     {
@@ -70,42 +75,23 @@ namespace WindowsForm
             }
         }
 
-        /// <summary>
-        /// Permet d'afficher ou de cacher le formulaire de modification du mot de passe
-        /// </summary>
-        private void AffichageFormulaire()
+        private void label5_Click(object sender, EventArgs e)
         {
-            try
-            {
-                if (label1.Visible == false)
-                {
-                    label1.Visible = true;
-                    label2.Visible = true;
-                    label3.Visible = true;
-                    AncienMdpTextBox.Visible = true;
-                    MdpTextBox.Visible = true;
-                    CMdpTextBox.Visible = true;
-                    BtValider.Visible = true;
-                }
-                else
-                {
-                    label1.Visible = false;
-                    label2.Visible = false;
-                    label3.Visible = false;
-                    AncienMdpTextBox.Visible = false;
-                    MdpTextBox.Visible = false;
-                    CMdpTextBox.Visible = false;
-                    MdpTextBox.Clear();
-                    AncienMdpTextBox.Clear();
-                    CMdpTextBox.Clear();
-                    BtValider.Visible = false;
-                }
-            }
-            catch (Exception)
-            {
-                throw;
-            }
+            this.Close();
         }
 
+        private void CloseLabel_Click(object sender, EventArgs e)
+        {
+            panel1.Visible = false;
+            BtModif.Visible = true;
+            ClearTextBox();
+        }
+
+        private void ClearTextBox()
+        {
+            AncienMdpTextBox.Clear();
+            CMdpTextBox.Clear();
+            MdpTextBox.Clear();
+        }
     }
 }

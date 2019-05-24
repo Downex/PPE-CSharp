@@ -42,6 +42,7 @@
             this.bdMotDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bdMotDataSet = new WindowsForm.BdMotDataSet();
             this.utilisateurTableAdapter = new WindowsForm.BdMotDataSetTableAdapters.UtilisateurTableAdapter();
+            this.CloseLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ClassementGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.utilisateurBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdMotDataSetBindingSource)).BeginInit();
@@ -54,6 +55,7 @@
             this.ClassementGridView.AllowUserToDeleteRows = false;
             this.ClassementGridView.AllowUserToOrderColumns = true;
             this.ClassementGridView.AutoGenerateColumns = false;
+            this.ClassementGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.ClassementGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ClassementGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
@@ -67,9 +69,10 @@
             this.ClassementGridView.DataSource = this.utilisateurBindingSource;
             this.ClassementGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ClassementGridView.Location = new System.Drawing.Point(0, 0);
+            this.ClassementGridView.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ClassementGridView.Name = "ClassementGridView";
             this.ClassementGridView.ReadOnly = true;
-            this.ClassementGridView.Size = new System.Drawing.Size(344, 538);
+            this.ClassementGridView.Size = new System.Drawing.Size(401, 662);
             this.ClassementGridView.TabIndex = 0;
             this.ClassementGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ClassementGridView_CellContentClick);
             // 
@@ -153,12 +156,29 @@
             // 
             this.utilisateurTableAdapter.ClearBeforeFill = true;
             // 
+            // CloseLabel
+            // 
+            this.CloseLabel.AutoSize = true;
+            this.CloseLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.CloseLabel.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CloseLabel.ForeColor = System.Drawing.Color.Violet;
+            this.CloseLabel.Location = new System.Drawing.Point(361, 9);
+            this.CloseLabel.Name = "CloseLabel";
+            this.CloseLabel.Size = new System.Drawing.Size(28, 28);
+            this.CloseLabel.TabIndex = 22;
+            this.CloseLabel.Text = "X";
+            this.CloseLabel.Click += new System.EventHandler(this.CloseLabel_Click_1);
+            // 
             // Classement
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(344, 538);
+            this.ClientSize = new System.Drawing.Size(401, 662);
+            this.Controls.Add(this.CloseLabel);
             this.Controls.Add(this.ClassementGridView);
+            this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Classement";
             this.Text = "Classement";
             this.Load += new System.EventHandler(this.Classement_Load);
@@ -167,6 +187,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bdMotDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdMotDataSet)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -185,5 +206,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn rangDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn scoreDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn isAdminDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label CloseLabel;
     }
 }

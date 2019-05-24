@@ -52,7 +52,6 @@ namespace WindowsForm
                             break;
                         }
                     }
-                    
                 }
             }
             else
@@ -64,6 +63,11 @@ namespace WindowsForm
         private void Inscription_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void CloseLabel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
