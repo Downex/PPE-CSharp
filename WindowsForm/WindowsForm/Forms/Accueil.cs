@@ -14,7 +14,6 @@ namespace WindowsForm
 {
     public partial class Accueil : Form
     {
-        //private List<Mot> lesMots;
 
         Utilisateur unUtilisateur;
         public Accueil(Utilisateur unUtilisateur)
@@ -36,46 +35,65 @@ namespace WindowsForm
 
         private void Accueil_Load(object sender, EventArgs e)
         {
+            WelcomeLabel.Text += unUtilisateur.Login + " !";
+            BtConnexion.Text = unUtilisateur.Login;
             if (unUtilisateur.IsAdmin == "1")
             {
-                ajoutDutilisateurToolStripMenuItem.Visible = true;
-                motToolStripMenuItem1.Visible = true;
+                panelAdmin.Visible = true;
             }
         }
 
-        private void InformationPersonnel_Click(object sender, EventArgs e)
+        private void CloseLabel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            panelAdmin.Visible = false;
+            labelAdmin.Visible = true;
+        }
+
+        private void BtLogin_Click(object sender, EventArgs e)
         {
             Information information = new Information(unUtilisateur);
             information.Show();
         }
 
-        private void listeDesUtilisateursToolStripMenuItem_Click(object sender, EventArgs e)
+        private void btJouer_Click(object sender, EventArgs e)
         {
-
+            Jouer jouer = new Jouer(unUtilisateur);
+            jouer.ShowDialog();
         }
 
-        private void classementToolStripMenuItem_Click(object sender, EventArgs e)
+        private void btClassement_Click(object sender, EventArgs e)
         {
             Classement classement = new Classement();
             classement.Show();
         }
 
-        private void ajoutDutilisateurToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            AjoutUtilisateur ajoutUtilisateur = new AjoutUtilisateur();
-            ajoutUtilisateur.ShowDialog();
-        }
-
-        private void listeMotToolStripMenuItem_Click(object sender, EventArgs e)
+        private void btAjoutMot_Click(object sender, EventArgs e)
         {
             ListeMot listeMot = new ListeMot();
             listeMot.ShowDialog();
         }
 
-        private void ajouterUnePhraseToolStripMenuItem_Click(object sender, EventArgs e)
+        private void btPhraseGen_Click(object sender, EventArgs e)
         {
             AjoutPhrase ajoutPhrase = new AjoutPhrase();
             ajoutPhrase.ShowDialog();
+        }
+
+        private void btGestionUser_Click(object sender, EventArgs e)
+        {
+            AjoutUtilisateur ajoutUtilisateur = new AjoutUtilisateur();
+            ajoutUtilisateur.ShowDialog();
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+            panelAdmin.Visible = true;
+            labelAdmin.Visible = false;
         }
     }
 }

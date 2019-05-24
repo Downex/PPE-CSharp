@@ -1091,5 +1091,10 @@ namespace WindowsForm.Forms
         {
 
         }
+
+        private void CloseLabel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

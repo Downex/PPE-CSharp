@@ -153,5 +153,15 @@ namespace WindowsForm
         {
 
         }
+
+        private void loginModifLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CloseLabel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
