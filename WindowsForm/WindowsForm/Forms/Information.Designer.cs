@@ -89,7 +89,7 @@
             this.CMdpTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.CMdpTextBox.ForeColor = System.Drawing.Color.White;
             this.CMdpTextBox.Location = new System.Drawing.Point(43, 180);
-            this.CMdpTextBox.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.CMdpTextBox.Margin = new System.Windows.Forms.Padding(5);
             this.CMdpTextBox.Name = "CMdpTextBox";
             this.CMdpTextBox.PasswordChar = '•';
             this.CMdpTextBox.Size = new System.Drawing.Size(339, 20);
@@ -123,7 +123,7 @@
             this.MdpTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.MdpTextBox.ForeColor = System.Drawing.Color.White;
             this.MdpTextBox.Location = new System.Drawing.Point(43, 129);
-            this.MdpTextBox.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.MdpTextBox.Margin = new System.Windows.Forms.Padding(5);
             this.MdpTextBox.Name = "MdpTextBox";
             this.MdpTextBox.PasswordChar = '•';
             this.MdpTextBox.Size = new System.Drawing.Size(339, 20);
@@ -136,7 +136,7 @@
             this.BtModif.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtModif.ForeColor = System.Drawing.Color.White;
             this.BtModif.Location = new System.Drawing.Point(33, 155);
-            this.BtModif.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.BtModif.Margin = new System.Windows.Forms.Padding(5);
             this.BtModif.Name = "BtModif";
             this.BtModif.Size = new System.Drawing.Size(215, 37);
             this.BtModif.TabIndex = 1;
@@ -161,7 +161,7 @@
             this.AncienMdpTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.AncienMdpTextBox.ForeColor = System.Drawing.Color.White;
             this.AncienMdpTextBox.Location = new System.Drawing.Point(47, 78);
-            this.AncienMdpTextBox.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.AncienMdpTextBox.Margin = new System.Windows.Forms.Padding(5);
             this.AncienMdpTextBox.Name = "AncienMdpTextBox";
             this.AncienMdpTextBox.PasswordChar = '•';
             this.AncienMdpTextBox.Size = new System.Drawing.Size(339, 20);
@@ -174,7 +174,7 @@
             this.BtValider.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtValider.ForeColor = System.Drawing.Color.White;
             this.BtValider.Location = new System.Drawing.Point(99, 210);
-            this.BtValider.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.BtValider.Margin = new System.Windows.Forms.Padding(5);
             this.BtValider.Name = "BtValider";
             this.BtValider.Size = new System.Drawing.Size(215, 37);
             this.BtValider.TabIndex = 5;
@@ -285,7 +285,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(45)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(653, 460);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -300,7 +300,7 @@
             this.Controls.Add(this.PseudoLabel);
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "Information";
             this.Text = "Information";
             this.Load += new System.EventHandler(this.Information_Load);

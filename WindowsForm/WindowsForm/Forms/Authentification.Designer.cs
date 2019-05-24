@@ -135,6 +135,7 @@
             // CloseLabel
             // 
             this.CloseLabel.AutoSize = true;
+            this.CloseLabel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CloseLabel.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CloseLabel.ForeColor = System.Drawing.Color.Violet;
             this.CloseLabel.Location = new System.Drawing.Point(320, 9);

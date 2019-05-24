@@ -55,7 +55,7 @@
             this.ClassementGridView.AllowUserToDeleteRows = false;
             this.ClassementGridView.AllowUserToOrderColumns = true;
             this.ClassementGridView.AutoGenerateColumns = false;
-            this.ClassementGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.ClassementGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(45)))), ((int)(((byte)(51)))));
             this.ClassementGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ClassementGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,

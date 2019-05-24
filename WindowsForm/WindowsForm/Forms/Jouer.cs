@@ -67,7 +67,8 @@ namespace WindowsForm.Forms
             ScoreLabel.Text = score.ToString();
         }
 
-        public void StartGame() { 
+        public void StartGame()
+        {
             var random = new Random();
             //Affiche une question aléatoire
             int numberOfQuestions = Bdd.SelectAllQuestion().Count;
@@ -108,11 +109,11 @@ namespace WindowsForm.Forms
             lesPhrases = Bdd.SelectAllPhrases();
             int indexPhrase = random.Next(lesPhrases.Count);
             Phrase phrase = (Phrase)lesPhrases[indexPhrase];
-            if(phrase.GetIdAdjectifPossessif().ToString().Length != 0)
+            if (phrase.GetIdAdjectifPossessif().ToString().Length != 0)
             {
                 phraseIdAP = phrase.GetIdAdjectifPossessif();
                 Adjectif adj = Bdd.SelectAdjectifById(phrase.GetIdAdjectifPossessif().ToString());
-                if(phrase.GetAdjectifPossessif().ToString() == "1")
+                if (phrase.GetAdjectifPossessif().ToString() == "1")
                 {
                     phraseAP = adj.GetSingMasculin();
                     LabelPerso labelAP = new LabelPerso();
@@ -146,6 +147,9 @@ namespace WindowsForm.Forms
             {
                 Article article = Bdd.SelectArticleById(phrase.GetIdArticle().ToString());
                 phraseIdArt = article.GetId();
+
+                Nom nom = Bdd.SelectNomById(phrase.GetIdNom().ToString());
+                phraseIdN = nom.GetId();
                 if (phrase.GetArticle().ToString() == "1")
                 {
                     phraseArt = article.GetMasculin();
@@ -160,7 +164,7 @@ namespace WindowsForm.Forms
                     labelArt.Text = article.GetFeminin();
                     lesLabels.Add(labelArt);
                 }
-                else if(phrase.GetArticle().ToString() == "3")
+                else if (phrase.GetArticle().ToString() == "3")
                 {
                     phraseArt = article.GetPluriel();
                     LabelPerso labelArt = new LabelPerso();
@@ -169,14 +173,14 @@ namespace WindowsForm.Forms
                 }
             }
 
-            if(phrase.GetIdPronom().ToString().Length != 0)
+            if (phrase.GetIdPronom().ToString().Length != 0)
             {
                 Pronom pronom = Bdd.SelectPronomById(phrase.GetIdPronom().ToString());
                 phraseIdP = pronom.GetId();
                 phraseP = pronom.getTexte();
                 LabelPerso labelP = new LabelPerso();
                 labelP.Text = pronom.getTexte();
-                lesLabels.Add(labelP);                
+                lesLabels.Add(labelP);
             }
 
             if (phrase.GetIdNom().ToString().Length != 0)
@@ -190,7 +194,7 @@ namespace WindowsForm.Forms
                     labelN.Text = nom.GetSingulier();
                     lesLabels.Add(labelN);
                 }
-                else if(phrase.GetNom().ToString() == "2")
+                else if (phrase.GetNom().ToString() == "2")
                 {
                     phraseN = nom.GetPluriel();
                     LabelPerso labelN = new LabelPerso();
@@ -200,7 +204,7 @@ namespace WindowsForm.Forms
             }
 
             Conjugaison conjugaison = (Conjugaison)Bdd.SelectConjugaisonById(phrase.GetIdVerbe().ToString());
-            if(phrase.GetConjugaison().ToString() == "1")
+            if (phrase.GetConjugaison().ToString() == "1")
             {
                 phraseIdV = conjugaison.GetIdverbe();
                 phraseC = conjugaison.GetPremierSing();
@@ -208,7 +212,7 @@ namespace WindowsForm.Forms
                 labelV.Text = conjugaison.premierSing;
                 lesLabels.Add(labelV);
             }
-            else if(phrase.GetConjugaison().ToString() == "2")
+            else if (phrase.GetConjugaison().ToString() == "2")
             {
                 phraseIdV = conjugaison.GetIdverbe();
                 phraseC = conjugaison.GetDeuxiemeSing();
@@ -254,7 +258,7 @@ namespace WindowsForm.Forms
                 MessageBox.Show("Une erreur est survenue lors de la récupération de la phrase");
             }
 
-            if(phrase.GetIdAdjectif().ToString().Length != 0)
+            if (phrase.GetIdAdjectif().ToString().Length != 0)
             {
                 phraseIdAdj = phrase.GetIdAdjectif();
                 Adjectif adj = Bdd.SelectAdjectifById(phrase.GetIdAdjectif().ToString());
@@ -289,7 +293,7 @@ namespace WindowsForm.Forms
                     lesLabels.Add(labelA);
                 }
             }
-            if(phrase.GetIdAdverbe().ToString().Length != 0)
+            if (phrase.GetIdAdverbe().ToString().Length != 0)
             {
                 Adverbe adverbe = Bdd.SelectAdverbeById(phrase.GetIdAdverbe().ToString());
                 phraseIdAdv = adverbe.GetId();
@@ -298,7 +302,7 @@ namespace WindowsForm.Forms
                 labelAdv.Text = adverbe.getTexte();
                 lesLabels.Add(labelAdv);
             }
-            
+
             AfficheLabel();
         }
 
@@ -444,27 +448,51 @@ namespace WindowsForm.Forms
                         }
                     }
                 }
-                else if(unLabel.Text == phraseArt)
+                else if (unLabel.Text == phraseArt)
                 {
                     Article art = Bdd.SelectArticleById(phraseIdArt);
                     Article article = new Article(art.GetId(), art.GetMasculin(), art.GetFeminin(), art.GetPluriel());
                     lesMots.Add(article);
                     int i = lesMots.IndexOf(article);
                     Article articlePhrase = (Article)lesMots[i];
+
+                    List<LabelPerso> myList = lesLabels;
+                    string nom = myList.Single(s => s.Text == phraseN).Text;
+
                     if (typeQuestion == "article")
                     {
                         LabelPerso label = new LabelPerso(articlePhrase);
-                        if (index == 0)
+
+                        if (nom[0].ToString() == "a" || nom[0].ToString() == "e" || nom[0].ToString() == "h"
+                            || nom[0].ToString() == "o" || nom[0].ToString() == "u" || nom[0].ToString() == "i")
                         {
-                            label.Text = char.ToUpper(unLabel.Text[0]) + unLabel.Text.Substring(1);
-                        }
-                        else if (index == lesLabels.Count - 1)
-                        {
-                            label.Text = unLabel.Text + ".";
+                            if (index == 0)
+                            {
+                                label.Text = "L'";
+                            }
+                            else if (index == lesLabels.Count - 1)
+                            {
+                                label.Text = unLabel.Text + ".";
+                            }
+                            else
+                            {
+                                label.Text = unLabel.Text;
+                            }
                         }
                         else
                         {
-                            label.Text = unLabel.Text;
+                            if (index == 0)
+                            {
+                                label.Text = char.ToUpper(unLabel.Text[0]) + unLabel.Text.Substring(1);
+                            }
+                            else if (index == lesLabels.Count - 1)
+                            {
+                                label.Text = unLabel.Text + ".";
+                            }
+                            else
+                            {
+                                label.Text = unLabel.Text;
+                            }
                         }
                         label.Font = new Font("Arial", 24);
                         label.Top = 150;
@@ -475,25 +503,53 @@ namespace WindowsForm.Forms
                         label.Width = Convert.ToInt32(stringSize.Width);
                         label.AutoSize = true;
                         this.Controls.Add(label);
-                        x = x + Convert.ToInt32(stringSize.Width) + 3;
+
+                        if (nom[0].ToString() == "a" || nom[0].ToString() == "e" || nom[0].ToString() == "h"
+                            || nom[0].ToString() == "o" || nom[0].ToString() == "u" || nom[0].ToString() == "i")
+                        {
+                            x = x + Convert.ToInt32(stringSize.Width);
+                        }
+                        else
+                        {
+                            x = x + Convert.ToInt32(stringSize.Width) + 3;
+                        }
                         index = index + 1;
                     }
                     else
                     {
                         LabelPerso label = new LabelPerso();
-                        if (index == 0)
+
+                        if (nom[0].ToString() == "a" || nom[0].ToString() == "e" || nom[0].ToString() == "h"
+                            || nom[0].ToString() == "o" || nom[0].ToString() == "u" || nom[0].ToString() == "i")
                         {
-                            label.Text = char.ToUpper(unLabel.Text[0]) + unLabel.Text.Substring(1);
-                        }
-                        else if (index == lesLabels.Count - 1)
-                        {
-                            label.Text = unLabel.Text + ".";
+                            if (index == 0)
+                            {
+                                label.Text = "L'";
+                            }
+                            else if (index == lesLabels.Count - 1)
+                            {
+                                label.Text = unLabel.Text + ".";
+                            }
+                            else
+                            {
+                                label.Text = unLabel.Text;
+                            }
                         }
                         else
                         {
-                            label.Text = unLabel.Text;
+                            if (index == 0)
+                            {
+                                label.Text = char.ToUpper(unLabel.Text[0]) + unLabel.Text.Substring(1);
+                            }
+                            else if (index == lesLabels.Count - 1)
+                            {
+                                label.Text = unLabel.Text + ".";
+                            }
+                            else
+                            {
+                                label.Text = unLabel.Text;
+                            }
                         }
-                        label.Text = unLabel.Text;
                         label.Font = new Font("Arial", 24);
                         label.Top = 150;
                         label.Left = x;
@@ -503,7 +559,16 @@ namespace WindowsForm.Forms
                         label.Width = Convert.ToInt32(stringSize.Width);
                         label.AutoSize = true;
                         this.Controls.Add(label);
-                        x = x + Convert.ToInt32(stringSize.Width) + 3;
+
+                        if (nom[0].ToString() == "a" || nom[0].ToString() == "e" || nom[0].ToString() == "h"
+                            || nom[0].ToString() == "o" || nom[0].ToString() == "u" || nom[0].ToString() == "i")
+                        {
+                            x = x + Convert.ToInt32(stringSize.Width);
+                        }
+                        else
+                        {
+                            x = x + Convert.ToInt32(stringSize.Width) + 3;
+                        }
                         index = index + 1;
                     }
                 }
@@ -514,20 +579,43 @@ namespace WindowsForm.Forms
                     lesMots.Add(pronom);
                     int i = lesMots.IndexOf(pronom);
                     Pronom pronomPhrase = (Pronom)lesMots[i];
+
+                    List<LabelPerso> myList = lesLabels;
+                    string verbe = myList.Single(s => s.Text == phraseC).Text;
                     if (typeQuestion == "pronom")
                     {
                         LabelPerso label = new LabelPerso(pronomPhrase);
-                        if (index == 0)
+
+                        if (pronom.getTexte() == "je" && (verbe[0].ToString() == "a" || verbe[0].ToString() == "e" || verbe[0].ToString() == "i"
+                            || verbe[0].ToString() == "o" || verbe[0].ToString() == "u"))
                         {
-                            label.Text = char.ToUpper(unLabel.Text[0]) + unLabel.Text.Substring(1);
-                        }
-                        else if (index == lesLabels.Count - 1)
-                        {
-                            label.Text = unLabel.Text + ".";
+                            if (index == 0)
+                            {
+                                label.Text = "J'";
+                            }
+                            else if (index == lesLabels.Count - 1)
+                            {
+                                label.Text = unLabel.Text + ".";
+                            }
+                            else
+                            {
+                                label.Text = unLabel.Text;
+                            }
                         }
                         else
                         {
-                            label.Text = unLabel.Text;
+                            if (index == 0)
+                            {
+                                label.Text = char.ToUpper(unLabel.Text[0]) + unLabel.Text.Substring(1);
+                            }
+                            else if (index == lesLabels.Count - 1)
+                            {
+                                label.Text = unLabel.Text + ".";
+                            }
+                            else
+                            {
+                                label.Text = unLabel.Text;
+                            }
                         }
                         label.Font = new Font("Arial", 24);
                         label.Top = 150;
@@ -538,23 +626,52 @@ namespace WindowsForm.Forms
                         label.Width = Convert.ToInt32(stringSize.Width);
                         label.AutoSize = true;
                         this.Controls.Add(label);
-                        x = x + Convert.ToInt32(stringSize.Width) + 3;
+
+                        if (pronom.getTexte() == "je" && (verbe[0].ToString() == "a" || verbe[0].ToString() == "e" || verbe[0].ToString() == "i"
+                            || verbe[0].ToString() == "o" || verbe[0].ToString() == "u"))
+                        {
+                            x = x + Convert.ToInt32(stringSize.Width);
+                        }
+                        else
+                        {
+                            x = x + Convert.ToInt32(stringSize.Width) + 3;
+                        }
                         index = index + 1;
                     }
                     else
                     {
                         LabelPerso label = new LabelPerso();
-                        if (index == 0)
+
+                        if (pronom.getTexte() == "je" && (verbe[0].ToString() == "a" || verbe[0].ToString() == "e" || verbe[0].ToString() == "i"
+                            || verbe[0].ToString() == "o" || verbe[0].ToString() == "u"))
                         {
-                            label.Text = char.ToUpper(unLabel.Text[0]) + unLabel.Text.Substring(1);
-                        }
-                        else if (index == lesLabels.Count - 1)
-                        {
-                            label.Text = unLabel.Text + ".";
+                            if (index == 0)
+                            {
+                                label.Text = "J'";
+                            }
+                            else if (index == lesLabels.Count - 1)
+                            {
+                                label.Text = unLabel.Text + ".";
+                            }
+                            else
+                            {
+                                label.Text = unLabel.Text;
+                            }
                         }
                         else
                         {
-                            label.Text = unLabel.Text;
+                            if (index == 0)
+                            {
+                                label.Text = char.ToUpper(unLabel.Text[0]) + unLabel.Text.Substring(1);
+                            }
+                            else if (index == lesLabels.Count - 1)
+                            {
+                                label.Text = unLabel.Text + ".";
+                            }
+                            else
+                            {
+                                label.Text = unLabel.Text;
+                            }
                         }
                         label.Font = new Font("Arial", 24);
                         label.Top = 150;
@@ -565,7 +682,16 @@ namespace WindowsForm.Forms
                         label.Width = Convert.ToInt32(stringSize.Width);
                         label.AutoSize = true;
                         this.Controls.Add(label);
-                        x = x + Convert.ToInt32(stringSize.Width) + 3;
+
+                        if (pronom.getTexte() == "je" && (verbe[0].ToString() == "a" || verbe[0].ToString() == "e" || verbe[0].ToString() == "i"
+                            || verbe[0].ToString() == "o" || verbe[0].ToString() == "u"))
+                        {
+                            x = x + Convert.ToInt32(stringSize.Width);
+                        }
+                        else
+                        {
+                            x = x + Convert.ToInt32(stringSize.Width) + 3;
+                        }
                         index = index + 1;
                     }
                 }
@@ -631,7 +757,7 @@ namespace WindowsForm.Forms
                         index = index + 1;
                     }
                 }
-                else if(unLabel.Text == phraseC)
+                else if (unLabel.Text == phraseC)
                 {
                     Conjugaison c = Bdd.SelectConjugaisonByVerbe(phraseIdV);
                     Verbe v = Bdd.SelectVerbeById(phraseIdV);
@@ -693,7 +819,7 @@ namespace WindowsForm.Forms
                         index = index + 1;
                     }
                 }
-                else if(unLabel.Text == phraseAdv)
+                else if (unLabel.Text == phraseAdv)
                 {
                     Adverbe adv = Bdd.SelectAdverbeById(phraseIdAdv);
                     Adverbe adverbe = new Adverbe(adv.GetId(), adv.getTexte());
@@ -881,7 +1007,6 @@ namespace WindowsForm.Forms
                                 MessageBox.Show("Dommage ! Ce n'était pas le bon mot." + "\n" + "Vous perdez 1 point !", "Dommage",
                                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 ScoreChange(false);
-
                             }
                         }
                         removeLabels();
@@ -896,68 +1021,68 @@ namespace WindowsForm.Forms
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if(typeQuestion == "article" && phraseArt == null)
+            if (typeQuestion == "article" && phraseArt == null)
             {
                 MessageBox.Show("Bien joué ! La phrase ne contenait pas d'article." + "\n" + "Vous gagnez 1 point !", "Félicitations",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
-                removeLabels();
                 ScoreChange(true);
+                removeLabels();
             }
-            else if(typeQuestion == "adjectif possessif" && phraseAP == null)
+            else if (typeQuestion == "adjectif possessif" && phraseAP == null)
             {
                 MessageBox.Show("Bien joué ! La phrase ne contenait pas d'adjectif possessif." + "\n" + "Vous gagnez 1 point !", "Félicitations",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
-                removeLabels();
                 ScoreChange(true);
+                removeLabels();
             }
-            else if(typeQuestion == "pronom" && phraseP == null)
+            else if (typeQuestion == "pronom" && phraseP == null)
             {
                 MessageBox.Show("Bien joué ! La phrase ne contenait pas de pronom." + "\n" + "Vous gagnez 1 point !", "Félicitations",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
-                removeLabels();
                 ScoreChange(true);
+                removeLabels();
             }
-            else if(typeQuestion == "nom" && phraseN == null)
+            else if (typeQuestion == "nom" && phraseN == null)
             {
                 MessageBox.Show("Bien joué ! La phrase ne contenait pas de nom." + "\n" + "Vous gagnez 1 point !", "Félicitations",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
-                removeLabels();
                 ScoreChange(true);
+                removeLabels();
             }
-            else if(typeQuestion == "verbe" && phraseC == null)
+            else if (typeQuestion == "verbe" && phraseC == null)
             {
                 MessageBox.Show("Bien joué ! La phrase ne contenait pas de verbe." + "\n" + "Vous gagnez 1 point !", "Félicitations",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
-                removeLabels();
                 ScoreChange(true);
+                removeLabels();
             }
-            else if(typeQuestion == "adjectif" && phraseAdj == null)
+            else if (typeQuestion == "adjectif" && phraseAdj == null)
             {
                 MessageBox.Show("Bien joué ! La phrase ne contenait pas d'adjectif." + "\n" + "Vous gagnez 1 point !", "Félicitations",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
-                removeLabels();
                 ScoreChange(true);
+                removeLabels();
             }
-            else if(typeQuestion == "adverbe" && phraseAdv == null)
+            else if (typeQuestion == "adverbe" && phraseAdv == null)
             {
                 MessageBox.Show("Bien joué ! La phrase ne contenait pas d'adverbe." + "\n" + "Vous gagnez 1 point !", "Félicitations",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
-                removeLabels();
                 ScoreChange(true);
+                removeLabels();
             }
             else
             {
                 MessageBox.Show("Dommage ! Le mot était bien dans la phrase." + "\n" + "Vous perdez 1 point !", "Dommage",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
-                removeLabels();
                 ScoreChange(false);
+                removeLabels();
             }
         }
 
         public void removeLabels()
         {
             var label = this.Controls.OfType<LabelPerso>().ToList();
-            foreach(LabelPerso l in label)
+            foreach (LabelPerso l in label)
             {
                 l.Dispose();
             }

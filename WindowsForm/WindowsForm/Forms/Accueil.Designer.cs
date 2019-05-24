@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.Button btJouer;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Accueil));
             System.Windows.Forms.Button btClassement;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Accueil));
             System.Windows.Forms.Button btAjoutMot;
             System.Windows.Forms.Button btGestionUser;
             System.Windows.Forms.Button btPhraseGen;
+            this.btJouer = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.BtConnexion = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.CloseLabel = new System.Windows.Forms.Label();
             this.WelcomeLabel = new System.Windows.Forms.Label();
@@ -44,8 +45,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.labelAdmin = new System.Windows.Forms.Label();
-            this.BtConnexion = new System.Windows.Forms.Button();
-            btJouer = new System.Windows.Forms.Button();
             btClassement = new System.Windows.Forms.Button();
             btAjoutMot = new System.Windows.Forms.Button();
             btGestionUser = new System.Windows.Forms.Button();
@@ -54,25 +53,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelAdmin.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btJouer
-            // 
-            btJouer.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            btJouer.FlatAppearance.BorderSize = 0;
-            btJouer.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            btJouer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            btJouer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            btJouer.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            btJouer.ForeColor = System.Drawing.Color.White;
-            btJouer.Image = ((System.Drawing.Image)(resources.GetObject("btJouer.Image")));
-            btJouer.Location = new System.Drawing.Point(0, 221);
-            btJouer.Name = "btJouer";
-            btJouer.Size = new System.Drawing.Size(207, 45);
-            btJouer.TabIndex = 2;
-            btJouer.Text = "S\'exercer";
-            btJouer.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            btJouer.UseVisualStyleBackColor = true;
-            btJouer.Click += new System.EventHandler(this.btJouer_Click);
             // 
             // btClassement
             // 
@@ -153,18 +133,54 @@
             btPhraseGen.UseVisualStyleBackColor = false;
             btPhraseGen.Click += new System.EventHandler(this.btPhraseGen_Click);
             // 
+            // btJouer
+            // 
+            this.btJouer.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btJouer.FlatAppearance.BorderSize = 0;
+            this.btJouer.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btJouer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btJouer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btJouer.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btJouer.ForeColor = System.Drawing.Color.White;
+            this.btJouer.Image = ((System.Drawing.Image)(resources.GetObject("btJouer.Image")));
+            this.btJouer.Location = new System.Drawing.Point(0, 221);
+            this.btJouer.Name = "btJouer";
+            this.btJouer.Size = new System.Drawing.Size(207, 45);
+            this.btJouer.TabIndex = 2;
+            this.btJouer.Text = "S\'exercer";
+            this.btJouer.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btJouer.UseVisualStyleBackColor = false;
+            this.btJouer.Click += new System.EventHandler(this.btJouer_Click);
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Purple;
             this.panel1.Controls.Add(this.BtConnexion);
             this.panel1.Controls.Add(btClassement);
-            this.panel1.Controls.Add(btJouer);
+            this.panel1.Controls.Add(this.btJouer);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(207, 541);
             this.panel1.TabIndex = 2;
+            // 
+            // BtConnexion
+            // 
+            this.BtConnexion.BackColor = System.Drawing.Color.Purple;
+            this.BtConnexion.FlatAppearance.BorderSize = 0;
+            this.BtConnexion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtConnexion.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtConnexion.ForeColor = System.Drawing.Color.White;
+            this.BtConnexion.Image = ((System.Drawing.Image)(resources.GetObject("BtConnexion.Image")));
+            this.BtConnexion.Location = new System.Drawing.Point(-3, 109);
+            this.BtConnexion.Name = "BtConnexion";
+            this.BtConnexion.Size = new System.Drawing.Size(207, 58);
+            this.BtConnexion.TabIndex = 1;
+            this.BtConnexion.Text = "Login";
+            this.BtConnexion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BtConnexion.UseVisualStyleBackColor = false;
+            this.BtConnexion.Click += new System.EventHandler(this.BtLogin_Click);
             // 
             // pictureBox1
             // 
@@ -194,9 +210,9 @@
             this.WelcomeLabel.ForeColor = System.Drawing.Color.Violet;
             this.WelcomeLabel.Location = new System.Drawing.Point(232, 80);
             this.WelcomeLabel.Name = "WelcomeLabel";
-            this.WelcomeLabel.Size = new System.Drawing.Size(155, 23);
+            this.WelcomeLabel.Size = new System.Drawing.Size(147, 23);
             this.WelcomeLabel.TabIndex = 13;
-            this.WelcomeLabel.Text = "Ravis de te voir ";
+            this.WelcomeLabel.Text = "Ravi de te voir ";
             // 
             // panelAdmin
             // 
@@ -269,28 +285,11 @@
             this.labelAdmin.Visible = false;
             this.labelAdmin.Click += new System.EventHandler(this.label5_Click);
             // 
-            // BtConnexion
-            // 
-            this.BtConnexion.BackColor = System.Drawing.Color.Purple;
-            this.BtConnexion.FlatAppearance.BorderSize = 0;
-            this.BtConnexion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtConnexion.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtConnexion.ForeColor = System.Drawing.Color.White;
-            this.BtConnexion.Image = ((System.Drawing.Image)(resources.GetObject("BtConnexion.Image")));
-            this.BtConnexion.Location = new System.Drawing.Point(-3, 109);
-            this.BtConnexion.Name = "BtConnexion";
-            this.BtConnexion.Size = new System.Drawing.Size(207, 58);
-            this.BtConnexion.TabIndex = 1;
-            this.BtConnexion.Text = "Login";
-            this.BtConnexion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BtConnexion.UseVisualStyleBackColor = false;
-            this.BtConnexion.Click += new System.EventHandler(this.BtLogin_Click);
-            // 
             // Accueil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(45)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(839, 541);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
@@ -324,5 +323,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label labelAdmin;
         private System.Windows.Forms.Button BtConnexion;
+        private System.Windows.Forms.Button btJouer;
     }
 }
